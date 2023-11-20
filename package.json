@@ -7,7 +7,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"start": "webpack-dev-server --config webpack.dev.js --port 3002",
+		"start": "webpack-dev-server --config webpack.dev.js --port 3001",
 		"start2": "webpack-dev-server --config webpack.dev.js",
 		"starthttps": "set HTTPS=true&&npm start",
 		"build": "webpack --config webpack.prod.js",

@@ -8,7 +8,7 @@ require('dotenv').config();
 const { NODE_ENV } = process.env
 const inDevelopment = NODE_ENV === "development";
 
-const port = 3002;
+const port = 3001;
 const BASE_URL_PUBLIC = process.env.BASE_URL_PUBLIC
 let publicUrl = `ws://${BASE_URL_PUBLIC}/ws`; //let publicUrl = `wss://${BASE_URL_PUBLIC}/ws`;
 if (process.env.GITPOD_WORKSPACE_URL) {

@@ -1,13 +1,10 @@
 import React from 'react';
-
-
+import { runCLI } from 'jest';
 
 const TestButton = (props) => {
   const runTests = async () => {
     // Ejecuta Jest bajo demanda
-    //const { runCLI } = require('jest');
-    //await runCLI({ _: [`${props.folder}myTest.test.js`] }, [process.cwd()]);
-
+    await runCLI({ _: [`${props.folder}myTest.test.js`] }, [process.cwd()]);
   };
 
   return (
