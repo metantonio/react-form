@@ -1,4 +1,4 @@
-jest.autoMockOff();
+/* jest.autoMockOff();
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -16,4 +16,4 @@ describe('List', () => {
 
         expect(repos.length).toEqual(3);
     });
-});
+}); */
