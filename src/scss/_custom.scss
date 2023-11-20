@@ -1,0 +1,156 @@
+// Here you can add other styles
+.sidebar-brand2 {
+    background-image: url("../js/assets/antonio-text.PNG");
+    background-color: #ffffff;
+    height: 90%;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    
+}
+
+.login2 {
+    height: 100%;
+    display: grid;
+    place-items: center;
+    font-family: 'Hammersmith One', sans-serif;
+}
+
+.login__container2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2% 2%;
+    padding: 50px;
+    text-align: center;
+    background-color: #ffffff71;
+    border-radius: 10px;
+    box-shadow: 10px 10px 2px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24) ;
+}
+
+.background-login2{
+    /*background: url("../img/backgroundyellow.jpg");*/
+    height: 70vh !important;
+    background-size: cover ;
+    background-position: 100%;
+    background: rgb(33,74,121);
+    background: linear-gradient(135deg, rgba(33,74,121,1) 0%,     rgba(52,123,123,1) 50%, rgba(178,214,206,1) 100%);
+}
+
+.sign-in-buttons2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cta-select2{
+    border-radius: 20px;
+    padding: 3px 10px;
+    background:#347b7b;
+    color: white;
+    border: none;
+    font-size: 16px;
+    margin-top: 20px;
+    width: 100%;
+    font-family:sans-serif;
+    
+}
+
+.cta-select-google2{
+    border-radius: 20px;
+    color: #ffffff;
+    padding: 10px 10px;
+    background: #2D3748;
+    border: solid 2px #ffffff;
+    font-size: 16px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.sign-input2{
+    width: 200px;
+    height: 25px;
+    border-radius: 5%;
+    border-radius: 5px;
+    border: solid 1px lightgrey;
+}
+
+@media screen and (max-width: 1024px){
+    .sign-input{
+        width: 100%;
+    }
+}
+
+.sign-input2:focus{
+    outline: none !important;
+    border:1px solid #0077ff;
+    box-shadow: 0 0 5px #0077ff;
+}
+
+.register-inputs-alignment2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.password-icon2 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: gray;
+    z-index: 9999;
+  }
+  .password-icon2:hover {
+    color: black;
+   
+    cursor: pointer;
+    
+  }
+  .wrap-input100 {
+    width: 100%;
+    position: relative;
+  
+  }
+
+  @media screen and (max-width: 1024px){
+    .sign-input2{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .cta-select2{
+        width: 100%;
+    }
+
+    .cta-select-google2{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .login2{
+        height: 100vh;
+    }
+
+    .login__container2{
+        height: 50%;
+    }
+
+    .login__container2 img{
+        margin-top: 40px;
+    }
+}
+
+.login__img2 {
+
+    width: 190px !important;
+    height: 80px !important;
+}
+
+#webpack-dev-server-client-overlay-div {
+    visibility: hidden !important;
+  }

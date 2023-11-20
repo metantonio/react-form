@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: o none;
+    position: relative;
+}
+/* *, *:before, *:after {
+  box-sizing: inherit;
+}  */
+
+/* este css actualiza el fonde de la pantalla*/
+html {
+  /* box-sizing: content-box; */
+  /* background: #cecece; */
+  /* background: linear-gradient(45deg, rgb(69,69,69) 0%, rgb(68,68,68) 50%, rgb(69,69,69) 100%) !important; */
+  overflow-y: auto;
+  /* height: max-content; */
+} 
+#menu_gral  *{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    background-color: rgba(114, 199, 161, 0) !important;
+    font-family: verdana, sans sherif;
+    width: 100%;
+    margin: 3px 0rem;
+    list-style-type: none;
+    /* margin-left: -4px; */
+}
+/*  .nav-ul  {
+    display: block;
+padding-left: 0px !important; 
+
+ }
+ */
+#menu_gral > ul li {
+    background: #FFf;
+    padding-top:5px ;
+    padding-bottom: 5px;
+   
+}
+#menu_gral li Link {
+    display: block;
+    font-size: 1rem;
+    line-height: 2.5rem;
+    color: #444;
+    
+}
+#menu_gral li:hover Link, #menu_gral li Link:focus {
+    background: #8DA889;
+    color: rgb(218, 218, 218);
+
+}
+
+#menu_gral li ul {
+    height: 0;
+    overflow: hidden;
+ 
+}
+/* hover de todo el menu */
+/* #menu_gral li:hover ul, #menu_gral li:focus ul {
+    height: auto;
+   
+
+} */
+
+#menu_gral li:hover li Link, #menu_gral li:focus li Link {
+    font-family: monospace;
+    font-size: .9rem;
+    line-height: 1.7rem;
+    border-top: 1px solid #e5e5e5;
+   
+    
+}
+#menu_gral li li Link:hover, #menu_gral li li Link:focus {
+    background: #989d9f; 
+}
+/* Punticos atras de padres */
+li {
+    list-style-type: none;
+  }
+
+  
+  .lista-principal {
+  display: auto;
+  
+  
+  }
+
+  path {
+      width: 0px !important;
+      
+  }
+
+  /* iconos ioicons */
+  a > svg {
+      width: auto !important;
+      padding-right: 5px;
+ 
+  }
+
+ .accordion {
+    background-color: #eee;
+    color: rgb(174, 142, 142);
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    
+    
+  }
+  /* .active, .accordion:hover {
+    background-color: #ccc !important; 
+  }  */
+  .panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+    
+  }
+  .panel1 {
+    padding: 0 18px;
+    display: block;
+    background-color: rgb(138, 195, 223);
+    overflow: hidden;
+    
+  }
+ 
+  
+
+  #menu_gral li:hover ul, #menu_gral li:focus ul {
+    height: auto;
+    background-color: rgba(167, 172, 168, 0.573) !important;
+
+} 
+
+/*border-hover*/
+li.border-double:hover {
+  color: #20dd26;
+  background: transparent;
+   box-shadow:none;
+}
+li.border-double:before,
+li.border-double:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #32d23d;
+  box-shadow:
+   -1px -1px 5px 0px #fff,
+   7px 7px 20px 0px #2b8c57,
+   4px 4px 5px 0px #2b8c58;
+  transition:400ms ease all;
+}
+li.border-double:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+li.border-double:hover:before,
+li.border-double:hover:after{
+  width:100%;
+  transition:200ms ease all;
+}
+
+.bajarboton {
+  margin: 0px 0x 0px 0px !important;
+
+}
+
+

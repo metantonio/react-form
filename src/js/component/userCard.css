@@ -1,0 +1,26 @@
+.fa-heart-o:hover{
+    color: red !important;
+    flood-color: red !important;
+    font-size: 1.2rem;
+    }
+    
+    .card {
+        width: 100%;
+        transition: 0.8s all ease-in-out;
+        overflow: hidden;
+        margin: 0 auto;
+    }
+    
+    .card-img-top:hover {
+        /* size: 200px !important; */
+        /* width: 105%;
+        height: 105%; */
+        transform: scale(1.1);
+    }
+    
+    .marco3 {
+        padding:8px 8px 20px 8px;
+        background-color: #ffffff;
+        max-height: 500px;
+        border: 1px solid #999999;
+     }

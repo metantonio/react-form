@@ -1,0 +1,140 @@
+.login {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    font-family: 'Hammersmith One', sans-serif;
+}
+
+.login__container img {
+    width: 100%;
+}
+
+.background-login{
+    /*background: url("../img/backgroundyellow.jpg");*/
+    background-size: cover ;
+    background-position: 100%;
+    background: rgb(199, 198, 211);
+    background: #cecece;
+}
+/* clase del logo de kaizen */
+.login__img {
+
+    width: 180px !important;
+    height: 67px !important;
+}
+.login__container {
+    margin: 2% 2%;
+    padding: 50px;
+    text-align: center;
+    background-color: #ffffff9c;
+    border-radius: 10px;
+    box-shadow: 10px 10px 2px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24) ;
+}
+
+@media screen and (max-width: 1024px){
+    .login{
+        height: 120vh;
+    }
+
+    .login__container{
+        height: 50%;
+    }
+
+    .login__container img{
+        margin-top: 40px;
+    }
+}
+
+.sign-in-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cta-select{
+    border-radius: 20px;
+    padding: 3px 10px;
+    background:#9f9f9f;
+    color: white;
+    border: none;
+    font-size: 16px;
+    margin-top: 20px;
+    width: 90%;
+    font-family:sans-serif;
+    
+}
+
+.cta-select-google{
+    border-radius: 20px;
+    color: #ffffff;
+    padding: 10px 10px;
+   /*  background: #04245a; */
+    border: solid 2px #ffffff;
+    font-size: 16px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+@media screen and (max-width: 1024px){
+    .cta-select{
+        width: 100%;
+    }
+
+    .cta-select-google{
+        width: 100%;
+    }
+}
+
+.sign-input{
+    width: 200px;
+    height: 25px;
+    border-radius: 5%;
+    border-radius: 5px;
+    border: solid 1px lightgrey;
+}
+
+@media screen and (max-width: 1024px){
+    .sign-input{
+        width: 100%;
+    }
+}
+
+input{
+    margin: 5px;
+
+}
+
+.sign-input:focus{
+    outline: none !important;
+    border:1px solid #0077ff;
+    box-shadow: 0 0 5px #0077ff;
+}
+
+.register-inputs-alignment{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.password-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: gray;
+    z-index: 9999;
+  }
+  .password-icon:hover {
+    color: black;
+   
+    cursor: pointer;
+    
+  }
+  .wrap-input100 {
+    width: 100%;
+    position: relative;
+  
+  }
+
+  .swal2-title {
+    z-index: 9999 !important;
+  }

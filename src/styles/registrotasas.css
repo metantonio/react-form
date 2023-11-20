@@ -1,0 +1,208 @@
+#contenedor-principal2 {
+    margin-left: 20% !important;
+    width: 80% !important;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    padding-bottom: 15px !important;
+    padding-top: 15px !important;
+    height: 100%;
+    transition-duration: 0.1s;
+  }
+  
+  #contenedor-expandido3 {
+    margin-left: 2% !important;
+    width: 96% !important;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(253, 253, 253, 0.63) !important;
+    padding-bottom: 15px !important;
+    padding-top: 15px !important;
+    background: white !important;
+    transition-duration: 0.3s;
+  }
+  
+  input {
+    z-index: 9999;
+  }
+  
+  .registro-input {
+    width: 100%;
+    padding: 15px;
+    background: #f8f8f8;
+    border: 1px solid rgba(0, 0, 0, 0.075);
+    margin-bottom: 25px;
+    color: #000000 !important;
+    font-size: 13px;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    z-index: auto;
+  }
+  
+  .registro-input:hover {
+    border: 1px solid #8bc3a3;
+  }
+  
+  .registro-input:focus {
+    color: white;
+    outline: none;
+    border: 1px solid #8bc3a3;
+  }
+  
+  h5 {
+    padding: 5px;
+    text-align: start;
+    width: auto;
+    font-weight: bold;
+    height: 20px;
+    font-size: 14px;
+  }
+  
+  .row {
+    padding-left: 0px !important;
+    margin: 0px !important;
+  }
+  
+  .btn-success {
+    padding: 2px 2px !important;
+      font-size: 15px !important;
+      text-align: center !important;
+      cursor: pointer !important;
+      color: white !important;
+      border-color: rgb(223, 219, 219) !important;
+      background-color: #dee2e6 !important;
+      border-radius: 10px !important;
+      margin-top: 13px !important;
+   
+  }
+  
+  span {
+    width: 0px;
+  }
+  
+  .titulo > * {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 20px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    font-family: sans-serif;
+  }
+  
+  .modal {
+    z-index: 9999;
+  }
+  
+  #modal2 {
+    z-index: 9999;
+  }
+  
+  .makeStyles >{
+    z-index: 9999;
+  }
+  
+  input{
+    height: 18px;
+  }
+  
+  .foc{
+    visibility: hidden !important;
+  }
+  
+  .dropdowncustom {
+    display: flex !important;
+    padding: 0px !important;
+    
+  }
+  .row>* {
+   
+    max-width: 100% !important;
+    padding-left: 0px !important;
+   
+  }
+  
+   .botonclase{
+    padding: 20px !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: auto !important;
+    text-align: center !important;
+    padding-right: 31px !important;
+   }
+  
+   /* .cajita {
+    border: 2px solid !important;
+    border-color: rgb(89, 201, 176)  !important;
+    height: 30px !important;
+    width: 33px !important;
+    border-radius: 5px;
+    background-color: rgb(89, 201, 176) !important;
+  } */
+  
+   /* .btn-primary {
+    color: #fff !important;
+    background-color: rgb(89, 201, 176) !important;
+    border-color: rgb(89, 201, 176)  !important;
+  } 
+   */
+ /*  .MuiButton-text {
+    background-color:rgb(89, 201, 176) !important;
+    padding: 6px 8px;
+  } */
+  
+ /*  .codcli{
+      padding: 0px !important;
+      width: auto !important;
+      font-weight: bold;
+      height: 27px !important;
+      font-size: 28px !important;
+      margin: 0px 0px 0px 12% !important;
+  
+  } */
+/* .codcli2 {
+    padding: 0px !important;
+    width: auto !important;
+    font-weight: bold;
+    height: 27px !important;
+    font-size: 28px !important;
+    margin: 0px 0px 0px 12% !important;
+}
+
+#contenedor-principal {
+    margin-left: 20% !important;
+    width: 80% !important;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    padding-bottom: 15px !important;
+    padding-top: 15px !important;
+    height: 100%;
+    transition-duration: 0.1s;
+  }
+  
+  #contenedor-expandido2 {
+    margin-left: 2% !important;
+    width: 96% !important;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(253, 253, 253, 0.63) !important;
+    padding-bottom: 15px !important;
+    padding-top: 15px !important;
+    background: white !important;
+    transition-duration: 0.3s;
+  }
+
+  .cajita {
+    border: 2px solid !important;
+    border-color: rgb(89, 201, 176)  !important;
+    height: 30px !important;
+    width: 33px !important;
+    border-radius: 5px;
+    background-color: rgb(89, 201, 176) !important;
+  } */

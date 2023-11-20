@@ -1,0 +1,284 @@
+#contenedor-principal2 {
+  margin-left: 20% !important;
+  width: 80% !important;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  padding-bottom: 15px !important;
+  padding-top: 15px !important;
+  height: 100%;
+  transition-duration: 0.1s;
+}
+
+#contenedor-expandido3 {
+  color: rgb(255, 255, 255) !important;
+  margin-left: 2% !important;
+  width: 96% !important;
+  justify-content: center;
+  align-items: center;
+   background-color:rgb(0, 0, 0) !important; 
+  padding-bottom: 15px !important;
+  padding-top: 15px !important;
+ /*  background: white !important; */
+  transition-duration: 0.3s;
+  margin-top: 1%;
+}
+
+input {
+  z-index: 1019;
+}
+
+.registro-input {
+  width: 100%;
+  padding: 15px;
+  background: #f8f8f8;
+  border: 1px solid rgba(0, 0, 0, 0.075);
+  margin-bottom: 25px;
+  color: #000000 !important;
+  font-size: 13px;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+  z-index: auto;
+}
+
+.registro-input:hover {
+  border: 1px solid #8bc3a3;
+}
+
+.registro-input:focus {
+  color: white;
+  outline: none;
+  border: 1px solid #8bc3a3;
+}
+
+h5 {
+  padding: 5px;
+  text-align: start;
+  width: auto;
+  font-weight: bold;
+  height: 20px;
+  font-size: 14px;
+}
+
+.row {
+  padding-left: 0px !important;
+  margin: 0px !important;
+}
+
+.btn-success {
+  padding: 2px 2px !important;
+    font-size: 15px !important;
+    text-align: center !important;
+    cursor: pointer !important;
+    color: white !important;
+    border-color: rgb(223, 219, 219) !important;
+    background-color: #dee2e6 !important;
+    border-radius: 10px !important;
+    margin-top: 13px !important;
+ 
+}
+
+span {
+  width: auto; /* 0px */
+}
+
+.titulo > * {
+  color: #000000;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 20px;
+  font-size: 25px !important;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.modal {
+  z-index: 9999;
+}
+
+#modal2 {
+  z-index: 9999;
+}
+
+.makeStyles >{
+  z-index: 9999;
+}
+
+input{
+  height: 18px;
+}
+
+.foc{
+  visibility: hidden !important;
+}
+
+.dropdowncustom {
+  display: flex !important;
+  padding: 0px !important;
+  
+}
+.row>* {
+ 
+  max-width: 100% !important;
+  padding-left: 0px !important;
+ 
+}
+
+ #botonclase{
+  padding: 20px !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: auto !important;
+  text-align: center !important;
+  padding-right: 31px !important;
+ }
+
+ .cajita {
+  margin: 0px 0px 0px 16px !important;
+  border: 2px solid !important;
+  border-color: rgb(89, 201, 176) !important;
+  height: 30px !important;
+  width: 33px !important;
+  border-radius: 5px;
+  background-color: rgb(89, 201, 176) !important;
+}
+/* 
+ .btn-primary {
+  color: #fff !important;
+  background-color: rgb(89, 201, 176) !important;
+  border-color: rgb(89, 201, 176)  !important;
+} 
+
+ .MuiButton-text {
+  background-color:rgb(89, 201, 176) !important;
+  padding: 6px 8px;
+}  */
+
+.codcli{
+  padding: 0px 0px 0px 0px !important;
+  width: auto !important;
+  font-weight: bold;
+  height: 27px !important;
+  font-size: 28px !important;
+  margin: 0px 0px 0px 4% !important;
+
+}
+
+.camposreq {
+  margin-bottom: -39px !important;
+  color: red;
+}
+
+.projo {
+  margin: -13px 0px -2px 157px;
+  color: red;
+}
+.projo1{
+  margin: -13px 0px -2px 98px;
+  color: red;
+}
+.projo2{
+  margin: -13px 0px -2px  99px;
+  color: red;
+}
+
+.projo3{
+  margin: -13px 0px -2px 55px;
+  color: red;
+}
+
+.projo4{
+  margin: -13px 0px -2px 37px;
+  color: red;
+}
+
+.PEP {
+  padding: 0px !important;
+}
+
+.subrayado {
+  color: green !important;
+  text-decoration:none !important;
+  
+  
+
+}
+
+#contenedor-principal > form > div:nth-child(6) > div:nth-child(2) > div > div > div > div > div > div > ul {
+  height: 250px !important;
+  overflow: scroll !important;
+  overflow-x: hidden !important;
+  width: auto !important;
+}
+
+#contenedor-principal > form > div:nth-child(8) > div:nth-child(3) > div > div > div > div > div > div > ul {
+
+  height: 250px !important;
+  overflow: scroll !important;
+  overflow-x: hidden !important;
+  width: auto !important;
+}
+
+#contenedor-principal > form > div:nth-child(8) > div:nth-child(4) > div > div > div > div > div > div > ul {
+
+  height: 250px !important;
+  overflow: scroll !important;
+  overflow-x: hidden !important;
+  width: auto !important;
+
+}
+#infobanco4 {
+  display: inline-flex !important;
+  color: rgb(89, 201, 176);
+  justify-content: center !important;
+  align-items: center !important;
+  padding-top: 7px !important;
+  margin: 5px 0px 0px 63px !important;
+  font-size: 13px;
+  height: 40px !important;
+  border-color: black !important;
+  padding-left: 6px;
+  padding-bottom: 14px !important;
+}
+
+.btn {
+  background-color: #fffffff7 !important;
+  color:#000000
+}
+
+.btn-outline-success {  
+  color:#6c757d !important
+}
+
+.btn-outline-danger {  
+  color:#fc0000fe !important
+}
+
+.btn-outline-success:hover {
+  background-color: #6c757d !important;
+  color: white !important;
+}
+
+.btn-outline-danger:hover {
+  background-color: #fc0000fe !important;
+  color: white !important;
+}
+
+
+.infobutton {
+  left: 200px;
+  position: absolute;
+  bottom: 19px;
+}
+
+.botoninfo{
+  outline: none !important;
+  font-size: 20px;
+  border-width: 0px;
+}

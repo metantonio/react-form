@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+/* * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+  
+}  */
+
+/* .menu, .reports {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+.contenedor-expandido {
+  margin-left: 2%;
+  width: 96%;
+  justify-content: center;
+  align-items: center;
+  
+} */
+
+/* #contenedor-principal {
+  margin-left: 20% !important;
+  width: 80% !important;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  padding-bottom: 15px !important;
+  padding-top: 15px !important;
+  height: 100%;
+  transition-duration: 0.1s;
+} */
+
+/* #contenedor-expandido {
+  margin-left: 2% !important;
+  width: 96% !important;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(253, 253, 253, 0.63) !important;
+  padding-bottom: 15px !important;
+  padding-top: 15px !important;
+  background: white !important;
+  transition-duration: 0.3s;
+} */
+/* #Bienvenido {
+  font-size: 55px;
+  margin: 20px 0px 0px 0px;
+  text-align: center;
+}
+
+.kaizenimg1 {
+  display: flex;
+  justify-content: center !important;
+  padding: 0px;
+  
+  width: 40%;
+ 
+  justify-content: center;
+  align-items: auto;
+  align-content: center;
+  align-self: center;
+  animation-name: kaizenimg;
+  animation-duration: 4s;
+  opacity: 80%;
+}
+
+.kaizenimg2 {
+
+  place-items: center !important;
+  height: 75vh;
+
+}
+
+
+
+@keyframes kaizenimg {
+  from {
+    opacity: 1%;
+  }
+
+  to {
+    opacity: 40%;
+  }
+} */

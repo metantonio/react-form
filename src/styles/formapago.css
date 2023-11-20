@@ -1,0 +1,26 @@
+.adicion-campo :hover {
+ color: rgb(6, 246, 6) !important;
+ background-color: hsl(60, 56%, 91%); 
+}
+
+.eliminacion-campo :hover {
+    color: red !important;
+    background-color: beige;    
+}
+
+.adicion-campo {
+    
+    align-items: center !important;
+    justify-content: center !important;
+    align-self: center !important;
+    margin-top: 25% !important;
+    margin-bottom: 25% !important;
+   }
+   
+.eliminacion-campo {
+    align-items: center !important;
+    justify-content: center !important;
+    align-self: center !important;
+    margin-top: 25% !important;
+    margin-bottom: 25% !important;  
+}

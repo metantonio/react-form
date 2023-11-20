@@ -1,0 +1,29 @@
+.filter-table {
+    margin: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .input-field {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .input-field label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  .input-field input {
+    width: 100px;
+  }
+  
+  table {
+    border-collapse: collapse;
+  }
+  
+  th,
+  td {
+    padding: 10px;
+    border: 1px solid black;
+  }
+  

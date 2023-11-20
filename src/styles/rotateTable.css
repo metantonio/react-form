@@ -1,0 +1,151 @@
+#tabla-representada1 table {
+    width: 100%;
+    /* height: 100vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#tabla-representada1 tbody {
+    display: flex;
+    width: 100%;
+    position: relative;
+    align-items: stretch;
+    border: 1px solid black;
+
+}
+
+#tabla-representada1 tr {
+    flex-basis: 33.33333333%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    /* padding: 5px 10px; */
+    width: 100%;
+
+}
+
+#tabla-representada1 tr+tr {
+    border-left: 1px solid black;
+}
+
+#tabla-representada1 th,
+#tabla-representada1 td {
+    flex-basis: 100%;
+    text-align: left;
+    display: flex;
+    /* padding: 2px; */
+    min-height: 60px;
+    max-height: 60px;
+}
+
+#tabla-representada1 th {
+    font-weight: bold;
+    width: 100px !important;
+    /* visibility: hidden; */
+}
+
+#tabla-representada1 td {
+    min-height: 60px;
+    max-height: 60px;
+    /* max-width: 200px; */
+    width: 100px;
+    white-space: break-word;
+}
+
+#tabla-representada1 tfoot {
+    display: none;
+    visibility: hidden
+}
+
+#tabla-representada1 {
+    z-index: 3000;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+#tabla-representada1 table{
+    overflow-y: auto;
+    overflow-x: scroll;
+}
+
+#tabla-representada2 table {
+    width: fit-content;
+    /* height: 100vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#tabla-representada2 tbody {
+    display: flex;
+    width: 100%;
+    position: relative;
+    align-items: stretch;
+    border: 1px solid black;
+
+}
+
+#tabla-representada2 tr {
+    flex-basis: 33.33333333%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    /* padding: 5px 10px; */
+    width: 100%;
+
+}
+
+#tabla-representada2 tr+tr {
+    border-left: 1px solid black;
+}
+
+#tabla-representada2 th,
+#tabla-representada2 td {
+    flex-basis: 100%;
+    text-align: left;
+    display: flex;
+    /* padding: 2px; */
+    min-height: 60px;
+    max-height: 60px;
+}
+
+#tabla-representada2 th {
+    font-weight: bold;
+    width: 100px !important;
+    /* visibility: hidden; */
+}
+
+#tabla-representada2 td {
+    min-height: 60px;
+    max-height: 60px;
+    /* max-width: 200px; */
+    width: 100px;
+    white-space: break-word;
+}
+
+#tabla-representada2 tfoot {
+    display: none;
+    visibility: hidden
+}
+
+#tabla-representada2 {    
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+#tabla-representada2 table{
+    overflow-y: auto;
+    /* overflow-x: scroll; */
+}
+
+#tabla-representada2 tfoot {
+    width: 100%;
+    /* visibility: hidden; */
+}
+
+
+#tabla-representada2 > div > table {
+   /*  visibility: hidden */
+   width: 100%;
+}
