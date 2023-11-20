@@ -92,7 +92,7 @@ module.exports = {
       filename: 'styles.css', // Extracted CSS filename
     }),
     new HtmlWebpackPlugin({
-      favicon: '4geeks.ico',
+      favicon: 'icon.ico',
       template: 'template.html'
     }),
     new Dotenv({
