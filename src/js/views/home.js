@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
-import { Link, useParams, useHistory } from "react-router-dom";
+import { Link, useParams, Navigate } from "react-router-dom";
 import { Context } from "../store/appContext.js";
 import MaterialTable from "material-table";
 import { Modal, TextField, Button } from "@material-ui/core";
@@ -52,7 +52,7 @@ import CIcon from '@coreui/icons-react'
 
 const Home = () => {
   const { store, actions } = useContext(Context);
-  const history = useHistory("");
+  const history = Navigate("");
   /* const volverLogin = () => {
     actions.logOut();
     return history.push("/");
@@ -62,20 +62,20 @@ const Home = () => {
   }, [])
   return (
     <>
-      <div class="social_right_block" style={{position:"fixed", top:"40%", right:"0%", zIndex:99, padding:"10px", backgroundColor:"#FFF"}}>
-        <a class="facebook" href="https://www.facebook.com/pages/Qualex-Consulting-Services-Inc/553252344725767" target="_blank">
+      <div className="social_right_block" style={{position:"fixed", top:"40%", right:"0%", zIndex:99, padding:"10px", backgroundColor:"#FFF"}}>
+        <a className="facebook" href="https://www.facebook.com/pages/Qualex-Consulting-Services-Inc/553252344725767" target="_blank">
           <CIcon icon={cibFacebook} className="text-high-emphasis-inverse" style={{fill:"darkslategrey"}}/>
         </a>
         <br />
-        <a class="twitter" href="https://twitter.com/Qualex_Corp" target="_blank">
+        <a className="twitter" href="https://twitter.com/Qualex_Corp" target="_blank">
         <CIcon icon={cibTwitter} className="text-high-emphasis-inverse" style={{fill:"darkslategrey"}}/>
         </a>
         <br />
-        <a class="linkedin" href="https://www.linkedin.com/company/qualexconsulting" target="_blank">
+        <a className="linkedin" href="https://www.linkedin.com/company/qualexconsulting" target="_blank">
         <CIcon icon={cibLinkedin} className="text-high-emphasis-inverse" style={{fill:"darkslategrey"}}/>
         </a>
         <br />
-        <a class="youtube" href="https://www.youtube.com/user/QualexConsulting/videos" target="_blank">
+        <a className="youtube" href="https://www.youtube.com/user/QualexConsulting/videos" target="_blank">
         <CIcon icon={cibYoutube} className="text-high-emphasis-inverse" style={{fill:"darkslategrey"}}/>
         </a>
         <br />

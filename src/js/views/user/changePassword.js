@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
-import { Redirect, useHistory } from "react-router-dom";
+import { Redirect, Navigate } from "react-router-dom";
 import { Context } from "../../store/appContext";
 //import MaterialTable from "material-table";
 //import { Modal, TextField, Button } from "@material-ui/core";
@@ -12,7 +12,7 @@ import WithAuth from "../../component/Auth/withAuth";
 const CambioPassword = () => {
     //Recordar cambiar nombre del componente aquí
     const { store, actions } = useContext(Context);
-    const history = useHistory("");
+    const history = Navigate("");
     const urlPass = "/qruser/change_password";
 
     const [pActual, setPActual] = useState(""); //la primera letra del estado debe estar en minúscula

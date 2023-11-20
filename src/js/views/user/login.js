@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../../store/appContext";
-import { Redirect, useHistory } from "react-router-dom";
+import { Redirect, Navigate } from "react-router-dom";
 import "../../../styles/login.css";
 import logo from "../../../img/logobyn.png";
 import { Link } from "react-router-dom";
@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
 const Loginqruser = () => {
     //const [state, dispatch] = useStateValue();
     const { store, actions } = useContext(Context);
-    const history = useHistory("");
+    const history = Navigate("");
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
     const [qrCode, setQrCode] = useState(false)

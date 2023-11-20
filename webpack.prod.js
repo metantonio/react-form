@@ -6,6 +6,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const { NODE_ENV } = process.env
+const inDevelopment = NODE_ENV === "development";
 /* module.exports = merge(common, {
     mode: 'production',
     optimization: {        
@@ -73,6 +75,15 @@ module.exports = {
           'css-loader',   // Translates CSS into CommonJS
           'less-loader'   // Processes Less to CSS
         ]
+      },
+      {
+        test: /\.(js|jsx)$/,
+        loader: "babel-loader",
+        exclude: !inDevelopment ? /node_modules\/(?!(@atlaskit\/tooltip))/ : /(node_modules)/,
+        options: {
+          cacheDirectory: inDevelopment,
+          cacheCompression: false,
+        },
       }
     ],
   },

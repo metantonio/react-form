@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import '../scss/style.scss'
 import { Context } from "./store/appContext";
-import { BrowserRouter, Route, Router, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Suspense, lazy } from "react";
 
 import ScrollToTop from "./component/scrollToTop";
@@ -20,11 +20,9 @@ import { Userqrregister } from "./views/user/signup.js";
 
 const CambioPassword = lazy(() => import('./views/user/changePassword.js'))
 
+import TestRunner from "./views/tutorial-html/testRunner.jsx";
 
 
-
-
-//create your first component
 const Layout = () => {
   //the basename is used when your project is published in a subdirectory and not in the root of the domain
   // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
@@ -33,32 +31,23 @@ const Layout = () => {
 
   return (
     <div>
-      <BrowserRouter basename={basename}>
+      <Router basename={basename}>
         <ScrollToTop>
           {/* {store.logOutConfirmation ? <Navbar2 /> : <></>} */}
           <Navbar2 />
           {/* {store.logOutConfirmation ? <IAInput /> : <></>} */}
           <Suspense fallback={<div className="spinner-border text-primary" />}>
-            <Switch>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route exact path="/login">
-                <Loginqruser />
-              </Route>
-              <Route exact path="/signup">
-                <Userqrregister />
-              </Route>
-              <Route exact path="/update-password">
-                <CambioPassword />
-              </Route>
-              <Route exact path="*">
-                <Error404 />
-              </Route>
-            </Switch>
+            <Routes>
+              <Route exact path="/" element={<Home />} />         
+              <Route exact path="/login" element={<Loginqruser />} />                
+              <Route exact path="/signup" element={<Userqrregister />} />            
+              <Route exact path="/update-password" element={<CambioPassword />} />   
+              <Route exact path="/testrunner" element={<TestRunner />} />     
+              <Route exact path="*" element={<Error404 />} />
+            </Routes>
           </Suspense>
         </ScrollToTop>
-      </BrowserRouter>
+      </Router>
     </div>
   );
 };

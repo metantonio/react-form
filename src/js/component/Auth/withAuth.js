@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../../store/appContext";
-import { Redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 
 const WithAuth = (Component) => {
@@ -11,7 +11,7 @@ const WithAuth = (Component) => {
     if (isAuth) {
       return <Component />;
     } else {
-      return <Redirect to='/iq-login'/>;
+      return <Navigate to='/iq-login'/>;
     }
   };
 

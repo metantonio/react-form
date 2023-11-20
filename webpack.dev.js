@@ -5,6 +5,8 @@ const common = require('./webpack.common.js');
 const fs = require('fs');
 require('dotenv').config();
 //const httpServer = require('http-server');
+const { NODE_ENV } = process.env
+const inDevelopment = NODE_ENV === "development";
 
 const port = 3002;
 const BASE_URL_PUBLIC = process.env.BASE_URL_PUBLIC
@@ -53,6 +55,19 @@ module.exports = merge(common, {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
-  plugins: []
+  plugins: [],
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        loader: "babel-loader",
+        exclude: !inDevelopment ? /node_modules\/(?!(@atlaskit\/tooltip))/ : /(node_modules)/,
+        options: {
+          cacheDirectory: inDevelopment,
+          cacheCompression: false,
+        },
+      }
+    ]
+  }
 });
 

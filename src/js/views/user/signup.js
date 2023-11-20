@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
-import { Redirect, useHistory } from "react-router-dom";
+import { Redirect, Navigate } from "react-router-dom";
 import { Context } from "../../store/appContext";
 import { makeStyles } from "@material-ui/core/styles";
 import { Modal, TextField, Button } from "@material-ui/core";
@@ -9,7 +9,7 @@ import "../../../styles/registroClientes.css";
 
 export const Userqrregister = () => { //Recordar cambiar nombre del componente aquí
   const { store, actions } = useContext(Context);
-  const history = useHistory("");
+  const history = Navigate("");
   const layoutURLTabla = "/tabla-usuarios"; //url del front-end a la tabla a la cual regresar
   const urlRegister = "/signup-qr-user"; //url del backend
   const [jRUsuario, setJRUsuario] = useState("Username"); //la primera letra del estado debe estar en minúscula

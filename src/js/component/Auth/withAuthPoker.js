@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../../store/appContext";
-import { Redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 
 const WithAuthPoker = (Component) => {
@@ -11,7 +11,7 @@ const WithAuthPoker = (Component) => {
     if (isAuth) {
       return <Component />;
     } else {
-      return <Redirect to='/poker-login'/>;
+      return <Navigate to='/poker-login'/>;
     }
   };
 
