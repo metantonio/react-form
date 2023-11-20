@@ -21,35 +21,6 @@ import Services from "../component/Services/Services.js";
 
 import { Navbar2 } from "../component/Navbar2/navbar2.jsx";
 
-import {
-  cibCcAmex,
-  cibCcApplePay,
-  cibCcMastercard,
-  cibCcPaypal,
-  cibCcStripe,
-  cibCcVisa,
-  cibGoogle,
-  cibFacebook,
-  cibApple,
-  cibLinkedin,
-  cifBr,
-  cifEs,
-  cifFr,
-  cifIn,
-  cifPl,
-  cifUs,
-  cibTwitter,
-  cilCloudDownload,
-  cilPeople,
-  cilUser,
-  cilUserFemale,
-  cibAndroid,
-  cibWindows,
-  cilDevices,
-  cibYoutube
-} from '@coreui/icons'
-import CIcon from '@coreui/icons-react'
-
 const Home = () => {
   const { store, actions } = useContext(Context);
   const history = Navigate("");
@@ -62,21 +33,21 @@ const Home = () => {
   }, [])
   return (
     <>
-      <div className="social_right_block" style={{position:"fixed", top:"40%", right:"0%", zIndex:99, padding:"10px", backgroundColor:"#FFF"}}>
+      <div className="social_right_block" style={{ position: "fixed", top: "40%", right: "0%", zIndex: 99, padding: "10px", backgroundColor: "#FFF" }}>
         <a className="facebook" href="https://www.facebook.com/pages/Qualex-Consulting-Services-Inc/553252344725767" target="_blank">
-          <CIcon icon={cibFacebook} className="text-high-emphasis-inverse" style={{fill:"darkslategrey"}}/>
+          <span className="text-high-emphasis-inverse" style={{ fill: "darkslategrey" }}>Facebook</span>
         </a>
         <br />
         <a className="twitter" href="https://twitter.com/Qualex_Corp" target="_blank">
-        <CIcon icon={cibTwitter} className="text-high-emphasis-inverse" style={{fill:"darkslategrey"}}/>
+          <span className="text-high-emphasis-inverse" style={{ fill: "darkslategrey" }}>Twitter</span>
         </a>
         <br />
         <a className="linkedin" href="https://www.linkedin.com/company/qualexconsulting" target="_blank">
-        <CIcon icon={cibLinkedin} className="text-high-emphasis-inverse" style={{fill:"darkslategrey"}}/>
+          <span className="text-high-emphasis-inverse" style={{ fill: "darkslategrey" }}>LinkedIn</span>
         </a>
         <br />
         <a className="youtube" href="https://www.youtube.com/user/QualexConsulting/videos" target="_blank">
-        <CIcon icon={cibYoutube} className="text-high-emphasis-inverse" style={{fill:"darkslategrey"}}/>
+          <span className="text-high-emphasis-inverse" style={{ fill: "darkslategrey" }}>Youtube</span>
         </a>
         <br />
       </div>
