@@ -4,9 +4,9 @@ import TerminalOutput from './terminalOutput.jsx';
 const TestRunner = () => {
   const [lsCommand, setLsCommand] = useState(false);
 
-  const handleCreateDirectory = async () => {
+  const handleCreateDirectory = async (endpoint) => {
     try {
-      const response = await fetch('http://localhost:3002/commands/ls-command', {
+      const response = await fetch(`http://localhost:3002/commands/${endpoint}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -26,7 +26,8 @@ const TestRunner = () => {
 
   return (
     <div>
-      <button onClick={handleCreateDirectory}>ls -l</button>
+      <button onClick={()=>handleCreateDirectory('ls-command')}>ls -l</button>
+      <button onClick={()=>handleCreateDirectory('test-1')}>test</button>
       {lsCommand ? <><TerminalOutput text={lsCommand} /></>: <></>}
     </div>
   );

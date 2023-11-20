@@ -7,6 +7,7 @@ const TerminalOutput = ({ text }) => {
     padding: '10px',
     fontFamily: 'monospace',
     whiteSpace: 'pre-wrap',
+    scrollY: 'auto',
   };
 
   return (
