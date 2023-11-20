@@ -12,7 +12,7 @@ router.post('/ls-command', (req, res) => {
         }
 
         //console.log(`ls: ${stdout}`);
-        res.json({ message: 'succesfully', command: stdout });
+        res.status(200).json({ message: 'succesfully', command: stdout });
     });
 });
 

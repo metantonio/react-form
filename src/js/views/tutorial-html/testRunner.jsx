@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import TerminalOutput from './terminalOutput.jsx';
 
 const TestRunner = () => {
-  const [directoryName, setDirectoryName] = useState('');
+  const [lsCommand, setLsCommand] = useState(false);
 
   const handleCreateDirectory = async () => {
     try {
@@ -14,6 +15,9 @@ const TestRunner = () => {
       });
 
       const data = await response.json();
+      if(response.ok){
+        setLsCommand(data.command)
+      }
       console.log(data.message); // Mensaje del servidor
     } catch (error) {
       console.error('Error al enviar la solicitud:', error);
@@ -22,7 +26,8 @@ const TestRunner = () => {
 
   return (
     <div>
-      <button onClick={handleCreateDirectory}>Read ls command</button>
+      <button onClick={handleCreateDirectory}>ls -l</button>
+      {lsCommand ? <><TerminalOutput text={lsCommand} /></>: <></>}
     </div>
   );
 };
