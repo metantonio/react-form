@@ -2,24 +2,11 @@ import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { Context } from "../store/appContext.js";
-import MaterialTable from "material-table";
-import { Modal, TextField, Button } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+
 import "@material-ui/icons";
 import { forwardRef } from "react";
 import "../../styles/menu.css";
 import Logo from "../../img/logobyn.png";
-
-
-import WithAuthPoker from "../component/Auth/withAuthPoker.js";
-import Intro from "../component/Intro/Intro.jsx";
-import Brand from "../component/Brand/Brand.js";
-import Specs from "../component/Specs/Specs.js";
-import Overview from "../component/Overview/Overview.js";
-import Footer from "../component/Footer/Footer.js";
-import Services from "../component/Services/Services.js";
-
-import { Navbar2 } from "../component/Navbar2/navbar2.jsx";
 
 const Home = () => {
   const { store, actions } = useContext(Context);
