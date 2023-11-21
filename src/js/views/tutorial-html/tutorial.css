@@ -7,26 +7,8 @@
     grid-template-areas: 
         "code instructions"
         "terminal terminal";
+    margin: 0;
 }
-
-/* #code{    
-    grid-area: code;  
-    padding: 20px;
-    background-color: #2E2E2E;
-    color: #FFFFFF;
-    overflow: auto;    
-  }
- */
-  textarea {
-    width: 100%;
-    height: 100%;
-    resize: none; /* Para desactivar la capacidad de redimensionar */
-    border: none; /* Para eliminar el borde predeterminado */
-    background: transparent; /* Fondo transparente para que el color de fondo del contenedor se vea */
-    color: inherit; /* Heredar el color de texto del contenedor */
-    font-family: inherit; /* Heredar la fuente del contenedor */
-  }
-
 
   #pre {
     grid-area: code;
@@ -35,12 +17,24 @@
     background-color: #2E2E2E;
     color: #FFFFFF;
     overflow: auto;
+    height: 100%;
+  }
+
+  textarea {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    resize: none; /* Para desactivar la capacidad de redimensionar */
+    border: none; /* Para eliminar el borde predeterminado */
+    background: transparent; /* Fondo transparente para que el color de fondo del contenedor se vea */
+    color: inherit; /* Heredar el color de texto del contenedor */
+    font-family: inherit; /* Heredar la fuente del contenedor */
+    box-sizing: border-box;
   }
 
   #instructions {
     grid-area: instructions;
-    /* grid-row: 1 / 2;
-    grid-column: 2 / 3; */
+
     padding: 20px;
     background-color: #f5f5f5;
     color: #202020; 
