@@ -119,7 +119,8 @@ const TestRunner = () => {
                     <h3>Instrucciones</h3>
                     <button className='btn btn-primary btn-sm mx-2' style={{ marginY: ".25rem", paddingX: ".5rem", fontSize: ".75rem" }} onClick={()=>{previousLesson()}}>Anterior</button>
                     <button className='btn btn-primary btn-sm mx-2' style={{ marginY: ".25rem", paddingX: ".5rem", fontSize: ".75rem" }} onClick={()=>{nextLesson()}}>Siguiente</button>
-                    <button className='btn btn-success btn-sm mx-2' style={{ marginY: ".25rem", paddingX: ".5rem", fontSize: ".75rem" }} onClick={() => handleCreateDirectory('test-1')}>Check</button>
+                    <button className='btn btn-success btn-sm mx-2' style={{ marginY: ".25rem", paddingX: ".5rem", fontSize: ".75rem" }} onClick={() => handleCreateDirectory(`test/${tutorialLesson}`)}>Check</button>
+                    {loading ? <div class="spinner-border text-primary"></div> : <></>}
                 </div>
 
                 <InstructionsViewer documentPath={`${BASE_URL}/tutorial-html/${tutorialLesson}`} />
@@ -127,7 +128,7 @@ const TestRunner = () => {
             <div id="terminal" className='terminal'>
                 <h4>Console</h4>
                 <button onClick={() => handleCreateDirectory('ls-command')}>ls -l</button>
-                {loading ? <div class="spinner-border text-primary"></div> : <></>}
+                
                 {lsCommand ?
                     <><TerminalOutput text={lsCommand} /></> :
                     <></>

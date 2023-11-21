@@ -1,6 +1,9 @@
 const router = require("express").Router();
 const { exec, spawn } = require('child_process');
 //const openTerminal = require('open-terminal');
+const path = require('path');
+
+const TUTORIALS_PATH = "../../backend-src/tutorial-html"
 
 router.post('/ls-command', (req, res) => {
     const { directoryName } = req.body;
@@ -29,11 +32,11 @@ router.post('/ls-command', (req, res) => {
     });
 });
 
-router.post('/test-1', (req, res) => {
+router.post('/test/:exerciseNumber', (req, res) => {
     const { directoryName } = req.body;
-
-    // Ejecutar el proceso cmd.exe con el comando dir en Windows
-    const childProcess = spawn('cmd.exe', ['/c', 'jest myTest'], { shell: true });
+    const exerciseNumber = req.params.exerciseNumber;
+    // Ejecutar el proceso cmd.exe con el comando jest en Windows
+    const childProcess = spawn('cmd.exe', ['/c', `jest exercise${exerciseNumber}`], { shell: true });
 
     let output = '';
 
