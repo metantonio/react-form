@@ -47,10 +47,10 @@ const TestRunner = () => {
         setContextMenuVisible(true);
 
         // Posiciona el menú contextual en la posición del clic derecho
-        /* if (document.getElementById('contextMenu')) {
+        if (document.getElementById('contextMenu')) {
             document.getElementById('contextMenu').style.top = `${e.clientY}px`;
             document.getElementById('contextMenu').style.left = `${e.clientX}px`;
-        } */
+        }
         // Cierra el menú contextual después de hacer clic en cualquier lugar
         document.addEventListener('click', handleOutsideClick);
     };
