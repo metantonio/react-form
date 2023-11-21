@@ -18,21 +18,19 @@
     <h2>📝 Instrucciones:</h2>
     <p>Elimina todo el contenido actual de la página, agrega las etiquetas anteriores en el HTML de tu sitio web y presiona "build" para ver los resultados.</p>
 
-    <button onclick="build()">Build</button>
+    
 
     <h2>💻 Resultado Esperado:</h2>
     <p>Tu sitio web final debería ser algo como esto:</p>
-    <div>
-        <!-- Aquí irá el preview si estás utilizando alguna herramienta de construcción como "build" -->
-    </div>
+    <button onclick="build()">Ejemplo</button>
 
     <h3>💡 Pista:</h3>
     <p>Sólo debes quitar lo que tiene el archivo actualmente y pegar el código dado en las instrucciones.</p>
 
     <script>
         function build() {
-            // Lógica de construcción, si es necesaria
-            console.log("¡Sitio web construido!");
+            // Abre una nueva ventana con un mensaje
+            window.open('', '_blank').document.write('<p>¡Sitio web construido!</p>');
         }
     </script>
 
