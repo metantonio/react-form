@@ -31,9 +31,9 @@ const TestRunner = () => {
 
     return (
         <div id="layout-tutorial">
-            <div id="code" className='code'>
+            <div id="pre">
                 <pre>
-                    /* write your code here */
+                    <textarea  id="code" className='code' placeholder='/* write your code here */'/>
                 </pre>
             </div>
             <div id="instructions" className='instructions'>

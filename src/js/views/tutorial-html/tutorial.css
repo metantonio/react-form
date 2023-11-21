@@ -1,40 +1,57 @@
 #layout-tutorial {
     display: grid;
     height: 100vh;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     grid-template-rows: 3fr 2fr;
     grid-gap: 5px;
     grid-template-areas: 
-    "code code instructions"
-    "terminal terminal terminal";
+        "code instructions"
+        "terminal terminal";
 }
 
-#code {
-    /* grid-row: 1 / 3;
-    grid-column: 1 / 2; */
+/* #code{    
+    grid-area: code;  
+    padding: 20px;
+    background-color: #2E2E2E;
+    color: #FFFFFF;
+    overflow: auto;    
+  }
+ */
+  textarea {
+    width: 100%;
+    height: 100%;
+    resize: none; /* Para desactivar la capacidad de redimensionar */
+    border: none; /* Para eliminar el borde predeterminado */
+    background: transparent; /* Fondo transparente para que el color de fondo del contenedor se vea */
+    color: inherit; /* Heredar el color de texto del contenedor */
+    font-family: inherit; /* Heredar la fuente del contenedor */
+  }
+
+
+  #pre {
+    grid-area: code;
+    margin: 0; /* Eliminar el margen predeterminado del textarea */
     padding: 20px;
     background-color: #2E2E2E;
     color: #FFFFFF;
     overflow: auto;
-    grid-area: code;
   }
 
   #instructions {
+    grid-area: instructions;
     /* grid-row: 1 / 2;
     grid-column: 2 / 3; */
     padding: 20px;
-    background-color: #f1ebeb;
-    color: #202020;
-    overflow: auto;
-    grid-area: instructions;
+    background-color: #f5f5f5;
+    color: #202020; 
   }
 
   #terminal {
+    grid-area: terminal;
     /* grid-row: 2 / 3;
     grid-column: 2 / 3; */
     padding: 20px;
     background-color: #000000;
     color: #00FF00;
-    overflow: auto;
-    grid-area: terminal;
+    overflow: auto;    
   }
