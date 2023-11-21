@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import TerminalOutput from './terminalOutput.jsx';
 import "./tutorial.css";
 
@@ -6,6 +6,9 @@ import "./tutorial.css";
 const TestRunner = () => {
     const [lsCommand, setLsCommand] = useState(false);
     const [loading, setLoading] = useState(false);
+    const textareaRef = useRef(null);
+    const [contextMenuVisible, setContextMenuVisible] = useState(false);
+    const [selectedText, setSelectedText] = useState('');
 
     const BASE_URL = process.env.BASE_URL2;
 
@@ -32,13 +35,64 @@ const TestRunner = () => {
         }
     };
 
+    const handleContextMenu = (e) => {
+        e.preventDefault();
+
+        const selected = textareaRef.current.value.substring(textareaRef.current.selectionStart, textareaRef.current.selectionEnd);
+        setSelectedText(selected);
+
+        setContextMenuVisible(true);
+
+        // Posiciona el menú contextual en la posición del clic derecho
+        if (document.getElementById('contextMenu')) {
+            document.getElementById('contextMenu').style.top = `${e.clientY}px`;
+            document.getElementById('contextMenu').style.left = `${e.clientX}px`;
+        }
+        // Cierra el menú contextual después de hacer clic en cualquier lugar
+        document.addEventListener('click', handleOutsideClick);
+    };
+
+    const handleOutsideClick = () => {
+        setContextMenuVisible(false);
+        setSelectedText('');
+        document.removeEventListener('click', handleOutsideClick);
+    };
+
+    const formatAsHtml = () => {
+        // Implementa la lógica para dar formato como HTML según tus necesidades
+        const formattedText = `<code>${selectedText}</code>`;
+
+        // Reemplaza el texto seleccionado en el textarea
+        const newText = textareaRef.current.value.substring(0, textareaRef.current.selectionStart) +
+            formattedText +
+            textareaRef.current.value.substring(textareaRef.current.selectionEnd);
+
+        // Actualiza el valor del textarea
+        textareaRef.current.value = newText;
+
+        // Oculta el menú contextual
+        setContextMenuVisible(false);
+        setSelectedText('');
+    };
+
     return (
         <div id="layout-tutorial">
             <div id="pre">
-                <pre>
-                    <textarea id="code" className='code' placeholder='/* write your code here */' />
-                </pre>
+                <code>
+                    <textarea
+                        ref={textareaRef}
+                        id="code"
+                        className="code"
+                        placeholder="/* write your code here */"
+                        onContextMenu={handleContextMenu}
+                    />
+                </code>
             </div>
+            {contextMenuVisible && (
+                <div id="contextMenu" style={{ position: 'absolute', zIndex: 999 }}>
+                    <div onClick={formatAsHtml}>Formato HTML</div>
+                </div>
+            )}
             <div id="instructions" className='instructions'>
                 <h2>Instrucciones</h2>
                 <p>Aquí van las instrucciones para el ejercicio o proyecto.</p>

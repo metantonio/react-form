@@ -16,8 +16,12 @@
     padding: 20px;
     background-color: #2E2E2E;
     color: #FFFFFF;
-    overflow: auto;
+    /* overflow: auto; */
     height: 100%;
+  }
+
+  code {
+    color: #ccc;
   }
 
   textarea {
@@ -48,4 +52,23 @@
     background-color: #000000;
     color: #00FF00;
     overflow: auto;    
+  }
+
+  #contextMenu {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 8px;
+    z-index: 999;
+    cursor: pointer;
+  }
+  
+  #contextMenu div {
+    padding: 8px;
+    user-select: none;
+  }
+  
+  #contextMenu div:hover {
+    background-color: #f1f1f1;
   }
