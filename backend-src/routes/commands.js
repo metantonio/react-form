@@ -33,11 +33,11 @@ router.post('/ls-command', (req, res) => {
 });
 
 router.post('/test/:exerciseNumber', (req, res) => {
-    const { obj } = req.body;
+    const { data } = req.body;
     const exerciseNumber = req.params.exerciseNumber;
     // Ejecutar el proceso cmd.exe con el comando jest en Windows
     const childProcess = spawn('cmd.exe', ['/c', `jest exercise${exerciseNumber}`], { shell: true });
-    console.log("comando pedido: ", obj)
+    console.log("comando pedido: ", data)
     let output = '';
 
     childProcess.stdout.on('data', (data) => {
