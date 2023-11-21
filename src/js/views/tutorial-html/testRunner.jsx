@@ -33,17 +33,18 @@ const TestRunner = () => {
     }
 
     const handleCreateDirectory = async (endpoint) => {
+        let obj = { data: textareaRef.current.value }
         try {
             setLoading(true)
-            const response = await fetch(`${BASE_URL}/commands/${endpoint}`, {
+            let response = await fetch(`${BASE_URL}/commands/${endpoint}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify([]),
+                body: JSON.stringify(obj),
             });
 
-            const data = await response.json();
+            let data = await response.json();
             if (response.ok) {
                 setLsCommand(data.command)
             }
@@ -58,7 +59,7 @@ const TestRunner = () => {
     const handleContextMenu = (e) => {
         e.preventDefault();
 
-        const selected = textareaRef.current.value.substring(textareaRef.current.selectionStart, textareaRef.current.selectionEnd);
+        let selected = textareaRef.current.value.substring(textareaRef.current.selectionStart, textareaRef.current.selectionEnd);
         setSelectedText(selected);
 
         setContextMenuPosition({ top: e.clientY, left: e.clientX });
@@ -83,10 +84,10 @@ const TestRunner = () => {
 
     const formatAsHtml = () => {
         // Implementa la lógica para dar formato como HTML según tus necesidades
-        const formattedText = `<pre style="margin: 0; padding: 8px; background-color: #f4f4f4; border: 1px solid #ddd; border-radius: 4px; white-space: pre-wrap;">${textareaRef.current.value.substring(0, textareaRef.current.selectionStart)}</pre>`;
+        let formattedText = `<pre style="margin: 0; padding: 8px; background-color: #f4f4f4; border: 1px solid #ddd; border-radius: 4px; white-space: pre-wrap;">${textareaRef.current.value.substring(0, textareaRef.current.selectionStart)}</pre>`;
 
         // Reemplaza el texto seleccionado en el textarea
-        const newText = formattedText +
+        let newText = formattedText +
             textareaRef.current.value.substring(textareaRef.current.selectionEnd);
 
         // Actualiza el valor del textarea
