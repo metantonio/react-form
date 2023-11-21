@@ -21,7 +21,7 @@ import { Userqrregister } from "./views/user/signup.js";
 const CambioPassword = lazy(() => import('./views/user/changePassword.js'))
 
 import TestRunner from "./views/tutorial-html/testRunner.jsx";
-import TestRunnerUnix from "./views/tutorial-unix/testRunner.jsx";
+import TestRunnerUnix from "./views/tutorial-unix/testRunnerUnix.jsx";
 
 
 const Layout = () => {

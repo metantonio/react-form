@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import TerminalOutput from './terminalOutput.jsx';
 import InstructionsViewer from './instructionsViewer.jsx';
-import "./tutorial.css";
+import styles from "./tutorialunix.module.css";
 
 
 const TestRunnerUnix = () => {
@@ -100,14 +100,13 @@ const TestRunnerUnix = () => {
     };
 
     return (
-        <div id="layout-tutorial">
-            <div id="pre">
+        <div className={styles.layouttutorial}>
+            <div className={styles.console}>
                 <code>
                     <textarea
                         ref={textareaRef}
-                        id="code"
-                        className="code"
-                        placeholder="/* write your code here */"
+                        className={styles.code}
+                        placeholder="/* write your commands here */"
                         onContextMenu={handleContextMenu}
                     />
                 </code>
@@ -120,7 +119,7 @@ const TestRunnerUnix = () => {
                     <div onClick={formatAsHtml}>Formato HTML</div>
                 </div>
             )}
-            <div id="instructions" className='instructions'>
+            <div className={styles.instructions}>
                 <div className='column d-flex'>
                     <h3>Instrucciones</h3>
                     {tutorialLesson != 0 ? <button className='btn btn-primary btn-sm mx-2' style={{ marginY: ".25rem", paddingX: ".5rem", fontSize: ".75rem" }} onClick={() => { previousLesson() }}>Anterior</button> : <></>}
@@ -132,7 +131,7 @@ const TestRunnerUnix = () => {
 
                 <InstructionsViewer documentPath={`${BASE_URL}/tutorial-unix/${tutorialLesson}`} />
             </div>
-            <div id="terminal" className='terminal'>
+            <div className={styles.terminal}>
                 <h4>Console</h4>
                 <button onClick={() => handleCreateDirectory('ls-command')}>ls -l</button>
 
