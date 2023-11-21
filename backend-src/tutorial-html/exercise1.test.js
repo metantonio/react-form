@@ -3,7 +3,7 @@ const config = {
     verbose: true,
 };
 
-const textVariable = process.argv.find(arg => arg.startsWith('--textVariable=')).split('=')[1];
+let textVariable = process.argv.find(arg => arg.startsWith('--textVariable=')).split('=')[1];
 textVariable = textVariable.slice(1, textVariable.length - 1) //to take out % symbols
 
 test('Exercise 1', () => {
