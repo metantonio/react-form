@@ -33,11 +33,11 @@ router.post('/ls-command', (req, res) => {
 });
 
 router.post('/test/:exerciseNumber', (req, res) => {
-    const { directoryName } = req.body;
+    const { obj } = req.body;
     const exerciseNumber = req.params.exerciseNumber;
     // Ejecutar el proceso cmd.exe con el comando jest en Windows
     const childProcess = spawn('cmd.exe', ['/c', `jest exercise${exerciseNumber}`], { shell: true });
-
+    console.log("comando pedido: ", obj)
     let output = '';
 
     childProcess.stdout.on('data', (data) => {
@@ -52,7 +52,7 @@ router.post('/test/:exerciseNumber', (req, res) => {
     childProcess.on('close', (code) => {
         if (code !== 0) {
             console.error(`Error: Proceso hijo cerrado con código ${code}`);
-            return res.status(500).json({ error: 'Error al ejecutar el comando' });
+            return res.status(500).json({ command: 'Error al ejecutar el comando', message:"Error" });
         }
 
         console.log(`Comando ejecutado con éxito:\n${output}`);
