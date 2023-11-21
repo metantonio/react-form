@@ -145,7 +145,7 @@ const TestRunnerUnix = () => {
                 <button onClick={() => handleCreateDirectory('ls-command')}>ls -l</button>
 
                 {lsCommand ?
-                    <><TerminalOutput text={lsCommand} enter={handleCreateDirectory(`unix/${tutorialLesson}`)} setText={setLsCommand} /></> :
+                    <><TerminalOutput text={lsCommand} /></> :
                     <></>
                 }
             </div>
