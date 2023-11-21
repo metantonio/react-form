@@ -53,7 +53,7 @@ router.post('/test/:exerciseNumber', (req, res) => {
     childProcess.on('close', (code) => {
         if (code !== 0) {
             console.error(`Error: Proceso hijo cerrado con código ${code}`);
-            return res.status(200).json({ command: output, message:"Error" });
+            return res.status(200).json({ command: output, message: "Error" });
         }
 
         console.log(`Comando ejecutado con éxito:\n${output}`);
@@ -81,12 +81,46 @@ router.post('/unix/:exerciseNumber', (req, res) => {
     childProcess.on('close', (code) => {
         if (code !== 0) {
             console.error(`Error: Proceso hijo cerrado con código ${code}`);
-            return res.status(200).json({ command: output, message:"Error" });
+            return res.status(200).json({ command: output, message: "Error" });
         }
 
         console.log(`Comando ejecutado con éxito:\n${output}`);
         res.status(200).json({ message: 'Exitoso', command: output });
     });
+});
+
+router.post('/unix/commands', (req, res) => {
+    let { data } = req.body;
+    //const exerciseNumber = req.params.exerciseNumber;
+    // Ejecutar el proceso cmd.exe con el comando dir en Windows
+    let childProcess;
+    if (data == 'dir' || data=='ls') {
+        childProcess = spawn('cmd.exe', ['/c', 'dir'], { shell: true });
+    }
+    if (data == 'pwd') {
+        childProcess = spawn('cmd.exe', ['/c', 'pwd'], { shell: true });
+    }
+
+    let output = '';
+
+    childProcess.stdout.on('data', (data) => {
+        output += data.toString();
+    });
+
+    childProcess.stderr.on('data', (data) => {
+        console.error(`Error: ${data}`);
+    });
+
+    childProcess.on('close', (code) => {
+        if (code !== 0) {
+            console.error(`Error: Proceso hijo cerrado con código ${code}`);
+            return res.status(500).json({ error: 'Error al ejecutar el comando' });
+        }
+
+        console.log(`Comando ejecutado con éxito:\n${output}`);
+        res.status(200).json({ message: 'Exitoso', command: output });
+    });
+
 });
 
 module.exports = router;
