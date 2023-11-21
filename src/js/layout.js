@@ -44,7 +44,7 @@ const Layout = () => {
               <Route exact path="/signup" element={<Userqrregister />} />            
               <Route exact path="/update-password" element={<CambioPassword />} />   
               <Route exact path="/html-tutorial" element={<TestRunner />} />
-              <Route exact path="/unix-tutorial" element={<TestRunner />} />      
+              <Route exact path="/unix-tutorial" element={<TestRunnerUnix />} />      
               <Route exact path="*" element={<Error404 />} />
             </Routes>
           </Suspense>
