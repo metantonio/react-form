@@ -106,7 +106,7 @@ const TestRunner = () => {
             )}
             <div id="instructions" className='instructions'>
                 <div className='column d-flex'>
-                    <h2>Instrucciones</h2>
+                    <h3>Instrucciones</h3>
                     <button className='btn btn-primary btn-sm mx-2' style={{marginY: ".25rem", paddingX: ".5rem", fontSize: ".75rem"}}>Anterior</button>
                     <button className='btn btn-primary btn-sm mx-2' style={{marginY: ".25rem", paddingX: ".5rem", fontSize: ".75rem"}}>Siguiente</button>
                     <button className='btn btn-success btn-sm mx-2' style={{marginY: ".25rem", paddingX: ".5rem", fontSize: ".75rem"}} onClick={() => handleCreateDirectory('test-1')}>Check</button>
