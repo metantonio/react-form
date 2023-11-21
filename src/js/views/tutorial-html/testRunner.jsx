@@ -22,7 +22,9 @@ const TestRunner = () => {
     }
 
     const previousLesson = () => {
-        setTutorialLesson(prev => prev - 1)
+        if(tutorialLesson>0){
+            setTutorialLesson(prev => prev - 1)
+        }        
     }
 
     const handleCreateDirectory = async (endpoint) => {
