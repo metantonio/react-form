@@ -61,4 +61,32 @@ router.post('/test/:exerciseNumber', (req, res) => {
     });
 });
 
+router.post('/unix/:exerciseNumber', (req, res) => {
+    const { data } = req.body;
+    const exerciseNumber = req.params.exerciseNumber;
+    // Ejecutar el proceso cmd.exe con el comando jest en Windows
+    const childProcess = spawn('cmd.exe', ['/c', `jest --runInBand exercise${exerciseNumber} --textVariable="%${data.toString()}%"`], { shell: true });
+    console.log("comando pedido: ", data)
+    let output = '';
+
+    childProcess.stdout.on('data', (data) => {
+        output += data.toString();
+    });
+
+    childProcess.stderr.on('data', (data) => {
+        console.error(`Error donde esta: ${data}`);
+        output += data.toString();
+    });
+
+    childProcess.on('close', (code) => {
+        if (code !== 0) {
+            console.error(`Error: Proceso hijo cerrado con código ${code}`);
+            return res.status(200).json({ command: output, message:"Error" });
+        }
+
+        console.log(`Comando ejecutado con éxito:\n${output}`);
+        res.status(200).json({ message: 'Exitoso', command: output });
+    });
+});
+
 module.exports = router;
