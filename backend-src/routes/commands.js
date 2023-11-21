@@ -32,6 +32,7 @@ router.post('/ls-command', (req, res) => {
     });
 });
 
+//this function is to test the code of the current exercise
 router.post('/test/:exerciseNumber', (req, res) => {
     const { data } = req.body;
     const exerciseNumber = req.params.exerciseNumber;
