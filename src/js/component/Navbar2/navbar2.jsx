@@ -31,6 +31,11 @@ export const Navbar2 = () => {
             url: "/python-tutorial",
             permission: true,
         },
+        {
+            name: "Unix Tutorial",
+            url: "/unix-tutorial",
+            permission: true,
+        },
         /* {
             name: "SMS LOG",
             url: "/iq-sms-campaign",
