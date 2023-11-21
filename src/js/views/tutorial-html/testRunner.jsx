@@ -9,6 +9,8 @@ const TestRunner = () => {
     const textareaRef = useRef(null);
     const [contextMenuVisible, setContextMenuVisible] = useState(false);
     const [selectedText, setSelectedText] = useState('');
+    const [contextMenuPosition, setContextMenuPosition] = useState({ top: 0, left: 0 });
+
 
     const BASE_URL = process.env.BASE_URL2;
 
@@ -41,13 +43,14 @@ const TestRunner = () => {
         const selected = textareaRef.current.value.substring(textareaRef.current.selectionStart, textareaRef.current.selectionEnd);
         setSelectedText(selected);
 
+        setContextMenuPosition({ top: e.clientY, left: e.clientX });
         setContextMenuVisible(true);
 
         // Posiciona el menú contextual en la posición del clic derecho
-        if (document.getElementById('contextMenu')) {
+        /* if (document.getElementById('contextMenu')) {
             document.getElementById('contextMenu').style.top = `${e.clientY}px`;
             document.getElementById('contextMenu').style.left = `${e.clientX}px`;
-        }
+        } */
         // Cierra el menú contextual después de hacer clic en cualquier lugar
         document.addEventListener('click', handleOutsideClick);
     };
