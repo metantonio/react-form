@@ -8,7 +8,7 @@ const TUTORIALS_PATH = "../../backend-src/tutorial-unix"
 router.get('/:exerciseNumber', (req, res) => {
     console.log(req.params.exerciseNumber)
     const exerciseNumber = req.params.exerciseNumber;
-    const exercisePath = `${TUTORIALS_PATH}/exercise${exerciseNumber}.html`;
+    const exercisePath = `${TUTORIALS_PATH}/exercise-unix${exerciseNumber}.html`;
   
     res.sendFile(path.join(__dirname, exercisePath));
   });
