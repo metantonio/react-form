@@ -2,14 +2,17 @@ import React, { useState } from 'react';
 import TerminalOutput from './terminalOutput.jsx';
 import "./tutorial.css";
 
+
 const TestRunner = () => {
     const [lsCommand, setLsCommand] = useState(false);
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false);
+
+    const BASE_URL = process.env.BASE_URL2;
 
     const handleCreateDirectory = async (endpoint) => {
         try {
             setLoading(true)
-            const response = await fetch(`http://localhost:3002/commands/${endpoint}`, {
+            const response = await fetch(`${BASE_URL}/commands/${endpoint}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -33,7 +36,7 @@ const TestRunner = () => {
         <div id="layout-tutorial">
             <div id="pre">
                 <pre>
-                    <textarea  id="code" className='code' placeholder='/* write your code here */'/>
+                    <textarea id="code" className='code' placeholder='/* write your code here */' />
                 </pre>
             </div>
             <div id="instructions" className='instructions'>
