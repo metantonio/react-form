@@ -105,13 +105,18 @@ const TestRunner = () => {
                 </div>
             )}
             <div id="instructions" className='instructions'>
-                <h2>Instrucciones</h2>
+                <div className='column d-flex'>
+                    <h2>Instrucciones</h2>
+                    <button className='btn btn-primary btn-sm mx-2' style={{marginY: ".25rem", paddingX: ".5rem", fontSize: ".75rem"}}>Anterior</button>
+                    <button className='btn btn-primary btn-sm mx-2' style={{marginY: ".25rem", paddingX: ".5rem", fontSize: ".75rem"}}>Siguiente</button>
+                    <button className='btn btn-success btn-sm mx-2' style={{marginY: ".25rem", paddingX: ".5rem", fontSize: ".75rem"}} onClick={() => handleCreateDirectory('test-1')}>Check</button>
+                </div>
+
                 <InstructionsViewer documentPath={`${BASE_URL}/tutorial-html/${tutorialLesson}`} />
             </div>
             <div id="terminal" className='terminal'>
                 <h4>Console</h4>
                 <button onClick={() => handleCreateDirectory('ls-command')}>ls -l</button>
-                <button onClick={() => handleCreateDirectory('test-1')}>test</button>
                 {loading ? <div class="spinner-border text-primary"></div> : <></>}
                 {lsCommand ?
                     <><TerminalOutput text={lsCommand} /></> :
