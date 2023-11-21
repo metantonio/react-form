@@ -105,7 +105,7 @@ const TestRunner = () => {
             )}
             <div id="instructions" className='instructions'>
                 <h2>Instrucciones</h2>
-                <InstructionsViewer documentPath="./js/views/tutorial-html/1/exercise.html" />
+                <InstructionsViewer documentPath={`${BASE_URL}/tutorial-html/${1}`} />
             </div>
             <div id="terminal" className='terminal'>
                 <h4>Console</h4>
