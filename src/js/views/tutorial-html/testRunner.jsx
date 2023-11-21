@@ -17,6 +17,11 @@ const TestRunner = () => {
 
     const BASE_URL = process.env.BASE_URL2;
 
+    function build() {
+        // Abre una nueva ventana con un mensaje
+        window.open('', '_blank').document.write(textareaRef.current.value);
+    }
+
     const nextLesson = () => {
         setTutorialLesson(prev => prev + 1)
     }
@@ -121,6 +126,7 @@ const TestRunner = () => {
                     <button className='btn btn-primary btn-sm mx-2' style={{ marginY: ".25rem", paddingX: ".5rem", fontSize: ".75rem" }} onClick={() => { nextLesson() }}>Siguiente</button>
                     {tutorialLesson != 0 ? <button className='btn btn-success btn-sm mx-2' style={{ marginY: ".25rem", paddingX: ".5rem", fontSize: ".75rem" }} onClick={() => handleCreateDirectory(`test/${tutorialLesson}`)}>Check</button> : <></>}
                     {loading ? <div class="spinner-border text-primary"></div> : <></>}
+                    <button className='btn btn-secondary btn-sm mx-2' style={{ marginY: ".25rem", paddingX: ".5rem", fontSize: ".75rem" }} onClick={() => { build() }}>Build Site</button>
                 </div>
 
                 <InstructionsViewer documentPath={`${BASE_URL}/tutorial-html/${tutorialLesson}`} />
