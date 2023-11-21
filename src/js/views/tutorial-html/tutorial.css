@@ -1,9 +1,11 @@
 #layout-tutorial {
     display: grid;
     height: 100vh;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 3fr 2fr;
+    grid-gap: 5px;
     grid-template-areas: 
-    "code code intructions"
+    "code code instructions"
     "terminal terminal terminal";
 }
 
@@ -14,14 +16,17 @@
     background-color: #2E2E2E;
     color: #FFFFFF;
     overflow: auto;
+    grid-area: code;
   }
 
   #instructions {
     /* grid-row: 1 / 2;
     grid-column: 2 / 3; */
     padding: 20px;
-    background-color: #333333;
-    color: #FFFFFF;
+    background-color: #f1ebeb;
+    color: #202020;
+    overflow: auto;
+    grid-area: instructions;
   }
 
   #terminal {
@@ -31,4 +36,5 @@
     background-color: #000000;
     color: #00FF00;
     overflow: auto;
+    grid-area: terminal;
   }
