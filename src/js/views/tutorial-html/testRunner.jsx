@@ -12,6 +12,7 @@ const TestRunner = () => {
     const [selectedText, setSelectedText] = useState('');
     const [contextMenuPosition, setContextMenuPosition] = useState({ top: 0, left: 0 });
     const [formattedHtml, setFormattedHtml] = useState('');
+    const [tutorialLesson, setTutorialLesson] = useState(0)
 
 
     const BASE_URL = process.env.BASE_URL2;
@@ -105,7 +106,7 @@ const TestRunner = () => {
             )}
             <div id="instructions" className='instructions'>
                 <h2>Instrucciones</h2>
-                <InstructionsViewer documentPath={`${BASE_URL}/tutorial-html/${1}`} />
+                <InstructionsViewer documentPath={`${BASE_URL}/tutorial-html/${tutorialLesson}`} />
             </div>
             <div id="terminal" className='terminal'>
                 <h4>Console</h4>
