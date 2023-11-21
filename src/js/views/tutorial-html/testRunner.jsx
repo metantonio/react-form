@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import TerminalOutput from './terminalOutput.jsx';
+import InstructionsViewer from './instructionsViewer.jsx';
 import "./tutorial.css";
 
 
@@ -10,6 +11,7 @@ const TestRunner = () => {
     const [contextMenuVisible, setContextMenuVisible] = useState(false);
     const [selectedText, setSelectedText] = useState('');
     const [contextMenuPosition, setContextMenuPosition] = useState({ top: 0, left: 0 });
+    const [formattedHtml, setFormattedHtml] = useState('');
 
 
     const BASE_URL = process.env.BASE_URL2;
@@ -51,6 +53,8 @@ const TestRunner = () => {
             document.getElementById('contextMenu').style.top = `${e.clientY}px`;
             document.getElementById('contextMenu').style.left = `${e.clientX}px`;
         }
+        // Posiciona el menú contextual en la posición del clic derecho
+        setFormattedHtml(`<pre style="margin: 0; padding: 8px; background-color: #f4f4f4; border: 1px solid #ddd; border-radius: 4px; white-space: pre-wrap;">${selected}</pre>`);
         // Cierra el menú contextual después de hacer clic en cualquier lugar
         document.addEventListener('click', handleOutsideClick);
     };
@@ -63,11 +67,10 @@ const TestRunner = () => {
 
     const formatAsHtml = () => {
         // Implementa la lógica para dar formato como HTML según tus necesidades
-        const formattedText = `<code>${selectedText}</code>`;
+        const formattedText = `<pre style="margin: 0; padding: 8px; background-color: #f4f4f4; border: 1px solid #ddd; border-radius: 4px; white-space: pre-wrap;">${textareaRef.current.value.substring(0, textareaRef.current.selectionStart)}</pre>`;
 
         // Reemplaza el texto seleccionado en el textarea
-        const newText = textareaRef.current.value.substring(0, textareaRef.current.selectionStart) +
-            formattedText +
+        const newText = formattedText +
             textareaRef.current.value.substring(textareaRef.current.selectionEnd);
 
         // Actualiza el valor del textarea
@@ -76,6 +79,7 @@ const TestRunner = () => {
         // Oculta el menú contextual
         setContextMenuVisible(false);
         setSelectedText('');
+        setFormattedHtml(newText)
     };
 
     return (
@@ -92,13 +96,16 @@ const TestRunner = () => {
                 </code>
             </div>
             {contextMenuVisible && (
-                <div id="contextMenu" style={{ position: 'absolute', zIndex: 999 }}>
+                <div id="contextMenu" style={{ position: 'absolute', top: formattedHtml ? '100px' : '0', left: '100px', zIndex: 999 }}>
+                    {formattedHtml && (
+                        <div dangerouslySetInnerHTML={{ __html: formattedHtml }} />
+                    )}
                     <div onClick={formatAsHtml}>Formato HTML</div>
                 </div>
             )}
             <div id="instructions" className='instructions'>
                 <h2>Instrucciones</h2>
-                <p>Aquí van las instrucciones para el ejercicio o proyecto.</p>
+                <InstructionsViewer documentPath="./js/views/tutorial-html/1/exercise.html" />
             </div>
             <div id="terminal" className='terminal'>
                 <h4>Console</h4>
