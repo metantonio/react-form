@@ -1,5 +1,5 @@
-### Please read this first:
-https://docs.google.com/document/d/1uFuBYx_s3tcQ4129IHAsURE0tUAAUxSxWxwmYfoVHH4/edit?usp=sharing
+# Qualex Learning Tutorials
+
 
 ### Requirements:
 - Make sure you are using node version >= 18.x+
