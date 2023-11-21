@@ -101,6 +101,7 @@ const TestRunner = () => {
                 <p>Aquí van las instrucciones para el ejercicio o proyecto.</p>
             </div>
             <div id="terminal" className='terminal'>
+                <h4>Console</h4>
                 <button onClick={() => handleCreateDirectory('ls-command')}>ls -l</button>
                 <button onClick={() => handleCreateDirectory('test-1')}>test</button>
                 {loading ? <div class="spinner-border text-primary"></div> : <></>}
