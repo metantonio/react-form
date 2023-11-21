@@ -5,6 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>01 Hello World</title>
+    <style>
+        code {
+            display: block;
+            background-color: #0a0a0a;
+            color: rgb(236, 237, 238);
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
 </head>
 
 <body>
@@ -16,9 +27,11 @@
     <strong>Hello, I am also a text but in bold</strong>
 
     <h2>📝 Instrucciones:</h2>
-    <p>Elimina todo el contenido actual de la página, agrega las etiquetas anteriores en el HTML de tu sitio web y presiona "build" para ver los resultados.</p>
+    <p>Elimina todo el contenido actual de la página, agrega las etiquetas anteriores en el HTML de tu sitio web y presiona "build" para ver el ejemplo.</p>
 
-    
+    <code>
+        <p>Soy un párrafo y de esta forma uso <strong>negrillas!</strong></p>
+    </code>
 
     <h2>💻 Resultado Esperado:</h2>
     <p>Tu sitio web final debería ser algo como esto:</p>
@@ -30,7 +43,7 @@
     <script>
         function build() {
             // Abre una nueva ventana con un mensaje
-            window.open('', '_blank').document.write('<p>¡Sitio web construido!</p>');
+            window.open('', '_blank').document.write('<p>Hola <strong>Mundo!</strong></p>');
         }
     </script>
 
