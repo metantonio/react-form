@@ -24,11 +24,13 @@ const TestRunnerUnix = () => {
 
     const nextLesson = () => {
         setTutorialLesson(prev => prev + 1)
+        textareaRef.current.value = ''
     }
 
     const previousLesson = () => {
         if (tutorialLesson > 0) {
             setTutorialLesson(prev => prev - 1)
+            textareaRef.current.value = ''
         }
     }
 
@@ -85,8 +87,9 @@ const TestRunnerUnix = () => {
     const handleKeyDown = (event) => {
         // Verifica si la tecla presionada es Enter (código 13)
         if (event.keyCode === 13 && tutorialLesson!=0) {
-            handleCreateDirectory(`/unix/commands`);
-            setLsCommand('');
+            handleCreateDirectory(`/unix-commands`);
+            /* setLsCommand(''); */
+            textareaRef.current.value = ''
         }
     };
 

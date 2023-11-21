@@ -89,7 +89,7 @@ router.post('/unix/:exerciseNumber', (req, res) => {
     });
 });
 
-router.post('/unix/commands', (req, res) => {
+router.post('/unix-commands', (req, res) => {
     let { data } = req.body;
     //const exerciseNumber = req.params.exerciseNumber;
     // Ejecutar el proceso cmd.exe con el comando dir en Windows
@@ -98,7 +98,7 @@ router.post('/unix/commands', (req, res) => {
         childProcess = spawn('cmd.exe', ['/c', 'dir'], { shell: true });
     }
     if (data == 'pwd') {
-        childProcess = spawn('cmd.exe', ['/c', 'pwd'], { shell: true });
+        childProcess = spawn('cmd.exe', ['/c', 'echo %CD%'], { shell: true });
     }
 
     let output = '';
