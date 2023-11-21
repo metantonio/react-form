@@ -97,6 +97,12 @@ router.post('/unix-commands', (req, res) => {
     if (data == 'dir' || data=='ls') {
         childProcess = spawn('cmd.exe', ['/c', 'dir'], { shell: true });
     }
+    if (data === 'ls -l') {
+        childProcess = spawn('cmd.exe', ['/c', 'dir /Q'], { shell: true });
+    }
+    if (data === 'ls -la') {
+        childProcess = spawn('cmd.exe', ['/c', 'dir /A /Q'], { shell: true });
+    }
     if (data == 'pwd') {
         childProcess = spawn('cmd.exe', ['/c', 'echo %CD%'], { shell: true });
     }
