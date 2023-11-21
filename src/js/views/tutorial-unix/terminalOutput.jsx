@@ -1,7 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 
-const TerminalOutput = ({ text }) => {
-
+const TerminalOutput = ({ text, enter, setText }) => {
   const terminalRef = useRef(null);
 
   useEffect(() => {
@@ -11,6 +10,13 @@ const TerminalOutput = ({ text }) => {
     }
   }, [text]);
 
+  const handleKeyDown = (event) => {
+    // Verifica si la tecla presionada es Enter (código 13)
+    if (event.keyCode === 13 && enter) {
+      enter();
+      setText('');
+    }
+  };
 
   const terminalStyle = {
     backgroundColor: '#2E2E2E',
@@ -22,7 +28,12 @@ const TerminalOutput = ({ text }) => {
   };
 
   return (
-    <pre style={terminalStyle} ref={terminalRef}>
+    <pre
+      style={terminalStyle}
+      ref={terminalRef}
+      onKeyDown={handleKeyDown} // Agrega el manejador de eventos de teclado
+      tabIndex={0} // Necesario para que el elemento reciba eventos de teclado
+    >
       {text}
       <div ref={terminalRef} />
     </pre>

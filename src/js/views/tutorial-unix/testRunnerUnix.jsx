@@ -82,6 +82,14 @@ const TestRunnerUnix = () => {
         document.removeEventListener('click', handleOutsideClick);
     };
 
+    const handleKeyDown = (event) => {
+        // Verifica si la tecla presionada es Enter (código 13)
+        if (event.keyCode === 13 && tutorialLesson!=0) {
+            handleCreateDirectory(`unix/${tutorialLesson}`);
+            setLsCommand('');
+        }
+    };
+
     const formatAsHtml = () => {
         // Implementa la lógica para dar formato como HTML según tus necesidades
         let formattedText = `<pre style="margin: 0; padding: 8px; background-color: #f4f4f4; border: 1px solid #ddd; border-radius: 4px; white-space: pre-wrap;">${textareaRef.current.value.substring(0, textareaRef.current.selectionStart)}</pre>`;
@@ -108,6 +116,7 @@ const TestRunnerUnix = () => {
                         className={styles.code}
                         placeholder="/* write your commands here */"
                         onContextMenu={handleContextMenu}
+                        onKeyDown={handleKeyDown}
                     />
                 </code>
             </div>
@@ -136,7 +145,7 @@ const TestRunnerUnix = () => {
                 <button onClick={() => handleCreateDirectory('ls-command')}>ls -l</button>
 
                 {lsCommand ?
-                    <><TerminalOutput text={lsCommand} /></> :
+                    <><TerminalOutput text={lsCommand} enter={handleCreateDirectory(`unix/${tutorialLesson}`)} setText={setLsCommand} /></> :
                     <></>
                 }
             </div>
