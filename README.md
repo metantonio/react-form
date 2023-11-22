@@ -2,7 +2,7 @@
 
 
 ### Requirements:
-- Make sure you are using node version >= 18.x+
+- Make sure you are using node.js LTS version >= 20.x+ Link: [node v20.9.0 LTS](https://nodejs.org/dist/v20.9.0/node-v20.9.0-x64.msi)
 
 ### Front-end Tutorial:
 
