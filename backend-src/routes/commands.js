@@ -112,7 +112,7 @@ router.post('/unix-commands', (req, res) => {
     // Ejecutar el proceso cmd.exe con el comando dir en Windows
     if (platform === 'win32') {
         let childProcess;
-        if (data == 'dir' || data == 'ls') {
+        if ((data == 'dir' || data == 'ls') && lesson < 4) {
             childProcess = spawn('cmd.exe', ['/c', 'dir'], { shell: true });
         }
         else if (data === 'ls -l' && lesson < 4) {
@@ -132,6 +132,12 @@ router.post('/unix-commands', (req, res) => {
         }
         else if (data == 'cd ./home/user1' && (lesson == 4)) {
             childProcess = spawn('cmd.exe', ['/c', 'cd'], { shell: true, detached: false, cwd: "./unix/home/user1" });
+        }
+        else if (data === 'ls -l' && lesson == 4) {
+            childProcess = spawn('cmd.exe', ['/c', 'dir /Q'], { shell: true, cwd: "./unix" });
+        }
+        else if (data === 'ls -la' && lesson == 4) {
+            childProcess = spawn('cmd.exe', ['/c', 'dir /A /Q'], { shell: true, cwd: "./unix" });
         } else {
             childProcess = spawn('cmd.exe', ['/c', 'dd'], { shell: true });
         }
