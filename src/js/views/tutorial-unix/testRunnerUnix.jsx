@@ -87,9 +87,10 @@ const TestRunnerUnix = () => {
     const handleKeyDown = (event) => {
         // Verifica si la tecla presionada es Enter (código 13)
         if (event.keyCode === 13 && tutorialLesson!=0) {
+            event.preventDefault(); //avoid the break line \n predetermined by textarea tag
             handleCreateDirectory(`/unix-commands`);
             /* setLsCommand(''); */
-            textareaRef.current.value = ''
+            textareaRef.current.value=""
         }
     };
 
