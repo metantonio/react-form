@@ -94,17 +94,19 @@ router.post('/unix-commands', (req, res) => {
     //const exerciseNumber = req.params.exerciseNumber;
     // Ejecutar el proceso cmd.exe con el comando dir en Windows
     let childProcess;
-    if (data == 'dir' || data=='ls') {
+    if (data == 'dir' || data == 'ls') {
         childProcess = spawn('cmd.exe', ['/c', 'dir'], { shell: true });
     }
-    if (data === 'ls -l') {
+    else if (data === 'ls -l') {
         childProcess = spawn('cmd.exe', ['/c', 'dir /Q'], { shell: true });
     }
-    if (data === 'ls -la') {
+    else if (data === 'ls -la') {
         childProcess = spawn('cmd.exe', ['/c', 'dir /A /Q'], { shell: true });
     }
-    if (data == 'pwd') {
+    else if (data == 'pwd') {
         childProcess = spawn('cmd.exe', ['/c', 'echo %CD%'], { shell: true });
+    }else{
+        childProcess = spawn('cmd.exe', ['/c', 'dd'], { shell: true });
     }
 
     let output = '';
@@ -120,7 +122,7 @@ router.post('/unix-commands', (req, res) => {
     childProcess.on('close', (code) => {
         if (code !== 0) {
             console.error(`Error: Proceso hijo cerrado con código ${code}`);
-            return res.status(500).json({ error: 'Error al ejecutar el comando', correct: false });
+            return res.status(500).json({ error: 'Error al ejecutar el comando', correct: false, message: "error" });
         }
 
         console.log(`Comando ejecutado con éxito:\n${output}`);

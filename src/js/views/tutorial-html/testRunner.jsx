@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import TerminalOutput from './terminalOutput.jsx';
 import InstructionsViewer from './instructionsViewer.jsx';
 import "./tutorial.css";
+import Swal from 'sweetalert2';
 
 
 const TestRunner = () => {
@@ -47,6 +48,11 @@ const TestRunner = () => {
             let data = await response.json();
             if (response.ok) {
                 setLsCommand(data.command)
+            }
+            if (data.correct) {
+                Swal.fire({ text: "Correct!", icon: "success" });
+            } else {
+                Swal.fire({ text: "Wrong!", icon: "error" });
             }
             console.log(data.message); // Mensaje del servidor
             setLoading(false)

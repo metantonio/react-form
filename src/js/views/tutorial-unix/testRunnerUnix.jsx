@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import TerminalOutput from './terminalOutput.jsx';
 import InstructionsViewer from './instructionsViewer.jsx';
 import styles from "./tutorialunix.module.css";
+import Swal from 'sweetalert2';
 
 
 const TestRunnerUnix = () => {
@@ -50,6 +51,11 @@ const TestRunnerUnix = () => {
             if (response.ok) {
                 setLsCommand(data.command)
             }
+            if (data.correct) {
+                Swal.fire({ text: "Correct!", icon: "success" });
+            } else {
+                Swal.fire({ text: "Wrong!", icon: "error" });
+            }
             console.log(data.message); // Mensaje del servidor
             setLoading(false)
         } catch (error) {
@@ -86,11 +92,11 @@ const TestRunnerUnix = () => {
 
     const handleKeyDown = (event) => {
         // Verifica si la tecla presionada es Enter (código 13)
-        if (event.keyCode === 13 && tutorialLesson!=0) {
+        if (event.keyCode === 13 && tutorialLesson != 0) {
             event.preventDefault(); //avoid the break line \n predetermined by textarea tag
             handleCreateDirectory(`/unix-commands`);
             /* setLsCommand(''); */
-            textareaRef.current.value=""
+            textareaRef.current.value = ""
         }
     };
 
