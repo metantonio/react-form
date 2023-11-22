@@ -123,6 +123,9 @@ router.post('/unix-commands', (req, res) => {
         }
         else if (data == 'pwd' && (lesson==1 || lesson==3)) {
             childProcess = spawn('cmd.exe', ['/c', 'echo %CD%'], { shell: true });
+        }
+        else if (data == 'cd ./unix' && (lesson==1 || lesson==3)) {
+            childProcess = spawn('cmd.exe', ['/c', 'cd ./unix && cd'], { shell: true });
         } else {
             childProcess = spawn('cmd.exe', ['/c', 'dd'], { shell: true });
         }
