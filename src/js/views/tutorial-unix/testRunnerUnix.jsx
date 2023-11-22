@@ -152,7 +152,7 @@ const TestRunnerUnix = () => {
             </div>
             <div className={styles.terminal}>
                 <h4>Console</h4>
-                <button onClick={() => handleCreateDirectory('ls-command')}>ls -l</button>
+                {/* <button onClick={() => handleCreateDirectory('ls-command')}>ls -l</button> */}
 
                 {lsCommand ?
                     <><TerminalOutput text={lsCommand} /></> :
