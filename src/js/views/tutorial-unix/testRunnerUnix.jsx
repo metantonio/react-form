@@ -36,7 +36,7 @@ const TestRunnerUnix = () => {
     }
 
     const handleCreateDirectory = async (endpoint) => {
-        let obj = { data: textareaRef.current.value }
+        let obj = { data: textareaRef.current.value, lesson: tutorialLesson }
         try {
             setLoading(true)
             let response = await fetch(`${BASE_URL}/commands/${endpoint}`, {
