@@ -147,6 +147,11 @@ router.post('/unix-commands', (req, res) => {
         }
         else if (data === 'ls -la' && lesson == 5) {
             childProcess = spawn('cmd.exe', ['/c', 'dir /A /Q'], { shell: true, cwd: "./unix/home/user1" });
+        }
+        else if ((data == 'cp hello.txt ../user2/HelloCopy.txt' || data == 'cp ./hello.txt ../user2/HelloCopy.txt') && lesson == 5) {
+            let origen = '.\\hello.txt';
+            let destino = '..\\user2\\HelloCopy.txt';
+            childProcess = spawn('cmd.exe', ['/c', `copy ${origen} ${destino}`], { shell: true, cwd: "./unix/home/user1" });
         } else {
             childProcess = spawn('cmd.exe', ['/c', 'dd'], { shell: true });
         }
@@ -154,6 +159,7 @@ router.post('/unix-commands', (req, res) => {
         let output = '';
 
         childProcess.stdout.on('data', (data) => {
+            console.log(`stdout: ${data}`);
             output += data.toString();
         });
 
