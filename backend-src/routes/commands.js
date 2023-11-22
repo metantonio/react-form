@@ -124,8 +124,8 @@ router.post('/unix-commands', (req, res) => {
         else if (data == 'pwd' && (lesson==1 || lesson==3)) {
             childProcess = spawn('cmd.exe', ['/c', 'echo %CD%'], { shell: true });
         }
-        else if (data == 'cd ./unix' && (lesson==1 || lesson==3)) {
-            childProcess = spawn('cmd.exe', ['/c', 'cd ./unix && echo %CD%'], { shell: true, detached: true });
+        else if (data == 'cd ./unix' && (lesson==3)) {
+            childProcess = spawn('cmd.exe', ['/c', 'cd'], { shell: true, detached: false, cwd:"./unix" });
         } else {
             childProcess = spawn('cmd.exe', ['/c', 'dd'], { shell: true });
         }
