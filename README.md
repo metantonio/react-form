@@ -7,11 +7,11 @@
 ### Front-end Tutorial:
 
 1. Install the packages (just need to do this the first time):
-```sh
+```bash
 npm install --legacy-peer-deps
 ```
 2. Create a .env file (create .env if do not exist):
-```sh
+```bash
 cp .env.example .env
 ```
 3. Run front-end server:
@@ -21,7 +21,7 @@ npm run start
 ```
 
 4. Open Browser:
-```sh
+```shell
 http://localhost:3001
 ```
 
