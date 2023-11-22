@@ -24,11 +24,11 @@ router.post('/ls-command', (req, res) => {
     childProcess.on('close', (code) => {
         if (code !== 0) {
             console.error(`Error: Proceso hijo cerrado con código ${code}`);
-            return res.status(500).json({ error: 'Error al ejecutar el comando' });
+            return res.status(500).json({ error: 'Error al ejecutar el comando', correct: false });
         }
 
         console.log(`Comando ejecutado con éxito:\n${output}`);
-        res.status(200).json({ message: 'Exitoso', command: output });
+        res.status(200).json({ message: 'Exitoso', command: output, correct: true });
     });
 });
 
@@ -53,11 +53,11 @@ router.post('/test/:exerciseNumber', (req, res) => {
     childProcess.on('close', (code) => {
         if (code !== 0) {
             console.error(`Error: Proceso hijo cerrado con código ${code}`);
-            return res.status(200).json({ command: output, message: "Error" });
+            return res.status(200).json({ command: output, message: "Error", correct: false });
         }
 
         console.log(`Comando ejecutado con éxito:\n${output}`);
-        res.status(200).json({ message: 'Exitoso', command: output });
+        res.status(200).json({ message: 'Exitoso', command: output, correct: true });
     });
 });
 
@@ -81,11 +81,11 @@ router.post('/unix/:exerciseNumber', (req, res) => {
     childProcess.on('close', (code) => {
         if (code !== 0) {
             console.error(`Error: Proceso hijo cerrado con código ${code}`);
-            return res.status(200).json({ command: output, message: "Error" });
+            return res.status(200).json({ command: output, message: "Error", correct: false });
         }
 
         console.log(`Comando ejecutado con éxito:\n${output}`);
-        res.status(200).json({ message: 'Exitoso', command: output });
+        res.status(200).json({ message: 'Exitoso', command: output, correct: true });
     });
 });
 
@@ -120,11 +120,11 @@ router.post('/unix-commands', (req, res) => {
     childProcess.on('close', (code) => {
         if (code !== 0) {
             console.error(`Error: Proceso hijo cerrado con código ${code}`);
-            return res.status(500).json({ error: 'Error al ejecutar el comando' });
+            return res.status(500).json({ error: 'Error al ejecutar el comando', correct: false });
         }
 
         console.log(`Comando ejecutado con éxito:\n${output}`);
-        res.status(200).json({ message: 'Exitoso', command: output });
+        res.status(200).json({ message: 'Exitoso', command: output, correct: true });
     });
 
 });
