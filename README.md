@@ -4,7 +4,9 @@
 ### Requirements:
 - Make sure you are using node.js LTS version >= 20.x+ Link: [node v20.9.0 LTS](https://nodejs.org/dist/v20.9.0/node-v20.9.0-x64.msi)
 
-### Front-end Tutorial:
+### Installation:
+
+0. Download or Clone this project, and open a terminal at the root of this project
 
 1. Install the packages (just need to do this the first time):
 
@@ -24,9 +26,8 @@ npm run start
 
 4. Open Browser:
 
-```shell
-http://localhost:3001
-```
+    [http://localhost:3001](http://localhost:3001)
+
 
 ### How to run Back-end Server
 
