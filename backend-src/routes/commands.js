@@ -115,17 +115,17 @@ router.post('/unix-commands', (req, res) => {
         if (data == 'dir' || data == 'ls') {
             childProcess = spawn('cmd.exe', ['/c', 'dir'], { shell: true });
         }
-        else if (data === 'ls -l') {
+        else if (data === 'ls -l' && lesson != 4) {
             childProcess = spawn('cmd.exe', ['/c', 'dir /Q'], { shell: true });
         }
-        else if (data === 'ls -la') {
+        else if (data === 'ls -la' && lesson != 4) {
             childProcess = spawn('cmd.exe', ['/c', 'dir /A /Q'], { shell: true });
         }
-        else if (data == 'pwd' && (lesson==1 || lesson==3)) {
+        else if (data == 'pwd' && (lesson == 1 || lesson == 3)) {
             childProcess = spawn('cmd.exe', ['/c', 'echo %CD%'], { shell: true });
         }
-        else if (data == 'cd ./unix' && (lesson==3)) {
-            childProcess = spawn('cmd.exe', ['/c', 'cd'], { shell: true, detached: false, cwd:"./unix" });
+        else if (data == 'cd ./unix' && (lesson == 3)) {
+            childProcess = spawn('cmd.exe', ['/c', 'cd'], { shell: true, detached: false, cwd: "./unix" });
         } else {
             childProcess = spawn('cmd.exe', ['/c', 'dd'], { shell: true });
         }
