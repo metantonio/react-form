@@ -24,13 +24,13 @@ cp .env.example .env
 npm run start
 ```
 
-4. Open Browser:
-
-    [http://localhost:3001](http://localhost:3001)
-
-
-### How to run Back-end Server
+4. Run back-end server
 
 ```bash
 node backend-server.js
 ```
+
+5. Open Browser:
+
+    [http://localhost:3001](http://localhost:3001)
+
