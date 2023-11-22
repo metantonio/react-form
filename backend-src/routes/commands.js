@@ -138,6 +138,15 @@ router.post('/unix-commands', (req, res) => {
         }
         else if (data === 'ls -la' && lesson == 4) {
             childProcess = spawn('cmd.exe', ['/c', 'dir /A /Q'], { shell: true, cwd: "./unix" });
+        }
+        else if (data == 'pwd' && (lesson == 5)) {
+            childProcess = spawn('cmd.exe', ['/c', 'echo %CD%'], { shell: true, detached: false, cwd: "./unix/home/user1" });
+        }
+        else if (data === 'ls -l' && lesson == 5) {
+            childProcess = spawn('cmd.exe', ['/c', 'dir /Q'], { shell: true, cwd: "./unix/home/user1" });
+        }
+        else if (data === 'ls -la' && lesson == 5) {
+            childProcess = spawn('cmd.exe', ['/c', 'dir /A /Q'], { shell: true, cwd: "./unix/home/user1" });
         } else {
             childProcess = spawn('cmd.exe', ['/c', 'dd'], { shell: true });
         }
