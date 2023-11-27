@@ -14,7 +14,7 @@ const TestRunner = () => {
     const [contextMenuPosition, setContextMenuPosition] = useState({ top: 0, left: 0 });
     const [formattedHtml, setFormattedHtml] = useState('');
     const [tutorialLesson, setTutorialLesson] = useState(0)
-
+    const [selectedLanguage, setSelectedLanguage] = useState('es');
 
     const BASE_URL = process.env.BASE_URL2;
 
@@ -32,6 +32,12 @@ const TestRunner = () => {
             setTutorialLesson(prev => prev - 1)
         }
     }
+
+    const handleLanguageChange = (event) => {
+        const newLanguage = event.target.value;
+        setSelectedLanguage(newLanguage);
+        // Aquí puedes realizar otras acciones relacionadas con el cambio de lenguaje si es necesario
+    };
 
     const handleCreateDirectory = async (endpoint) => {
         let obj = { data: textareaRef.current.value }
@@ -123,20 +129,30 @@ const TestRunner = () => {
                     {formattedHtml && (
                         <div dangerouslySetInnerHTML={{ __html: formattedHtml }} />
                     )}
-                    <div onClick={formatAsHtml}>Formato HTML</div>
+                    <div onClick={formatAsHtml}>{selectedLanguage=='es'?'Formato HTML':'HTML Format'}</div>
                 </div>
             )}
             <div id="instructions" className='instructions'>
                 <div className='column d-flex'>
-                    <h3>Instrucciones</h3>
-                    {tutorialLesson != 0 ? <button className='btn btn-primary btn-sm mx-2' style={{ marginY: ".25rem", paddingX: ".5rem", fontSize: ".75rem" }} onClick={() => { previousLesson() }}>Anterior</button> : <></>}
-                    <button className='btn btn-primary btn-sm mx-2' style={{ marginY: ".25rem", paddingX: ".5rem", fontSize: ".75rem" }} onClick={() => { nextLesson() }}>Siguiente</button>
+                    <h3>{selectedLanguage == 'es' ? 'Instrucciones' : 'Instructions'}</h3>
+                    <div className='mx-2' style={{ marginY: ".25rem", paddingX: ".5rem", fontSize: ".75rem" }}>
+                        <label htmlFor="languageDropdown"></label>
+                        <select id="languageDropdown" onChange={handleLanguageChange} value={selectedLanguage}>
+                            <option value="en">English</option>
+                            <option value="es">Español</option>
+                            {/* Agrega más opciones de idioma según sea necesario */}
+                        </select>
+
+                        {/* Puedes mostrar el lenguaje seleccionado en la interfaz si es necesario */}
+                    </div>
+                    {tutorialLesson != 0 ? <button className='btn btn-primary btn-sm mx-2' style={{ marginY: ".25rem", paddingX: ".5rem", fontSize: ".75rem" }} onClick={() => { previousLesson() }}>{selectedLanguage=='es'?'Anterior':'Previous'}</button> : <></>}
+                    <button className='btn btn-primary btn-sm mx-2' style={{ marginY: ".25rem", paddingX: ".5rem", fontSize: ".75rem" }} onClick={() => { nextLesson() }}>{selectedLanguage=='es'?'Siguiente':'Next'}</button>
                     {tutorialLesson != 0 ? <button className='btn btn-success btn-sm mx-2' style={{ marginY: ".25rem", paddingX: ".5rem", fontSize: ".75rem" }} onClick={() => handleCreateDirectory(`test/${tutorialLesson}`)}>Check</button> : <></>}
                     {loading ? <div class="spinner-border text-primary"></div> : <></>}
                     <button className='btn btn-secondary btn-sm mx-2' style={{ marginY: ".25rem", paddingX: ".5rem", fontSize: ".75rem" }} onClick={() => { build() }}>Build Site</button>
                 </div>
 
-                <InstructionsViewer documentPath={`${BASE_URL}/tutorial-html/${tutorialLesson}`} />
+                <InstructionsViewer documentPath={`${BASE_URL}/tutorial-html/${selectedLanguage=="es"?'':"en/"}${tutorialLesson}`} />
             </div>
             <div id="terminal" className='terminal'>
                 <h4>Console</h4>
