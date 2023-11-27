@@ -9,17 +9,17 @@ const port = 3002;
 app.use(cors());
 app.use(express.json());
 app.set('trust proxy', true)
-app.use('./backend-src/tutorial-html', express.static(path.join(__dirname, 'ruta_hacia_tus_documentos')));
-app.use('./backend-src/tutorial-unix', express.static(path.join(__dirname, 'ruta_hacia_tus_documentos')));
+app.use('/backend-src/tutorial-html', express.static(path.join(__dirname, 'ruta_hacia_tus_documentos')));
+app.use('/backend-src/tutorial-unix', express.static(path.join(__dirname, 'ruta_hacia_tus_documentos')));
 
 const commandRouter = require('./backend-src/routes/commands');
 app.use('/commands', commandRouter);
 
 const tutorialHtmlRouter = require('./backend-src/routes/tutorial-html');
-app.use('./tutorial-html', tutorialHtmlRouter);
+app.use('/tutorial-html', tutorialHtmlRouter);
 
 const tutorialUnixRouter = require('./backend-src/routes/tutorial-unix');
-app.use('./tutorial-unix', tutorialUnixRouter)
+app.use('/tutorial-unix', tutorialUnixRouter)
 
 app.listen(port, () => {
   console.log(`running server at port: ${port}`);
