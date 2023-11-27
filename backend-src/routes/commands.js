@@ -225,10 +225,15 @@ router.post('/unix-commands', (req, res) => {
         else if (data === 'ls -l' && lesson == 4) {
             childProcess = spawn('ls', ['-l'], { shell: true, cwd: "./unix" });
         }
+        else if (data === 'ls -l' && lesson == 5) {
+            childProcess = spawn('ls', ['-l'], { shell: true, cwd: "./unix/home/user1" });
+        }
         else if ((data == 'cp hello.txt ../user2/HelloCopy.txt' || data == 'cp ./hello.txt ../user2/HelloCopy.txt') && lesson == 5) {
             let origen = './hello.txt';
             let destino = '../user2/HelloCopy.txt';
             childProcess = spawn(`cp ${origen} ${destino}`, [], { shell: true, cwd: "./unix/home/user1" });
+        }else {
+            childProcess = spawn('echo wrong command', [], { shell: true });
         }
         childProcess.stdout.on('data', (data) => {
             console.log(`stdout: ${data}`);
