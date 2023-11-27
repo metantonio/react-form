@@ -211,13 +211,13 @@ router.post('/unix-commands', (req, res) => {
         if ((data == 'pwd')) {
             childProcess = spawn('pwd', []);
         }
-        else if ((data == 'ls')) {
+        else if ((data == 'ls') && lesson <4) {
             childProcess = spawn('ls', []);
         }
-        else if ((data == 'ls -l')) {
+        else if ((data == 'ls -l') && lesson <4 ) {
             childProcess = spawn('ls', ['-l']);
         }
-        else if ((data == 'ls -la' || data == 'ls -l -a')) {
+        else if ((data == 'ls -la' || data == 'ls -l -a') && lesson <4) {
             childProcess = spawn('ls', ['-la']);
         }
         else if (commandParts[0] === 'cd') {
