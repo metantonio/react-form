@@ -220,8 +220,11 @@ router.post('/unix-commands', (req, res) => {
         else if ((data == 'ls -la' || data == 'ls -l -a') && lesson <4) {
             childProcess = spawn('ls', ['-la']);
         }
-        else if (commandParts[0] === 'cd') {
+        else if (commandParts[0] === 'cd' && lesson < 4) {
             childProcess = spawn('cd', [commandParts[1]]);
+        }
+        else if (commandParts[0] === 'cd' && lesson == 4) {
+            childProcess = spawn('cd', [commandParts[1]], { shell: true, cwd: "./unix" });
         }
         else if (commandParts[0] === 'ls' && lesson == 4) {
             childProcess = spawn('ls', [commandParts[1]], { shell: true, cwd: "./unix" });
