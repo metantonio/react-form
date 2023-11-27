@@ -41,6 +41,7 @@ router.post('/ls-command', (req, res) => {
         childProcess = spawn('ls', ['-l']);        
         childProcess.stdout.on('data', (data) => {
             console.log(`stdout: ${data}`);
+            output += data.toString();
         });
 
         childProcess.stderr.on('data', (data) => {
@@ -210,6 +211,7 @@ router.post('/unix-commands', (req, res) => {
         }
         childProcess.stdout.on('data', (data) => {
             console.log(`stdout: ${data}`);
+            output += data.toString();
         });
 
         childProcess.stderr.on('data', (data) => {
