@@ -206,7 +206,7 @@ router.post('/unix-commands', (req, res) => {
         let childProcess;
         console.log("distinto de windows")
         console.log("data: ", data)
-        const commandParts = commandString.split(' ');
+        let commandParts = commandString.split(' ');
         if ((data == 'pwd')) {
             childProcess = spawn('pwd', []);
         }
