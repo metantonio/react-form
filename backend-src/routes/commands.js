@@ -177,6 +177,29 @@ router.post('/unix-commands', (req, res) => {
             res.status(200).json({ message: 'Exitoso', command: output, correct: true });
         });
 
+    } else {
+        let childProcess;
+        if ((data == 'pwd')) {
+            childProcess = spawn('ls', ['']);
+        }
+        childProcess.stdout.on('data', (data) => {
+            console.log(`stdout: ${data}`);
+        });
+
+        childProcess.stderr.on('data', (data) => {
+            console.error(`stderr: ${data}`);
+        });
+
+        childProcess.on('close', (code) => {
+            if (code !== 0) {
+                console.error(`Error: Proceso hijo cerrado con código ${code}`);
+                return res.status(500).json({ error: 'Error al ejecutar el comando', correct: false, message: "error" });
+            }
+
+            console.log(`Comando ejecutado con éxito:\n${output}`);
+            res.status(200).json({ message: 'Exitoso', command: output, correct: true });
+        });
+
     }
 
 });
