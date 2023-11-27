@@ -233,7 +233,7 @@ router.post('/unix-commands', (req, res) => {
             let destino = '../user2/HelloCopy.txt';
             childProcess = spawn(`cp ${origen} ${destino}`, [], { shell: true, cwd: "./unix/home/user1" });
         }else {
-            childProcess = spawn('echo wrong command', [], { shell: true });
+            childProcess = spawn(`echo Wrong Command: ${data}`, [], { shell: true });
         }
         childProcess.stdout.on('data', (data) => {
             console.log(`stdout: ${data}`);
