@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructura de Carpetas de Unix</title>
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            font-family: 'Courier New', monospace;
+            margin-left: 20px;
+        }
+
+        p {
+            margin-left: 20px;
+        }
+
+        code {
+            display: block;
+            background-color: #0a0a0a;
+            color: rgb(236, 237, 238);
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>04 Unix Folder Structure</h1>
+    <code>
+    <ul>
+        <li>/
+            <ul>
+                <li>/bin (Binaries)</li>
+                <li>/boot (Boot)</li>
+                <li>/dev (Devices)</li>
+                <li>/etc (Configuration)</li>
+                <li>/home (Home)
+                    <ul>
+                        <li>/user1</li>
+                        <li>/user2</li>
+                        <!-- Other users -->
+                    </ul>
+                </li>
+                <li>/lib (Libraries)</li>
+                <li>/media (Media)</li>
+                <li>/mnt (Mount)</li>
+                <li>/opt (Optional)</li>
+                <li>/proc (Process)</li>
+                <li>/root (Superuser root)</li>
+                <li>/run (Runtime)</li>
+                <li>/sbin (Superuser binary)</li>
+                <li>/srv (Services)</li>
+                <li>/tmp (Temporary)</li>
+                <li>/usr (User)</li>
+                <li>/var (Variable)</li>
+            </ul>
+        </li>
+    </ul>
+</code>
+
+    <p>/bin: Contains executable files (programs) that are essential for the system's operation and used by all system
+        users.</p>
+    <p>/boot: Contains files related to the system's boot process.</p>
+    <p>/dev: Device files. In Unix, everything is a file, and devices are also represented as files in the /dev
+        directory.</p>
+    <p>/etc: Contains system and application configuration files.</p>
+    <p>/home: User home directories. Each user has their own subdirectory in /home.</p>
+    <p>/lib: Contains shared libraries used by programs in /bin and /sbin.</p>
+    <p>/media: Mount point for removable media such as USB, DVD, etc.</p>
+    <p>/mnt: Temporary mount point for additional file systems.</p>
+    <p>/opt: Contains additional software packages that are not part of the main OS distribution.</p>
+    <p>/proc: Contains information about running processes.</p>
+    <p>/root: Home directory for the root user (superuser).</p>
+    <p>/run: Contains temporary file data that is valid only during system runtime.</p>
+    <p>/sbin: Contains essential binary files for system administration, accessible only by the superuser.</p>
+    <p>/srv: Contains data specific to services provided by the system.</p>
+    <p>/tmp: Stores temporary files.</p>
+    <p>/usr: Contains files and programs for users. It can be shared among systems and remotely mounted.</p>
+    <p>/var: Stores files that can dynamically change in size, such as logs, temporary files, and databases.</p>
+
+    <h2>📝 Instructions:</h2>
+    <p>Review the file system of the directory you are in as a list and navigate using relative paths to the
+        <strong>user1</strong> folder within the <strong>home</strong> directory.
+    </p>
+
+</body>
+
+</html>

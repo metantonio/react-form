@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructura de Carpetas de Unix</title>
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            font-family: 'Courier New', monospace;
+            margin-left: 20px;
+        }
+
+        p {
+            margin-left: 20px;
+        }
+
+        code {
+            display: block;
+            background-color: #0a0a0a;
+            color: rgb(236, 237, 238);
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>05 File Copy</h1>
+    <p>From the terminal, we can copy files using the <code>cp</code> command.</p>
+
+    <p>The cp command requires two arguments, which can be paths (absolute and/or relative). The first argument
+        indicates where to copy from, and the second argument indicates where to place the copied content.</p>
+    <p>When paths are not specified, and only names are used, it is understood that the terminal is currently located in
+        the same directory as the file to be copied, and its copy will be in the same place.</p>
+    <p><code>cp original.txt copy.txt</code></p>
+
+    <h2>📝 Instructions:</h2>
+    <p>Review the file system of the directory you are in as a list. You should see a text file named hello.</p>
+    <p>Considering your current location, copy the text file, and rename the copy to <strong>HelloCopy.txt</strong>
+        inside the <strong>user2</strong> directory.</p>
+    <ul>
+        <li>/home
+            <ul>
+                <li>/user1 (you are currently here)</li>
+                <li>/user2</li>
+            </ul>
+        </li>
+    </ul>
+
+</body>
+
+</html>
