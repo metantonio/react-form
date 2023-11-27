@@ -208,7 +208,7 @@ router.post('/unix-commands', (req, res) => {
         console.log("data: ", data)
         let commandParts = data.split(' ');
         let correcto = true
-        if ((data == 'pwd')) {
+        if ((data == 'pwd' && lesson <= 4)) {
             childProcess = spawn('pwd', []);
         }
         else if ((data == 'ls') && lesson <4) {
@@ -228,6 +228,9 @@ router.post('/unix-commands', (req, res) => {
         }
         else if (commandParts[0] === 'ls' && lesson == 4) {
             childProcess = spawn('ls', [commandParts[1]], { shell: true, cwd: "./unix" });
+        }
+        else if (data === 'pwd' && lesson == 5) {
+            childProcess = spawn('pwd', [], { shell: true, cwd: "./unix/home/user1" });
         }
         else if (commandParts[0] === 'ls' && lesson == 5) {
             childProcess = spawn('ls', [commandParts[1]], { shell: true, cwd: "./unix/home/user1" });
