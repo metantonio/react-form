@@ -207,6 +207,7 @@ router.post('/unix-commands', (req, res) => {
         console.log("distinto de windows")
         console.log("data: ", data)
         let commandParts = data.split(' ');
+        let correcto = true
         if ((data == 'pwd')) {
             childProcess = spawn('pwd', []);
         }
@@ -234,6 +235,7 @@ router.post('/unix-commands', (req, res) => {
             childProcess = spawn(`cp ${origen} ${destino}`, [], { shell: true, cwd: "./unix/home/user1" });
         }else {
             childProcess = spawn(`echo Wrong Command: ${data}`, [], { shell: true });
+            correcto = false
         }
         childProcess.stdout.on('data', (data) => {
             console.log(`stdout: ${data}`);
@@ -251,7 +253,7 @@ router.post('/unix-commands', (req, res) => {
             }
 
             console.log(`Comando ejecutado con éxito:\n${output}`);
-            res.status(200).json({ message: 'Exitoso', command: output, correct: true });
+            res.status(200).json({ message: 'Exitoso', command: output, correct: correcto });
         });
 
     }
