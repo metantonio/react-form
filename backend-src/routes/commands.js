@@ -209,6 +209,15 @@ router.post('/unix-commands', (req, res) => {
         if ((data == 'pwd')) {
             childProcess = spawn('pwd', []);
         }
+        if ((data == 'ls')) {
+            childProcess = spawn('ls', []);
+        }
+        if ((data == 'ls -l')) {
+            childProcess = spawn('ls', ['-l']);
+        }
+        if ((data == 'ls -la' || data == 'ls -l -a')) {
+            childProcess = spawn('ls', ['-la']);
+        }
         childProcess.stdout.on('data', (data) => {
             console.log(`stdout: ${data}`);
             output += data.toString();
