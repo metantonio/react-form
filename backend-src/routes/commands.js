@@ -180,7 +180,7 @@ router.post('/unix-commands', (req, res) => {
     } else {
         let childProcess;
         if ((data == 'pwd')) {
-            childProcess = spawn('ls', ['']);
+            childProcess = spawn('pwd', ['']);
         }
         childProcess.stdout.on('data', (data) => {
             console.log(`stdout: ${data}`);
