@@ -36,11 +36,8 @@ router.post('/ls-command', (req, res) => {
 
     }else {
         let childProcess;
-        console.log("distinto de windows")
-        console.log("data: ", data)
-        if ((data == 'pwd')) {
-            childProcess = spawn('ls', ['-l']);
-        }
+        console.log("distinto de windows")           
+        childProcess = spawn('ls', ['-l']);        
         childProcess.stdout.on('data', (data) => {
             console.log(`stdout: ${data}`);
         });
