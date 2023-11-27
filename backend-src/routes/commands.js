@@ -10,11 +10,12 @@ router.post('/ls-command', (req, res) => {
     let { directoryName } = req.body;
     let platform = os.platform();
     console.log(platform)
+    let output = '';
     // Ejecutar el proceso cmd.exe con el comando dir en Windows
     if (platform === 'win32') {
         let childProcess = spawn('cmd.exe', ['/c', 'dir'], { shell: true });
 
-        let output = '';
+        
 
         childProcess.stdout.on('data', (data) => {
             output += data.toString();
@@ -65,12 +66,12 @@ router.post('/test/:exerciseNumber', (req, res) => {
     const { data } = req.body;
     const exerciseNumber = req.params.exerciseNumber;
     let platform = os.platform();
-
+    let output = '';
     // Ejecutar el proceso cmd.exe con el comando jest en Windows
     if (platform === 'win32') {
         let childProcess = spawn('cmd.exe', ['/c', `jest --runInBand exercise${exerciseNumber} --textVariable="%${data.toString()}%"`], { shell: true });
         console.log("comando pedido: ", data)
-        let output = '';
+        
 
         childProcess.stdout.on('data', (data) => {
             output += data.toString();
@@ -98,12 +99,12 @@ router.post('/unix/:exerciseNumber', (req, res) => {
     const { data } = req.body;
     const exerciseNumber = req.params.exerciseNumber;
     let platform = os.platform();
-
+    let output = '';
     // Ejecutar el proceso cmd.exe con el comando jest en Windows
     if (platform === 'win32') {
         let childProcess = spawn('cmd.exe', ['/c', `jest --runInBand exercise${exerciseNumber} --textVariable="%${data.toString()}%"`], { shell: true });
         console.log("comando pedido: ", data)
-        let output = '';
+        
 
         childProcess.stdout.on('data', (data) => {
             output += data.toString();
@@ -130,6 +131,7 @@ router.post('/unix/:exerciseNumber', (req, res) => {
 router.post('/unix-commands', (req, res) => {
     let { data, lesson } = req.body;
     let platform = os.platform();
+    let output = '';
     //const exerciseNumber = req.params.exerciseNumber;
     // Ejecutar el proceso cmd.exe con el comando dir en Windows
     if (platform === 'win32') {
@@ -178,7 +180,7 @@ router.post('/unix-commands', (req, res) => {
             childProcess = spawn('cmd.exe', ['/c', 'dd'], { shell: true });
         }
 
-        let output = '';
+        
 
         childProcess.stdout.on('data', (data) => {
             console.log(`stdout: ${data}`);
