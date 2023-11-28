@@ -15,7 +15,7 @@ router.post('/ls-command', (req, res) => {
     if (platform === 'win32') {
         let childProcess = spawn('cmd.exe', ['/c', 'dir'], { shell: true });
 
-        
+
 
         childProcess.stdout.on('data', (data) => {
             output += data.toString();
@@ -35,10 +35,10 @@ router.post('/ls-command', (req, res) => {
             res.status(200).json({ message: 'Exitoso', command: output, correct: true });
         });
 
-    }else {
+    } else {
         let childProcess;
-        console.log("distinto de windows")           
-        childProcess = spawn('ls', ['-l']);        
+        console.log("distinto de windows")
+        childProcess = spawn('ls', ['-l']);
         childProcess.stdout.on('data', (data) => {
             console.log(`stdout: ${data}`);
             output += data.toString();
@@ -72,7 +72,7 @@ router.post('/test/:exerciseNumber', (req, res) => {
     if (platform === 'win32') {
         let childProcess = spawn('cmd.exe', ['/c', `jest --runInBand exercise${exerciseNumber} --textVariable="%${data.toString()}%"`], { shell: true });
         console.log("comando pedido: ", data)
-        
+
 
         childProcess.stdout.on('data', (data) => {
             output += data.toString();
@@ -105,7 +105,7 @@ router.post('/unix/:exerciseNumber', (req, res) => {
     if (platform === 'win32') {
         let childProcess = spawn('cmd.exe', ['/c', `jest --runInBand exercise${exerciseNumber} --textVariable="%${data.toString()}%"`], { shell: true });
         console.log("comando pedido: ", data)
-        
+
 
         childProcess.stdout.on('data', (data) => {
             output += data.toString();
@@ -181,7 +181,7 @@ router.post('/unix-commands', (req, res) => {
             childProcess = spawn('cmd.exe', ['/c', 'dd'], { shell: true });
         }
 
-        
+
 
         childProcess.stdout.on('data', (data) => {
             console.log(`stdout: ${data}`);
@@ -211,13 +211,13 @@ router.post('/unix-commands', (req, res) => {
         if ((data == 'pwd' && lesson <= 4)) {
             childProcess = spawn('pwd', []);
         }
-        else if ((data == 'ls') && lesson <4) {
+        else if ((data == 'ls') && lesson < 4) {
             childProcess = spawn('ls', []);
         }
-        else if ((data == 'ls -l') && lesson <4 ) {
+        else if ((data == 'ls -l') && lesson < 4) {
             childProcess = spawn('ls', ['-l']);
         }
-        else if ((data == 'ls -la' || data == 'ls -l -a') && lesson <4) {
+        else if ((data == 'ls -la' || data == 'ls -l -a') && lesson < 4) {
             childProcess = spawn('ls', ['-la']);
         }
         else if (commandParts[0] === 'cd' && lesson < 4) {
@@ -246,11 +246,22 @@ router.post('/unix-commands', (req, res) => {
             childProcess = spawn('ls', [commandParts[1]], { shell: true, cwd: "./unix/home/user1" });
             correcto = true
         }
+        else if (commandParts[0] === 'ls' && lesson > 6) {
+            childProcess = spawn('ls', [commandParts[1]], { shell: true, cwd: "./unix/home/user1" });
+            correcto = false
+        }
         else if ((data == 'cp hello.txt ../user2/HelloCopy.txt' || data == 'cp ./hello.txt ../user2/HelloCopy.txt') && lesson == 5) {
             let origen = './hello.txt';
             let destino = '../user2/HelloCopy.txt';
             childProcess = spawn(`cp ${origen} ${destino}`, [], { shell: true, cwd: "./unix/home/user1" });
-        }else {
+        }
+        else if (commandParts[0] === 'find' && lesson == 7) {
+            let resto = commandParts.slice(1)
+            childProcess = spawn('find', resto, { shell: true, cwd: "./unix/home/user1" });
+            if (data == 'find ./ -type f "*.js"' || data == 'find . -type f "*.js"') {
+                correcto = false
+            }
+        } else {
             childProcess = spawn(`echo Wrong Command: ${data}`, [], { shell: true });
             correcto = false
         }

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructura de Carpetas de Unix</title>
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            font-family: 'Courier New', monospace;
+            margin-left: 20px;
+        }
+
+        p {
+            margin-left:20px;
+        }
+        code {
+            display: block;
+            background-color: #0a0a0a;
+            color: rgb(236, 237, 238);
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>07 Búsqueda de archivos</h1>
+    <p>Es común encontrase directorios con miles de archivos y decenas de subdirectorios, por lo que es necesario filtrar la búsqueda o sólo obtener un archivo en específico. Para esto usamos el comando  <code>find</code></p>
+
+    <p>El comando find tiene un gran número de parámetros</p>
+    <p>Para ver toda la lista de argumentos usa<code>find --help</code> </p>
+    <p>La estructura más básica para buscar un archivo de forma recuusiva desde el directorio en el que nos encontramos es <code>find ./ -type f -name "name-of-file.txt"
+    </code></p>
+    <p>Donde el argumento "-type f" nos indica que lo que queremos encontrar son archivos</p>
+    
+    <h2>📝 Instrucciones:</h2>
+    <p>Busca de manera recurvisa todos los archivos, desde directorio en el que te encuentras, que tengan la extensión de javascript (.js)</p>
+    <ul>
+        <li>/home
+            <ul>
+                <li>/user1 (estás parado aquí)</li>
+                <li>/user2</li>
+            </ul>
+        </li>
+    </ul>
+    <h3>💡 Pista:</h3>
+    <p>Ayúdate con el todo poderoso <code>*</code></p>
+</body>
+
+</html>
