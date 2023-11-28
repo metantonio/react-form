@@ -290,6 +290,16 @@ router.post('/unix-commands', (req, res) => {
             childProcess = spawn('mkdir', ["--help"], { shell: true, cwd: "./unix/home/user1" });
             correcto = false
         }
+        else if (data === 'cat --help') {
+            let resto = commandParts.slice(1)
+            childProcess = spawn('cat', ["--help"], { shell: true, cwd: "./unix/home/user1" });
+            correcto = false
+        }
+        else if (data === 'rm --help') {
+            let resto = commandParts.slice(1)
+            childProcess = spawn('rm', ["--help"], { shell: true, cwd: "./unix/home/user1" });
+            correcto = false
+        }
         else if (commandParts[0] === 'ls' && lesson >= 10) {
             let resto = commandParts.slice(1)
             childProcess = spawn('ls', resto, { shell: true, cwd: "./unix/home/user1" });
