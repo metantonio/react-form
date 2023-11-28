@@ -62,3 +62,6 @@ node_modules/
 !.env.example
 .now
 .vercel
+
+# ignore unix/home/user2/documents
+unix/home/user2/documents
