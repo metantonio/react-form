@@ -321,14 +321,14 @@ router.post('/unix-commands', (req, res) => {
             childProcess = spawn('rm', ["-r QLX"], { shell: true, cwd: "./unix/home/user2" });
             correcto = true
         }
-        else if (data === 'cat ./documents/more\ documents/not\ important\ documents/jokes.txt' && lesson == 11) {
+        else if (data === 'cat ./documents/more documents/not important documents/jokes.txt' && lesson == 11) {
             let resto = commandParts.slice(1)
             childProcess = spawn('cat', ["./documents/more\ documents/not\ important\ documents/jokes.txt"], { shell: true, cwd: "./unix/home/user1" });
             correcto = true
         }
-        else if (data === 'less ./documents/more\ documents/not\ important\ documents/jokes.txt' && lesson == 11) {
+        else if (data === 'less ./documents/more documents/not important documents/jokes.txt' && lesson == 11) {
             let resto = commandParts.slice(1)
-            childProcess = spawn('less', ["./documents/more\ documents/not\ important\ documents/jokes.txt"], { shell: true, cwd: "./unix/home/user1" });
+            childProcess = spawn('less', ["./documents/more documents/not important documents/jokes.txt"], { shell: true, cwd: "./unix/home/user1" });
             correcto = true
         }
         else {
