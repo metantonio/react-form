@@ -295,6 +295,11 @@ router.post('/unix-commands', (req, res) => {
             childProcess = spawn('cat', ["--help"], { shell: true, cwd: "./unix/home/user1" });
             correcto = false
         }
+        else if (data === 'less --help') {
+            let resto = commandParts.slice(1)
+            childProcess = spawn('less', ["--help"], { shell: true, cwd: "./unix/home/user1" });
+            correcto = false
+        }
         else if (data === 'rm --help') {
             let resto = commandParts.slice(1)
             childProcess = spawn('rm', ["--help"], { shell: true, cwd: "./unix/home/user1" });
@@ -314,6 +319,16 @@ router.post('/unix-commands', (req, res) => {
             let resto = commandParts.slice(1)
             childProcess = spawn('mkdir', ["QLX"], { shell: true, cwd: "./unix/home/user2" });
             childProcess = spawn('rm', ["-r QLX"], { shell: true, cwd: "./unix/home/user2" });
+            correcto = true
+        }
+        else if (data === 'cat ./documents/more\ documents/not\ important\ documents/jokes.txt' && lesson == 11) {
+            let resto = commandParts.slice(1)
+            childProcess = spawn('cat', ["./documents/more\ documents/not\ important\ documents/jokes.txt"], { shell: true, cwd: "./unix/home/user1" });
+            correcto = true
+        }
+        else if (data === 'less ./documents/more\ documents/not\ important\ documents/jokes.txt' && lesson == 11) {
+            let resto = commandParts.slice(1)
+            childProcess = spawn('less', ["./documents/more\ documents/not\ important\ documents/jokes.txt"], { shell: true, cwd: "./unix/home/user1" });
             correcto = true
         }
         else {
