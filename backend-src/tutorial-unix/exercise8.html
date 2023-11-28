@@ -34,17 +34,16 @@
 
 <body>
 
-    <h1>07 Búsqueda de archivos</h1>
-    <p>Es común encontrase directorios con miles de archivos y decenas de subdirectorios, por lo que es necesario filtrar la búsqueda o sólo obtener un archivo en específico. Para esto usamos el comando  <code>find</code></p>
+    <h1>08 El operador PIPE</h1>
+    <p>La consola de UNIX nos permite concatenar código, y esto lo podemos hacer gracias al operador PIPE <code>|</code> Se le dice así ya que al colocarlo dos veces simula una tubería "||"</p>
 
-    <p>El comando find tiene un gran número de parámetros</p>
-    <p>Para ver toda la lista de argumentos usa<code>find --help</code> </p>
-    <p>La estructura más básica para buscar un archivo de forma recursiva desde el directorio en el que nos encontramos es <code>find ./ -type f -name "name-of-file.txt"
+    <p>Es común ver al operador pipe asociado con el comando <code>grep</code>el cual suele ser de ayuda para filtrar patrones</p>
+    <p>La estructura más básica para buscar tipos de archivos de forma recursiva desde el directorio en el que nos encontramos es y especificar un patrón es<code>find ./ -type f -name "*.extension" | grep "pattern-to-search"
     </code></p>
     <p>Donde el argumento "-type f" nos indica que lo que queremos encontrar son archivos</p>
     
     <h2>📝 Instrucciones:</h2>
-    <p>Busca de manera recurvisa todos los archivos, desde directorio en el que te encuentras, que tengan la extensión de javascript (.js)</p>
+    <p>Busca de manera recurvisa todos los archivos, desde directorio en el que te encuentras, que tengan la extensión de texto (.txt) y además, tenga "important" como parte de su nombre</p>
     <ul>
         <li>/home
             <ul>
@@ -53,8 +52,6 @@
             </ul>
         </li>
     </ul>
-    <h3>💡 Pista:</h3>
-    <p>Ayúdate con el todo poderoso <code>*</code></p>
 </body>
 
 </html>

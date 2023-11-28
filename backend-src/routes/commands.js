@@ -262,8 +262,18 @@ router.post('/unix-commands', (req, res) => {
                 correcto = true
             }else{
                 correcto = false
-            }
-        } else {
+            }        
+        }
+        else if (commandParts[0] === 'find' && lesson == 8) {
+            let resto = commandParts.slice(1)
+            childProcess = spawn('find', resto, { shell: true, cwd: "./unix/home/user1" });
+            if (data == 'find ./ -type f -name "*.txt" | grep "important"' || data == 'find . -type f -name "*.txt" | grep "important"') {
+                correcto = true
+            }else{
+                correcto = false
+            }        
+        }
+         else {
             childProcess = spawn(`echo Wrong Command: ${data}`, [], { shell: true });
             correcto = false
         }

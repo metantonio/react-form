@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructura de Carpetas de Unix</title>
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            font-family: 'Courier New', monospace;
+            margin-left: 20px;
+        }
+
+        p {
+            margin-left:20px;
+        }
+        code {
+            display: block;
+            background-color: #0a0a0a;
+            color: rgb(236, 237, 238);
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>08 The PIPE Operator</h1>
+    <p>The UNIX console allows us to concatenate code, and we can do this thanks to the PIPE operator <code>|</code>. It is called this way because when placed twice, it simulates a pipe "||".</p>
+    
+    <p>It is common to see the pipe operator associated with the <code>grep</code> command, which is usually helpful for filtering patterns.</p>
+    <p>The most basic structure to recursively search for file types from the current directory and specify a pattern is <code>find ./ -type f -name "*.extension" | grep "pattern-to-search"</code>.</p>
+    <p>Where the argument "-type f" indicates that we want to find files.</p>
+    
+    <h2>📝 Instructions:</h2>
+    <p>Recursively search for all files, starting from the current directory, with the extension ".txt" and also have "important" as part of their name.</p>
+    <ul>
+        <li>/home
+            <ul>
+                <li>/user1 (you are here)</li>
+                <li>/user2</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+
+</html>
