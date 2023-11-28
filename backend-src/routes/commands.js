@@ -259,6 +259,8 @@ router.post('/unix-commands', (req, res) => {
             let resto = commandParts.slice(1)
             childProcess = spawn('find', resto, { shell: true, cwd: "./unix/home/user1" });
             if (data == 'find ./ -type f "*.js"' || data == 'find . -type f "*.js"') {
+                correcto = true
+            }else{
                 correcto = false
             }
         } else {
