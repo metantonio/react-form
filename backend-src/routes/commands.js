@@ -281,6 +281,7 @@ router.post('/unix-commands', (req, res) => {
         }
         else if (data === 'mkdir ../user2/QLX' && lesson == 9) {
             let resto = commandParts.slice(1)
+            childProcess = spawn('rm', ["-r QLX"], { shell: true, cwd: "./unix/home/user2" });
             childProcess = spawn('mkdir', ["QLX"], { shell: true, cwd: "./unix/home/user2" });
             correcto = true
         }
