@@ -235,7 +235,7 @@ router.post('/unix-commands', (req, res) => {
         else if (commandParts[0] === 'ls' && lesson == 5) {
             childProcess = spawn('ls', [commandParts[1]], { shell: true, cwd: "./unix/home/user1" });
         }
-        else if (data === 'pwd' && lesson >= 6 && lesson <=8) {
+        else if (data === 'pwd' && lesson >= 6 && lesson <= 8) {
             childProcess = spawn('pwd', [], { shell: true, cwd: "./unix/home/user1" });
             correcto = false
         }
@@ -261,25 +261,35 @@ router.post('/unix-commands', (req, res) => {
             childProcess = spawn('find', resto, { shell: true, cwd: "./unix/home/user1" });
             if (data == 'find ./ -type f -name "*.js"' || data == 'find . -type f -name "*.js"') {
                 correcto = true
-            }else{
+            } else {
                 correcto = false
-            }        
+            }
         }
         else if (commandParts[0] === 'find' && lesson == 8) {
             let resto = commandParts.slice(1)
             childProcess = spawn('find', resto, { shell: true, cwd: "./unix/home/user1" });
             if (data == 'find ./ -type f -name "*.txt" | grep "secret"' || data == 'find . -type f -name "*.txt" | grep "secret"') {
                 correcto = true
-            }else{
+            } else {
                 correcto = false
-            }        
+            }
         }
-        else if (commandParts[0] === 'ls' && lesson == 8) {
+        else if (commandParts[0] === 'ls' && lesson >= 8) {
             let resto = commandParts.slice(1)
             childProcess = spawn('ls', resto, { shell: true, cwd: "./unix/home/user1" });
-            correcto = false      
+            correcto = false
         }
-         else {
+        else if (commandParts[0] === 'mkdir ../user2/QLX' && lesson == 9) {
+            let resto = commandParts.slice(1)
+            childProcess = spawn('mkdir', ["../user2/QLX"], { shell: true, cwd: "./unix/home/user1" });
+            correcto = true
+        }
+        else if (commandParts[0] === 'mkdir --help' && lesson == 9) {
+            let resto = commandParts.slice(1)
+            childProcess = spawn('mkdir', ["--help"], { shell: true, cwd: "./unix/home/user1" });
+            correcto = false
+        }
+        else {
             childProcess = spawn(`echo Wrong Command: ${data}`, [], { shell: true });
             correcto = false
         }

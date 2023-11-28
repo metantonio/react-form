@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructura de Carpetas de Unix</title>
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            font-family: 'Courier New', monospace;
+            margin-left: 20px;
+        }
+
+        p {
+            margin-left:20px;
+        }
+        code {
+            display: block;
+            background-color: #0a0a0a;
+            color: rgb(236, 237, 238);
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>09 Creación de Directorios</h1>
+    <p>Podemos crear carpetas nuevas con el comando<code>mkdir</code>Un breve atajo a las palabras "make directory"</p>
+
+    <p>Es común crear carpetas en el directorio actual, con la siguiente estructura <code>mkdir new_folder</code> donde new_folder es el nombre de la nueva carpeta</p>
+    
+    <p>Pero también es posible, y de hecho bastante útil, especificar dónde se creará la carpeta sin tener que movernos de nuestro directorio actual, usando rutas relativas.</p>
+    
+    <h2>📝 Instrucciones:</h2>
+    <p>Desde directorio en el que te encuentras, crea una carpeta llamada <strong>QLX</strong> dentro del directorio <strong>user2</strong></p>
+    <ul>
+        <li>/home
+            <ul>
+                <li>/user1 (estás parado aquí)</li>
+                <li>/user2</li>
+            </ul>
+        </li>
+    </ul>
+    <h3>💡 Pista:</h3>
+    <p>Ten en cuenta que con rutas relativas puedes ir a directorios anteriores con <code>../</code></p>
+</body>
+
+</html>
