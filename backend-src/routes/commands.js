@@ -92,6 +92,29 @@ router.post('/test/:exerciseNumber', (req, res) => {
             console.log(`Comando ejecutado con éxito:\n${output}`);
             res.status(200).json({ message: 'Exitoso', command: output, correct: true });
         });
+    }else{
+        let childProcess = spawn('bash', ['/c', `jest --runInBand exercise${exerciseNumber} --textVariable="%${data.toString()}%"`], { shell: true });
+        console.log("comando pedido: ", data)
+
+
+        childProcess.stdout.on('data', (data) => {
+            output += data.toString();
+        });
+
+        childProcess.stderr.on('data', (data) => {
+            console.error(`Error donde esta: ${data}`);
+            output += data.toString();
+        });
+
+        childProcess.on('close', (code) => {
+            if (code !== 0) {
+                console.error(`Error: Proceso hijo cerrado con código ${code}`);
+                return res.status(200).json({ command: output, message: "Error", correct: false });
+            }
+
+            console.log(`Comando ejecutado con éxito:\n${output}`);
+            res.status(200).json({ message: 'Exitoso', command: output, correct: true });
+        });
     }
 
 });
