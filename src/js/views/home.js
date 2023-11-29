@@ -27,22 +27,22 @@ const Home = () => {
         <Block
           title="Sección 1"
           imageUrl="URL de la imagen 1"
-          link="/seccion1"
+          link="/html-tutorial"
         />
         <Block
           title="Sección 2"
           imageUrl="URL de la imagen 2"
-          link="/seccion2"
+          link="/javascript-tutorial"
         />
         <Block
           title="Sección 3"
           imageUrl="URL de la imagen 3"
-          link="/seccion3"
+          link="/python-tutorial"
         />
         <Block
           title="Sección 4"
           imageUrl="URL de la imagen 4"
-          link="/seccion4"
+          link="/unix-tutorial"
         />
       </main>
       <div className="social_right_block" style={{ position: "fixed", top: "40%", right: "0%", zIndex: 99, padding: "10px", backgroundColor: "#FFF" }}>
