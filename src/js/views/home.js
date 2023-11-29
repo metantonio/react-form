@@ -39,7 +39,6 @@ const Home = () => {
         </a>
         <br />
       </div>
-      <Footer/>
     </>
 
   );
