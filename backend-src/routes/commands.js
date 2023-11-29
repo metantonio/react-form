@@ -70,7 +70,7 @@ router.post('/test/:exerciseNumber', (req, res) => {
     let output = '';
     // Ejecutar el proceso cmd.exe con el comando jest en Windows
     if (platform === 'win32') {
-        let childProcess = spawn('cmd.exe', ['/c', `jest --runInBand exercise${exerciseNumber} --textVariable="%${data.toString()}%"`], { shell: true });
+        let childProcess = spawn('cmd.exe', ['/c', `jest --runInBand exercise-html${exerciseNumber} --textVariable="%${data.toString()}%"`], { shell: true });
         console.log("comando pedido: ", data)
 
 
