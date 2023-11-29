@@ -101,7 +101,7 @@ const TestRunner = () => {
         <html>
           <head>
             <meta charset="utf-8" />
-            <title>Mi pagina de prueba</title>
+            <title>Title on tab</title>
           </head>
           <body>
             <div>Hello World</div>
