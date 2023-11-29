@@ -17,16 +17,8 @@ describe('Exercise 01: The Console', () => {
     });
 
     test('Evaluate JavaScript code for printing function', () => {
-        const jsCode = `
-            const printing = () => {
-                let a = 1;
-                let b = 2;
-                return a + b;
-            };
-            printing();
-        `;
-
-        const func = new Function(jsCode);
+        
+        const func = new Function(textVariable);
         const result = func();
 
         expect(result).toBe(3);
