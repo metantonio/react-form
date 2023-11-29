@@ -22,6 +22,7 @@ const CambioPassword = lazy(() => import('./views/user/changePassword.js'))
 
 import TestRunner from "./views/tutorial-html/testRunner.jsx";
 import TestRunnerUnix from "./views/tutorial-unix/testRunnerUnix.jsx";
+import TestRunnerJavascript from "./views/tutorial-javascript/testRunnerJavascript.jsx";
 
 
 const Layout = () => {
@@ -44,7 +45,8 @@ const Layout = () => {
               <Route exact path="/signup" element={<Userqrregister />} />            
               <Route exact path="/update-password" element={<CambioPassword />} />   
               <Route exact path="/html-tutorial" element={<TestRunner />} />
-              <Route exact path="/unix-tutorial" element={<TestRunnerUnix />} />      
+              <Route exact path="/unix-tutorial" element={<TestRunnerUnix />} />   
+              <Route exact path="/javascript-tutorial" element={<TestRunnerJavascript />} />    
               <Route exact path="*" element={<Error404 />} />
             </Routes>
           </Suspense>
