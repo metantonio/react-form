@@ -96,11 +96,21 @@ const TestRunner = () => {
 
     const formatAsHtml = () => {
         // Implementa la lógica para dar formato como HTML según tus necesidades
-        let formattedText = `<pre style="margin: 0; padding: 8px; background-color: #f4f4f4; border: 1px solid #ddd; border-radius: 4px; white-space: pre-wrap;">${textareaRef.current.value.substring(0, textareaRef.current.selectionStart)}</pre>`;
-
+        //let formattedText = `<pre style="margin: 0; padding: 8px; background-color: #f4f4f4; border: 1px solid #ddd; border-radius: 4px; white-space: pre-wrap;">${textareaRef.current.value.substring(0, textareaRef.current.selectionStart)}</pre>`;
+        let formattedText=`<!doctype html>
+        <html>
+          <head>
+            <meta charset="utf-8" />
+            <title>Mi pagina de prueba</title>
+          </head>
+          <body>
+            <div>Hello World</div>
+          </body>
+        </html>
+        `
         // Reemplaza el texto seleccionado en el textarea
-        let newText = formattedText +
-            textareaRef.current.value.substring(textareaRef.current.selectionEnd);
+        //let newText = formattedText + textareaRef.current.value.substring(textareaRef.current.selectionEnd);
+        let newText = formattedText
 
         // Actualiza el valor del textarea
         textareaRef.current.value = newText;
