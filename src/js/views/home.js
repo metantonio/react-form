@@ -23,19 +23,19 @@ const Home = () => {
     <>
       <div className="social_right_block" style={{ position: "fixed", top: "40%", right: "0%", zIndex: 99, padding: "10px", backgroundColor: "#FFF" }}>
         <a className="facebook" href="https://www.facebook.com/pages/Qualex-Consulting-Services-Inc/553252344725767" target="_blank">
-          <span className="text-high-emphasis-inverse" style={{ fill: "darkslategrey" }}>Facebook</span>
+          <span className="text-high-emphasis-inverse" style={{ fill: "darkslategrey" }}><i class="fab fa-facebook"></i></span>
         </a>
         <br />
         <a className="twitter" href="https://twitter.com/Qualex_Corp" target="_blank">
-          <span className="text-high-emphasis-inverse" style={{ fill: "darkslategrey" }}>Twitter</span>
+          <span className="text-high-emphasis-inverse" style={{ fill: "darkslategrey" }}><i class="fab fa-twitter"></i></span>
         </a>
         <br />
         <a className="linkedin" href="https://www.linkedin.com/company/qualexconsulting" target="_blank">
-          <span className="text-high-emphasis-inverse" style={{ fill: "darkslategrey" }}>LinkedIn</span>
+          <span className="text-high-emphasis-inverse" style={{ fill: "darkslategrey" }}><i class="fab fa-linkedin"></i></span>
         </a>
         <br />
         <a className="youtube" href="https://www.youtube.com/user/QualexConsulting/videos" target="_blank">
-          <span className="text-high-emphasis-inverse" style={{ fill: "darkslategrey" }}>Youtube</span>
+          <span className="text-high-emphasis-inverse" style={{ fill: "darkslategrey" }}><i class="fab fa-youtube"></i></span>
         </a>
         <br />
       </div>
