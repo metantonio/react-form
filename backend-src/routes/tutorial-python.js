@@ -1,3 +1,7 @@
+const router = require("express").Router();
+const { exec, spawn } = require('child_process');
+const path = require('path');
+
 const TUTORIALS_PATH = "../../backend-src/tutorial-python"
 
 // Manejar las rutas dinámicas
