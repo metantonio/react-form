@@ -93,7 +93,7 @@ router.post('/test/:exerciseNumber', (req, res) => {
             res.status(200).json({ message: 'Exitoso', command: output, correct: true });
         });
     }else{
-        let childProcess = spawn('sh', [`jest --runInBand exercise${exerciseNumber} --textVariable="%${data.toString()}%"`], { shell: true, cwd: "./backend-src/routes/tutorial-html" });
+        let childProcess = spawn('npx', [`jest --runInBand exercise${exerciseNumber} --textVariable="%${data.toString()}%"`], { shell: true, cwd: "./backend-src/routes/tutorial-html" });
         console.log("comando pedido: ", data)
 
 
