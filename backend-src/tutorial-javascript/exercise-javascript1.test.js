@@ -17,15 +17,34 @@ describe('Exercise 01: The Console', () => {
         textVariable = textVariable.slice(1, textVariable.length - 1); // Para quitar los símbolos de porcentaje
     });
 
-    test('Evaluate JavaScript code for printing function', () => {
-        //console.log("textVariable:", textVariable)
-        const jsCode = textVariable.replace(/[\n\t\r]+\s*/g, '');
-        //console.log("jsCode:", jsCode)
-        try {
-            //const func = new Function(jsCode);
-            //const result = func();
+    test('Evaluate JavaScript function and its return', () => {        
+        let jsCode = textVariable.replace(/[\n\t\r]+\s*/g, '');        
+        try {         
             let result = eval(jsCode)
             expect(result).toBe(3);
+        } catch (error) {
+            console.error("Error during code evaluation:", error);
+            throw error;
+        }
+    });
+    test('Evaluate a console.log()', () => {        
+        let jsCode = textVariable.replace(/[\n\t\r]+\s*/g, '');        
+        try {
+            // capturing the ouput of the console.log
+            let consoleOutput = '';
+            const originalConsoleLog = console.log;
+            console.log = (output) => {
+                consoleOutput += output + '\n';
+            };
+    
+            // run code
+            eval(jsCode);
+    
+            // Restaurar la función original de console.log
+            console.log = originalConsoleLog;
+    
+            // Verificar la presencia de console.log en la salida
+            expect(consoleOutput.includes('console.log')).toBe(true);
         } catch (error) {
             console.error("Error during code evaluation:", error);
             throw error;
