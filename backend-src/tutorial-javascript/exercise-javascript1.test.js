@@ -18,7 +18,7 @@ describe('Exercise 01: The Console', () => {
 
     test('Evaluate JavaScript code for printing function', () => {
         
-        const func = new Function(textVariable.replace(/[\n\t\r]/g, ''));
+        const func = new Function(textVariable.replace(/[\n\t\r]+/g, ''));
         const result = func();
 
         expect(result).toBe(3);
