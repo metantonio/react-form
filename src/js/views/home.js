@@ -9,6 +9,7 @@ import "@material-ui/icons";
 import { forwardRef } from "react";
 import "../../styles/menu.css";
 import Logo from "../../img/logobyn.png";
+import "./home.module.css"
 
 const Home = () => {
   const { store, actions } = useContext(Context);
