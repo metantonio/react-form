@@ -9,13 +9,6 @@ if (!process.argv.find(arg => arg.startsWith('--textVariable='))) {
     process.exit(1); // Exit the process with an error code
   }
 
-/* test('Exercise 01: Hello World', () => {
-    //console.log("dentro de la función de test: ", textVariable)
-    expect(textVariable).toMatch(/<span>.*<\/span>/);
-    expect(textVariable).toMatch(/<strong>.*<\/strong>/);
-    expect(textVariable).toBe("<span>Hola <strong>Mundo!</strong></span>");
-}); */
-
 describe('Exercise 01: Hello World', () => {
     beforeEach(() => {
         // Antes de cada prueba, configuramos el valor de textVariable
