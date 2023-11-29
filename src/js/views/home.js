@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { Link, useParams, Navigate } from "react-router-dom";
 import { Context } from "../store/appContext.js";
+import Footer from "../component/Footer/Footer.js";
 
 import "@material-ui/icons";
 import { forwardRef } from "react";
@@ -38,6 +39,7 @@ const Home = () => {
         </a>
         <br />
       </div>
+      <Footer/>
     </>
 
   );
