@@ -5,7 +5,7 @@ import './block.module.css';
 const Block = ({ title, imageUrl, link }) => {
   return (
     <Link to={link} className="block">
-      <img src={imageUrl} alt={title} />
+      <img src={imageUrl} alt={title} className="block-image"/>
       <h2>{title}</h2>
     </Link>
   );

@@ -12,3 +12,10 @@
     max-width: 100%;
     border-radius: 10px;
   }
+
+  .block-image {
+    width: 100%; /* La imagen ocupa el 100% del ancho del contenedor */
+    height: 250px; /* Ajusta la altura según tus preferencias */
+    object-fit: cover; /* Mantiene la relación de aspecto y cubre el contenedor */
+    border-radius: 10px;
+  }
