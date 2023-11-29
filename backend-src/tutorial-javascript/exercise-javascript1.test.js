@@ -17,7 +17,7 @@ describe('Exercise 01: The Console', () => {
     });
 
     test('Evaluate JavaScript code for printing function', () => {
-        const jsCode = textVariable.replace(/[\n\t\r]+/g, '');
+        const jsCode = textVariable.replace(/[\n\t\r]+\s*/g, '');
         console.log("jsCode:", jsCode)
         try {
             //const func = new Function(jsCode);
