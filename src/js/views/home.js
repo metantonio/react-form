@@ -25,22 +25,22 @@ const Home = () => {
     <>
       <main>
         <Block
-          title="Sección 1"
+          title="HTML"
           imageUrl="HTML"
           link="/html-tutorial"
         />
         <Block
-          title="Sección 2"
+          title="JAVASCRIPT"
           imageUrl="JAVASCRIPT"
           link="/javascript-tutorial"
         />
         <Block
-          title="Sección 3"
+          title="PYTHON"
           imageUrl="PYTHON"
           link="/python-tutorial"
         />
         <Block
-          title="Sección 4"
+          title="UNIX"
           imageUrl="UNIX"
           link="/unix-tutorial"
         />
