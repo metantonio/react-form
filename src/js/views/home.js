@@ -26,22 +26,22 @@ const Home = () => {
       <main>
         <Block
           title="Sección 1"
-          imageUrl="URL de la imagen 1"
+          imageUrl="HTML"
           link="/html-tutorial"
         />
         <Block
           title="Sección 2"
-          imageUrl="URL de la imagen 2"
+          imageUrl="JAVASCRIPT"
           link="/javascript-tutorial"
         />
         <Block
           title="Sección 3"
-          imageUrl="URL de la imagen 3"
+          imageUrl="PYTHON"
           link="/python-tutorial"
         />
         <Block
           title="Sección 4"
-          imageUrl="URL de la imagen 4"
+          imageUrl="UNIX"
           link="/unix-tutorial"
         />
       </main>
