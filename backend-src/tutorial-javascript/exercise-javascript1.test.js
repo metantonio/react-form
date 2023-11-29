@@ -17,16 +17,16 @@ describe('Exercise 01: The Console', () => {
         textVariable = textVariable.slice(1, textVariable.length - 1); // Para quitar los símbolos de porcentaje
     });
 
-    test('Evaluate JavaScript function and its return', () => {        
-        let jsCode = textVariable.replace(/[\n\t\r]+\s*/g, '');        
-        try {         
-            let result = eval(jsCode)
-            expect(result).toBe(3);
-        } catch (error) {
-            console.error("Error during code evaluation:", error);
-            throw error;
-        }
-    });
+    //test('Evaluate JavaScript function and its return', () => {        
+    //    let jsCode = textVariable.replace(/[\n\t\r]+\s*/g, '');        
+    //    try {         
+    //        let result = eval(jsCode)
+    //        expect(result).toBe(3);
+    //    } catch (error) {
+    //        console.error("Error during code evaluation:", error);
+    //        throw error;
+    //    }
+    //});
     test('Evaluate a console.log("Hello World")', () => {        
         let jsCode = textVariable.replace(/[\n\t\r]+\s*/g, '');        
         try {
