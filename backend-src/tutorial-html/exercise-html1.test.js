@@ -13,6 +13,8 @@ textVariable = textVariable.slice(1, textVariable.length - 1) //to take out % sy
 
 test('Exercise 01: Hello World', () => {
     //console.log("dentro de la función de test: ", textVariable)
+    expect(textVariable).toMatch(/<span>.*<\/span>/);
+    expect(textVariable).toMatch(/<strong>.*<\/strong>/);
     expect(textVariable).toBe("<span>Hola <strong>Mundo!</strong></span>");
 });
 
