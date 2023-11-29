@@ -13,14 +13,14 @@ describe('Exercise 01: The Console', () => {
     beforeEach(() => {
         // Antes de cada prueba, configuramos el valor de textVariable
         textVariable = process.argv.find(arg => arg.startsWith('--textVariable=')).split('=').slice(1).join('=');
-        console.log("textVariable0:", textVariable)
+        //console.log("textVariable0:", textVariable)
         textVariable = textVariable.slice(1, textVariable.length - 1); // Para quitar los símbolos de porcentaje
     });
 
     test('Evaluate JavaScript code for printing function', () => {
-        console.log("textVariable:", textVariable)
+        //console.log("textVariable:", textVariable)
         const jsCode = textVariable.replace(/[\n\t\r]+\s*/g, '');
-        console.log("jsCode:", jsCode)
+        //console.log("jsCode:", jsCode)
         try {
             //const func = new Function(jsCode);
             //const result = func();
