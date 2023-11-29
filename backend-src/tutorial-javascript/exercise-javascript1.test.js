@@ -27,7 +27,7 @@ describe('Exercise 01: The Console', () => {
             throw error;
         }
     });
-    test('Evaluate a console.log()', () => {        
+    test('Evaluate a console.log("Hello World")', () => {        
         let jsCode = textVariable.replace(/[\n\t\r]+\s*/g, '');        
         try {
             // capturing the ouput of the console.log
