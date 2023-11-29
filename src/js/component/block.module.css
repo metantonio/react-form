@@ -8,10 +8,10 @@
     margin: 10px;
   }
   
-  img {
+  /* img {
     max-width: 100%;
     border-radius: 10px;
-  }
+  } */
 
   .block-image {
     width: 100%; /* La imagen ocupa el 100% del ancho del contenedor */
