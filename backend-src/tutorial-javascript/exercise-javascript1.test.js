@@ -20,7 +20,7 @@ describe('Exercise 01: The Console', () => {
         const jsCode = textVariable.replace(/[\n\t\r]+/g, '{ ');
         const func = new Function(jsCode);
         const result = func();
-
+        console.log("result",result)
         expect(result).toBe(3);
     });
     /* test('Contains opening and closing <strong> tags', () => {
