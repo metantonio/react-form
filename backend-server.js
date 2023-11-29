@@ -11,6 +11,8 @@ app.use(express.json());
 app.set('trust proxy', true)
 app.use('/backend-src/tutorial-html', express.static(path.join(__dirname, 'ruta_hacia_tus_documentos')));
 app.use('/backend-src/tutorial-unix', express.static(path.join(__dirname, 'ruta_hacia_tus_documentos')));
+app.use('/backend-src/tutorial-javascript', express.static(path.join(__dirname, 'ruta_hacia_tus_documentos')));
+app.use('/backend-src/tutorial-python', express.static(path.join(__dirname, 'ruta_hacia_tus_documentos')));
 
 const commandRouter = require('./backend-src/routes/commands');
 app.use('/commands', commandRouter);
@@ -20,6 +22,12 @@ app.use('/tutorial-html', tutorialHtmlRouter);
 
 const tutorialUnixRouter = require('./backend-src/routes/tutorial-unix');
 app.use('/tutorial-unix', tutorialUnixRouter)
+
+const tutorialJavascriptRouter = require('./backend-src/routes/tutorial-javascript');
+app.use('/tutorial-javascript', tutorialJavascriptRouter)
+
+const tutorialPythonRouter = require('./backend-src/routes/tutorial-python.js');
+app.use('/tutorial-python', tutorialPythonRouter)
 
 app.listen(port, () => {
   console.log(`running server at port: ${port}`);
