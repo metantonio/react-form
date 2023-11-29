@@ -16,9 +16,9 @@ const Home = () => {
     actions.logOut();
     return history.push("/");
   }; */
-  useEffect(() => {
+  /* useEffect(() => {
     actions.checkUser();
-  }, [])
+  }, []) */
   return (
     <>
       <div className="social_right_block" style={{ position: "fixed", top: "40%", right: "0%", zIndex: 99, padding: "10px", backgroundColor: "#FFF" }}>
