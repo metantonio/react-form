@@ -2,7 +2,7 @@
 const config = {
     verbose: true,
 };
-console.error('exercise 1 html test');
+console.log('exercise 1 html test');
 let textVariable = process.argv.find(arg => arg.startsWith('--textVariable=')).split('=')[1];
 if (!process.argv.find(arg => arg.startsWith('--textVariable='))) {
     console.error('Error: --textVariable argument is missing.');
