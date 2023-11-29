@@ -18,11 +18,11 @@ describe('Exercise 01: The Console', () => {
 
     test('Evaluate JavaScript code for printing function', () => {
         const jsCode = textVariable.replace(/[\n\t\r]+/g, '{ ') + ';';
+        console.log("jsCode", jsCode)
         try {
             //const func = new Function(jsCode);
             //const result = func();
             let result = eval(jsCode)
-            console.log("result", result)
             expect(result).toBe(3);
         } catch (error) {
             console.error("Error during code evaluation:", error);
