@@ -119,6 +119,63 @@ router.post('/test/:exerciseNumber', (req, res) => {
 
 });
 
+router.post('/test-javascript/:exerciseNumber', (req, res) => {
+    const { data } = req.body;
+    const exerciseNumber = req.params.exerciseNumber;
+    let platform = os.platform();
+    let output = '';
+    let tutorialType='javascript';
+    // Ejecutar el proceso cmd.exe con el comando jest en Windows
+    if (platform === 'win32') {
+        let childProcess = spawn('cmd.exe', ['/c', `jest --runInBand exercise-${tutorialType}${exerciseNumber} --textVariable="%${data.toString()}%"`], { shell: true });
+        console.log("comando pedido: ", data)
+
+
+        childProcess.stdout.on('data', (data) => {
+            output += data.toString();
+        });
+
+        childProcess.stderr.on('data', (data) => {
+            console.error(`Error donde esta: ${data}`);
+            output += data.toString();
+        });
+
+        childProcess.on('close', (code) => {
+            if (code !== 0) {
+                console.error(`Error: Proceso hijo cerrado con código ${code}`);
+                return res.status(200).json({ command: output, message: "Error", correct: false });
+            }
+
+            console.log(`Comando ejecutado con éxito:\n${output}`);
+            res.status(200).json({ message: 'Exitoso', command: output, correct: true });
+        });
+    }else{
+        let childProcess = spawn('npx', ['jest',`exercise-${tutorialType}${exerciseNumber}.test.js`,'--',`--textVariable="${data.toString()}"`], {cwd: "./" });
+        console.log("comando pedido: ", data)
+
+
+        childProcess.stdout.on('data', (data) => {
+            output += data.toString();
+        });
+
+        childProcess.stderr.on('data', (data) => {
+            console.error(`Error donde esta: ${data}`);
+            output += data.toString();
+        });
+
+        childProcess.on('close', (code) => {
+            if (code !== 0) {
+                console.error(`Error: Proceso hijo cerrado con código ${code}`);
+                return res.status(200).json({ command: output, message: "Error", correct: false });
+            }
+
+            console.log(`Comando ejecutado con éxito:\n${output}`);
+            res.status(200).json({ message: 'Exitoso', command: output, correct: true });
+        });
+    }
+
+});
+
 router.post('/unix/:exerciseNumber', (req, res) => {
     const { data } = req.body;
     const exerciseNumber = req.params.exerciseNumber;
