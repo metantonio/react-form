@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial HTML</title>
+    <style>
+        code {
+            display: block;
+            background-color: #0a0a0a;
+            color: rgb(236, 237, 238);
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>01 The Console</h1>
+    <p>Welcome to the JavaScript tutorial.</p>
+    <p>The JavaScript console is a fundamental tool for developers. It allows you to print messages and debug code. One of the most common functions is <code>console.log()</code>.</p>
+
+    <h2>📝 Instructions:</h2>
+    <p>Delete all current content in the code section, press the Example button, and use the following code line:</p>
+    
+    <code>console.log("Hello World");</code>
+
+    <p>Observe the output in the browser console and check if the message "Hello World" appears. Click "Run" to see the result!</p>
+
+    <h2>Example:</h2>
+    <div id="codeExample">
+        <!-- The result of the code will be shown here -->
+    </div>
+
+    <script>
+        // This is the code section where users can practice
+        function runExample() {
+            // Clear previous content
+            document.getElementById('codeExample').innerText = '';
+
+            // Insert the provided code line
+            let codeSnippet = 'WoW!!';
+            document.getElementById('codeExample').innerText = codeSnippet;
+
+            // Run the code
+            eval(codeSnippet);
+        }
+    </script>
+    <button onclick="runExample()">Secret Message</button>
+</body>
+
+</html>
