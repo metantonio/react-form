@@ -10,6 +10,10 @@ import { forwardRef } from "react";
 import "../../styles/menu.css";
 import Logo from "../../img/logobyn.png";
 import "./home.module.css"
+import tutoHtml from "../../img/tutorial-html.jpg"
+import tutoUnix from "../../img/tutorial-unix.jpg"
+import tutoPython from "../../img/tutorial-python.jpg"
+import tutoJavascript from "../../img/tutorial-javascript.jpg"
 
 const Home = () => {
   const { store, actions } = useContext(Context);
@@ -26,22 +30,22 @@ const Home = () => {
       <main>
         <Block
           title="HTML"
-          imageUrl="HTML"
+          imageUrl={tutoHtml}
           link="/html-tutorial"
         />
         <Block
           title="JAVASCRIPT"
-          imageUrl="JAVASCRIPT"
+          imageUrl={tutoJavascript}
           link="/javascript-tutorial"
         />
         <Block
           title="PYTHON"
-          imageUrl="PYTHON"
+          imageUrl={tutoPython}
           link="/python-tutorial"
         />
         <Block
           title="UNIX"
-          imageUrl="UNIX"
+          imageUrl={tutoUnix}
           link="/unix-tutorial"
         />
       </main>
