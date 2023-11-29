@@ -12,7 +12,7 @@ if (!process.argv.find(arg => arg.startsWith('--textVariable='))) {
 describe('Exercise 01: The Console', () => {
     beforeEach(() => {
         // Antes de cada prueba, configuramos el valor de textVariable
-        textVariable = process.argv.find(arg => arg.startsWith('--textVariable=')).split('=')[1];
+        textVariable = process.argv.find(arg => arg.startsWith('--textVariable=')).split('=').slice(1).join('=');
         console.log("textVariable0:", textVariable)
         textVariable = textVariable.slice(1, textVariable.length - 1); // Para quitar los símbolos de porcentaje
     });
