@@ -18,5 +18,5 @@
     height: 200px; /* Ajusta la altura según tus preferencias */
     object-fit: cover; /* Mantiene la relación de aspecto y cubre el contenedor */
     border-radius: 10px;
-    max-height: 200px;
+    max-height: 180px;
   }
