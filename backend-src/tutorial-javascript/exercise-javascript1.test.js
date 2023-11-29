@@ -44,7 +44,7 @@ describe('Exercise 01: The Console', () => {
             console.log = originalConsoleLog;
     
             // Verificar la presencia de console.log en la salida
-            expect(consoleOutput.includes('console.log')).toBe(true);
+            expect(consoleOutput.includes('Hello World')).toBe(true);
         } catch (error) {
             console.error("Error during code evaluation:", error);
             throw error;
