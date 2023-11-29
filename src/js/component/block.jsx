@@ -6,7 +6,7 @@ const Block = ({ title, imageUrl, link }) => {
   return (
     <Link to={link} className="block">
       <img src={imageUrl} alt={title} className="block-image"/>
-      <h2>{title}</h2>
+      <h2 className='block-title text-center'>{title}</h2>
     </Link>
   );
 };
