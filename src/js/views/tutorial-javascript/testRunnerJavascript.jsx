@@ -37,7 +37,7 @@ const TestRunnerJavascript = () => {
             // Restaura console.log a su estado original
             console.log = originalConsoleLog;
 
-            setLsCommand(consoleLogOutput);
+            setLsCommand(prev=>`${prev}\n${consoleLogOutput}`);
         } catch (error) {
             console.error('Error running code:', error);
             //setLsCommand(null); // Puedes establecer un valor predeterminado o manejarlo de acuerdo a tus necesidades
