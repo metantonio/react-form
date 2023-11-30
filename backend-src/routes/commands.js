@@ -167,6 +167,7 @@ router.post('/test-javascript/:exerciseNumber', (req, res) => {
             if (code !== 0) {
                 console.error(`Error: Proceso hijo cerrado con código ${code}`);
                 let dividedMessage = output.split("https://jestjs.io/docs/configuration")
+                console.log("dividesMessage.length = ", dividedMessage.length)
                 if(dividedMessage.length >= 1){
                     return res.status(200).json({ command: dividedMessage[dividedMessage.length - 1], message: "Error", correct: false });
                 }else{
