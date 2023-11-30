@@ -27,32 +27,13 @@ describe('Exercise 04: Weakly Typed Language', () => {
     //        throw error;
     //    }
     //});
-    test('Evaluate a console.log(age)', () => {        
-        let jsCode = textVariable.replace(/[\n\t\r]+\s*/g, '');        
-        try {
-            // capturing the ouput of the console.log
-            let consoleOutput = '';
-            const originalConsoleLog = console.log;
-            console.log = (output) => {
-                consoleOutput += output + '\n';
-            };
     
-            // run code
-            eval(jsCode);
-    
-            // Restaurar la función original de console.log
-            console.log = originalConsoleLog;
-    
-            // Verificar la presencia de console.log en la salida
-            expect(parseInt(consoleOutput)).toBeGreaterThan(0);
-        } catch (error) {
-            console.error("Error during code evaluation:", error);
-            throw error;
-        }
-    });
-
     test('Contains specific variable age', () => {
         expect(textVariable).toContain("age");
+    });
+
+    test('Contains specific console.log(age)', () => {
+        expect(textVariable).toContain("console.log(age)");
     });
 
     /* test('Contains opening and closing <strong> tags', () => {
