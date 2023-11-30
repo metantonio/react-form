@@ -26,7 +26,7 @@ const TestRunnerJavascript = () => {
     function runCode(){
         let codeToRun = textareaRef.current.value
         //console.log(codeToRun)
-        let resultRunning = eval(codeToRun)
+        let resultRunning = new Function(codeToRun)
         console.log("running code",resultRunning)
         setLsCommand(resultRunning)
     }
