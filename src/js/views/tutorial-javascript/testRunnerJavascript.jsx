@@ -188,8 +188,8 @@ const TestRunnerJavascript = () => {
             </div>
             <div id="terminal" className='terminal'>
                 <h4>Console</h4>
-                <button onClick={() => handleCreateDirectory('ls-command')}>ls -l</button>
-
+                {/* <button onClick={() => handleCreateDirectory('ls-command')}>ls -l</button> */}
+                <button onClick={() => setLsCommand('')}>clear</button>
                 {lsCommand ?
                     <><TerminalOutput text={lsCommand} /></> :
                     <></>
