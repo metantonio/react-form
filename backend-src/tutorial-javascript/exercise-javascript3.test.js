@@ -44,7 +44,7 @@ describe('Exercise 03: Mathematical Operations', () => {
             console.log = originalConsoleLog;
     
             // Verificar la presencia de console.log en la salida
-            expect(consoleOutput.toBe(453 * 32)).toBe(true);
+            expect(consoleOutput).toBe(453 * 32);
         } catch (error) {
             console.error("Error during code evaluation:", error);
             throw error;
