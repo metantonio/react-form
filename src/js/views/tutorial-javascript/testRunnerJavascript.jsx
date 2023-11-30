@@ -25,9 +25,10 @@ const TestRunnerJavascript = () => {
 
     function runCode(){
         let codeToRun = textareaRef.current.value
-        console.log(codeToRun)
-        let resulRunning = eval(codeToRun)
-        setLsCommand(resulRunning)
+        //console.log(codeToRun)
+        let resultRunning = eval(codeToRun)
+        console.log("running code",resultRunning)
+        setLsCommand(resultRunning)
     }
 
     const nextLesson = () => {
