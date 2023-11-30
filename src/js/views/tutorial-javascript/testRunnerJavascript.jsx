@@ -23,15 +23,25 @@ const TestRunnerJavascript = () => {
         window.open('', '_blank').document.write(textareaRef.current.value);
     }
 
-    function runCode(){
+    function runCode() {
         try {
             let codeToRun = textareaRef.current.value;
-            let resultRunning = new Function(codeToRun)();
-            setLsCommand(resultRunning);
-          } catch (error) {
+            let consoleLogOutput = '';
+
+            // Intercepta console.log para capturar la salida
+            const originalConsoleLog = console.log;
+            console.log = (message) => {
+                consoleLogOutput += `${message}\n`;
+            };
+            new Function(codeToRun)();
+            // Restaura console.log a su estado original
+            console.log = originalConsoleLog;
+
+            setLsCommand(consoleLogOutput);
+        } catch (error) {
             console.error('Error running code:', error);
             //setLsCommand(null); // Puedes establecer un valor predeterminado o manejarlo de acuerdo a tus necesidades
-          }
+        }
     }
 
     const nextLesson = () => {
@@ -108,7 +118,7 @@ const TestRunnerJavascript = () => {
     const formatAsHtml = () => {
         // Implementa la lógica para dar formato como HTML según tus necesidades
         //let formattedText = `<pre style="margin: 0; padding: 8px; background-color: #f4f4f4; border: 1px solid #ddd; border-radius: 4px; white-space: pre-wrap;">${textareaRef.current.value.substring(0, textareaRef.current.selectionStart)}</pre>`;
-        let formattedText=`<!doctype html>
+        let formattedText = `<!doctype html>
         <html>
           <head>
             <meta charset="utf-8" />
@@ -150,7 +160,7 @@ const TestRunnerJavascript = () => {
                     {formattedHtml && (
                         <div dangerouslySetInnerHTML={{ __html: formattedHtml }} />
                     )}
-                    <div onClick={formatAsHtml}>{selectedLanguage=='es'?'Formato HTML':'HTML Format'}</div>
+                    <div onClick={formatAsHtml}>{selectedLanguage == 'es' ? 'Formato HTML' : 'HTML Format'}</div>
                 </div>
             )}
             <div id="instructions" className='instructions'>
@@ -166,15 +176,15 @@ const TestRunnerJavascript = () => {
 
                         {/* Puedes mostrar el lenguaje seleccionado en la interfaz si es necesario */}
                     </div>
-                    {tutorialLesson != 0 ? <button className='btn btn-primary btn-sm mx-2' style={{ marginY: ".25rem", paddingX: ".5rem", fontSize: ".75rem" }} onClick={() => { previousLesson() }}>{selectedLanguage=='es'?'Anterior':'Previous'}</button> : <></>}
-                    <button className='btn btn-primary btn-sm mx-2' style={{ marginY: ".25rem", paddingX: ".5rem", fontSize: ".75rem" }} onClick={() => { nextLesson() }}>{selectedLanguage=='es'?'Siguiente':'Next'}</button>
+                    {tutorialLesson != 0 ? <button className='btn btn-primary btn-sm mx-2' style={{ marginY: ".25rem", paddingX: ".5rem", fontSize: ".75rem" }} onClick={() => { previousLesson() }}>{selectedLanguage == 'es' ? 'Anterior' : 'Previous'}</button> : <></>}
+                    <button className='btn btn-primary btn-sm mx-2' style={{ marginY: ".25rem", paddingX: ".5rem", fontSize: ".75rem" }} onClick={() => { nextLesson() }}>{selectedLanguage == 'es' ? 'Siguiente' : 'Next'}</button>
                     {tutorialLesson != 0 ? <button className='btn btn-success btn-sm mx-2' style={{ marginY: ".25rem", paddingX: ".5rem", fontSize: ".75rem" }} onClick={() => handleCreateDirectory(`test-javascript/${tutorialLesson}`)}>Check</button> : <></>}
                     {loading ? <div class="spinner-border text-primary"></div> : <></>}
                     {/* <button className='btn btn-secondary btn-sm mx-2' style={{ marginY: ".25rem", paddingX: ".5rem", fontSize: ".75rem" }} onClick={() => { build() }}>Build Site</button> */}
                     <button className='btn btn-secondary btn-sm mx-2' style={{ marginY: ".25rem", paddingX: ".5rem", fontSize: ".75rem" }} onClick={() => { runCode() }}>Run code</button>
                 </div>
 
-                <InstructionsViewer documentPath={`${BASE_URL}/tutorial-javascript/${selectedLanguage=="es"?'':"en/"}${tutorialLesson}`} />
+                <InstructionsViewer documentPath={`${BASE_URL}/tutorial-javascript/${selectedLanguage == "es" ? '' : "en/"}${tutorialLesson}`} />
             </div>
             <div id="terminal" className='terminal'>
                 <h4>Console</h4>
