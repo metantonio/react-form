@@ -92,8 +92,8 @@ router.post('/test/:exerciseNumber', (req, res) => {
             console.log(`Comando ejecutado con éxito:\n${output}`);
             res.status(200).json({ message: 'Exitoso', command: output, correct: true });
         });
-    }else{
-        let childProcess = spawn('npx', ['jest',`exercise-html${exerciseNumber}.test.js`,'--',`--textVariable="${data.toString()}"`], {cwd: "./" });
+    } else {
+        let childProcess = spawn('npx', ['jest', `exercise-html${exerciseNumber}.test.js`, '--', `--textVariable="${data.toString()}"`], { cwd: "./" });
         console.log("comando pedido: ", data)
 
 
@@ -124,7 +124,7 @@ router.post('/test-javascript/:exerciseNumber', (req, res) => {
     const exerciseNumber = req.params.exerciseNumber;
     let platform = os.platform();
     let output = '';
-    let tutorialType='javascript';
+    let tutorialType = 'javascript';
     // Ejecutar el proceso cmd.exe con el comando jest en Windows
     if (platform === 'win32') {
         let childProcess = spawn('cmd.exe', ['/c', `jest --runInBand exercise-${tutorialType}${exerciseNumber} --textVariable="%${data.toString()}%"`], { shell: true });
@@ -149,8 +149,8 @@ router.post('/test-javascript/:exerciseNumber', (req, res) => {
             console.log(`Comando ejecutado con éxito:\n${output}`);
             res.status(200).json({ message: 'Exitoso', command: output, correct: true });
         });
-    }else{
-        let childProcess = spawn('npx', ['jest',`exercise-${tutorialType}${exerciseNumber}.test.js`,'--',`--textVariable="${data.toString()}"`], {cwd: "./" });
+    } else {
+        let childProcess = spawn('npx', ['jest', `exercise-${tutorialType}${exerciseNumber}.test.js`, '--', `--textVariable="${data.toString()}"`], { cwd: "./" });
         console.log("comando pedido: ", data)
 
 
@@ -166,18 +166,17 @@ router.post('/test-javascript/:exerciseNumber', (req, res) => {
         childProcess.on('close', (code) => {
             if (code !== 0) {
                 console.error(`Error: Proceso hijo cerrado con código ${code}`);
-                let dividedMessage = output.split("https://jestjs.io/docs/configuration")
-                console.log("dividesMessage.length = ", dividedMessage.length)
-                if(dividedMessage.length >= 1){
-                    return res.status(200).json({ command: dividedMessage[dividedMessage.length - 1], message: "Error", correct: false });
-                }else{
-                    return res.status(200).json({ command: output, message: "Error", correct: false });
-                }
-                
+                return res.status(200).json({ command: output, message: "Error", correct: false });
+            }
+            let dividedMessage = output.split("https://jestjs.io/docs/configuration")
+            console.log("dividesMessage.length = ", dividedMessage.length)
+            console.log(`Comando ejecutado con éxito:\n${output}`);
+            if (dividedMessage.length >= 1) {
+                res.status(200).json({ message: 'Exitoso', command: dividedMessage[dividedMessage.length - 1], correct: true });
+            } else {
+                res.status(200).json({ message: 'Exitoso', command: output, correct: true });
             }
 
-            console.log(`Comando ejecutado con éxito:\n${output}`);
-            res.status(200).json({ message: 'Exitoso', command: output, correct: true });
         });
     }
 
