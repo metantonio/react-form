@@ -23,6 +23,13 @@ const TestRunnerJavascript = () => {
         window.open('', '_blank').document.write(textareaRef.current.value);
     }
 
+    function runCode(){
+        let codeToRun = textareaRef.current.value
+        console.log(codeToRun)
+        let resulRunning = eval(codeToRun)
+        setLsCommand(resulRunning)
+    }
+
     const nextLesson = () => {
         setTutorialLesson(prev => prev + 1)
     }
@@ -159,7 +166,8 @@ const TestRunnerJavascript = () => {
                     <button className='btn btn-primary btn-sm mx-2' style={{ marginY: ".25rem", paddingX: ".5rem", fontSize: ".75rem" }} onClick={() => { nextLesson() }}>{selectedLanguage=='es'?'Siguiente':'Next'}</button>
                     {tutorialLesson != 0 ? <button className='btn btn-success btn-sm mx-2' style={{ marginY: ".25rem", paddingX: ".5rem", fontSize: ".75rem" }} onClick={() => handleCreateDirectory(`test-javascript/${tutorialLesson}`)}>Check</button> : <></>}
                     {loading ? <div class="spinner-border text-primary"></div> : <></>}
-                    <button className='btn btn-secondary btn-sm mx-2' style={{ marginY: ".25rem", paddingX: ".5rem", fontSize: ".75rem" }} onClick={() => { build() }}>Build Site</button>
+                    {/* <button className='btn btn-secondary btn-sm mx-2' style={{ marginY: ".25rem", paddingX: ".5rem", fontSize: ".75rem" }} onClick={() => { build() }}>Build Site</button> */}
+                    <button className='btn btn-secondary btn-sm mx-2' style={{ marginY: ".25rem", paddingX: ".5rem", fontSize: ".75rem" }} onClick={() => { runCode() }}>Run code</button>
                 </div>
 
                 <InstructionsViewer documentPath={`${BASE_URL}/tutorial-javascript/${selectedLanguage=="es"?'':"en/"}${tutorialLesson}`} />
