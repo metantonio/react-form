@@ -24,11 +24,14 @@ const TestRunnerJavascript = () => {
     }
 
     function runCode(){
-        let codeToRun = textareaRef.current.value
-        //console.log(codeToRun)
-        //let resultRunning = new Function(codeToRun)
-        //console.log("running code",resultRunning)
-        setLsCommand(new Function(codeToRun))
+        try {
+            let codeToRun = textareaRef.current.value;
+            let resultRunning = new Function(codeToRun)();
+            setLsCommand(resultRunning);
+          } catch (error) {
+            console.error('Error running code:', error);
+            //setLsCommand(null); // Puedes establecer un valor predeterminado o manejarlo de acuerdo a tus necesidades
+          }
     }
 
     const nextLesson = () => {
