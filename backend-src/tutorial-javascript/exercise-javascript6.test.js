@@ -9,7 +9,7 @@ if (!process.argv.find(arg => arg.startsWith('--textVariable='))) {
     process.exit(1); // Exit the process with an error code
 }
 
-describe('Exercise 05: Declaration of Constant Variables', () => {
+describe('Exercise 06: Scope of Declaration', () => {
     beforeEach(() => {
         // Antes de cada prueba, configuramos el valor de textVariable
         textVariable = process.argv.find(arg => arg.startsWith('--textVariable=')).split('=').slice(1).join('=');
