@@ -6,7 +6,7 @@ const TUTORIALS_PATH = "../../backend-src/tutorial-javascript"
 
 // Manejar las rutas dinámicas
 router.get('/:exerciseNumber', (req, res) => {
-    console.log(req.params.exerciseNumber)
+    console.log("Javascript exercise(spanish): ",req.params.exerciseNumber)
     const exerciseNumber = req.params.exerciseNumber;
     const exercisePath = `${TUTORIALS_PATH}/exercise${exerciseNumber}.html`;
   
@@ -14,7 +14,7 @@ router.get('/:exerciseNumber', (req, res) => {
   });
 
   router.get('/en/:exerciseNumber', (req, res) => {
-    console.log(req.params.exerciseNumber)
+    console.log("Javascript exercise(english): ",req.params.exerciseNumber)
     const exerciseNumber = req.params.exerciseNumber;
     const exercisePath = `${TUTORIALS_PATH}/exercise-en${exerciseNumber}.html`;
   
