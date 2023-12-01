@@ -49,7 +49,7 @@ describe('Exercise 06: String Concatenation', () => {
             console.log = originalConsoleLog;
 
             // Verificar la presencia de console.log en la salida
-            expect(parseFloat(consoleOutput)).toBe('<!doctype html><html><head><meta charset="utf-8" /></head><body><div>Hello World</div></body></html>');
+            expect(consoleOutput).toBe('<!doctype html><html><head><meta charset="utf-8" /></head><body><div>Hello World</div></body></html>');
         } catch (error) {
             console.error("Error during code evaluation:", error);
             throw error;
