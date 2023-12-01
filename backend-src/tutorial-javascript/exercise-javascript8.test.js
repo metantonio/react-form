@@ -49,7 +49,7 @@ describe('Exercise 07: String Concatenation', () => {
             console.log = originalConsoleLog;
 
             // Verificar la presencia de console.log en la salida
-            expect(consoleOutput).toBe(false);
+            expect(consoleOutput).toBe(`is Odd, returns false`);
         } catch (error) {
             console.error("Error during code evaluation:", error);
             throw error;
