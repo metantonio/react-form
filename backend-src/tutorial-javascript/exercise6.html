@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial HTML</title>
+    <style>
+        code {
+            display: block;
+            background-color: #0a0a0a;
+            color: rgb(236, 237, 238);
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>06 Alcance de la declaración</h1>
+    <p><strong>let</strong> se introdujo como una alternativa a <strong>var</strong> para declarar variables. A
+        diferencia de <strong>var</strong>, las variables declaradas con <strong>let</strong> tienen un ámbito de bloque
+        más estricto o alcance reducido.</p>
+    <p>Lo que quiere decir, que las variables declaradas con <strong>let</strong> sólo viven dentro de los bloques de
+        llaves <strong>{ }</strong></p>
+    <p>Observa los siguientes ejemplos:</p>
+    <code>
+        function exampleVar() {
+        <br/>
+            if (true) {
+                <br/>
+              var x = 10;
+              <br/>
+              console.log(`Inside if block (var): ${x}`);
+              <br/>
+            }
+            <br/>
+            console.log(`Outside if block (var): ${x}`);
+            <br/>
+          }
+          <br/>
+          exampleVar();
+    </code>
+    <code>
+        function exampleLet() {
+        <br/>
+            if (true) {
+                <br/>
+              var x = 10;
+              <br/>
+              console.log(`Inside if block (let): ${x}`);
+              <br/>
+            }
+            <br/>
+            // Esto generará un error, ya que 'x' no está definido fuera del bloque if
+            <br/>
+            //console.log(`Outside if block (let): ${x}`);
+            <br/>
+          }
+          <br/>
+          exampleLet();
+    </code>
+
+    <h2>📝 Instrucciones:</h2>
+    <p>A continuación, elimina todo el contenido en la sección de código y copia lo siguiente:
+        <code>
+        const PI = 3.14;
+        <br/>
+            function exercise() {
+            <br/>
+                if (true) {
+                    <br/>
+                  let area = PI * 10 * 10;
+                  <br/>
+                }  
+                <br/>              
+              }
+              <br/>
+              exercise();
+        </code>
+
+    <p>Coloca un <strong>console.log() </strong>en el lugar correcto e imprime el valor del área del círculo de radio 10</p>
+
+    <h2>Pista:</h2>
+    <!-- <p><a href="https://www.w3schools.com/jsref/jsref_var.asp" target="_blank">The var statement</a></p> -->
+    <p>No olvides el punto y coma (;) al final de cada línea de código</p>
+    <!-- <script>
+    <div id="codeExample">
+       
+    </div>
+
+    
+        function runExample() {
+            document.getElementById('codeExample').innerText = '';
+            let codeSnippet = 'WoW!!';
+            document.getElementById('codeExample').innerText = codeSnippet;
+            eval(codeSnippet);
+        }
+    </script>
+
+    <button onclick="runExample()">Mensaje Secreto</button> -->
+
+
+
+</body>
+
+</html>

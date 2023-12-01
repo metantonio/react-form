@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial HTML</title>
+    <style>
+        code {
+            display: block;
+            background-color: #0a0a0a;
+            color: rgb(236, 237, 238);
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>06 Scope of Declaration</h1>
+    <p><strong>let</strong> was introduced as an alternative to <strong>var</strong> for declaring variables. Unlike
+        <strong>var</strong>, variables declared with <strong>let</strong> have a stricter block scope.
+    </p>
+    <p>This means that variables declared with <strong>let</strong> only exist within the curly braces <strong>{
+            }</strong>.</p>
+    <p>Observe the following examples:</p>
+    <code>
+        function exampleVar() {
+        <br/>
+            if (true) {
+                <br/>
+              var x = 10;
+              <br/>
+              console.log(`Inside if block (var): ${x}`);
+              <br/>
+            }
+            <br/>
+            console.log(`Outside if block (var): ${x}`);
+            <br/>
+          }
+          <br/>
+          exampleVar();
+    </code>
+    <code>
+        function exampleLet() {
+        <br/>
+            if (true) {
+                <br/>
+              let x = 10;
+              <br/>
+              console.log(`Inside if block (let): ${x}`);
+              <br/>
+            }
+            <br/>
+            // This will generate an error, as 'x' is not defined outside the if block
+            <br/>
+            //console.log(`Outside if block (let): ${x}`);
+            <br/>
+          }
+          <br/>
+          exampleLet();
+    </code>
+
+    <h2>📝 Instructions:</h2>
+    <p>Next, remove all content in the code section and copy the following:
+        <code>
+        const PI = 3.14;
+        <br/>
+            function exercise() {
+            <br/>
+                if (true) {
+                    <br/>
+                  let area = PI * 10 * 10;
+                  <br/>
+                  console.log(area);
+                  <br/>
+                }  
+                <br/>              
+              }
+              <br/>
+              exercise();
+        </code>
+
+    <p>Place a <strong>console.log()</strong> in the correct place and print the value of the area of the circle with a
+        radius of 10.</p>
+
+    <h2>Hint:</h2>
+    <!-- <p><a href="https://www.w3schools.com/jsref/jsref_var.asp" target="_blank">The var statement</a></p> -->
+    <p>Don't forget the semicolon (;) at the end of each line of code.</p>
+
+    <!-- <script>
+    <div id="codeExample">
+       
+    </div>
+
+    
+        function runExample() {
+            document.getElementById('codeExample').innerText = '';
+            let codeSnippet = 'WoW!!';
+            document.getElementById('codeExample').innerText = codeSnippet;
+            eval(codeSnippet);
+        }
+    </script>
+
+    <button onclick="runExample()">Mensaje Secreto</button> -->
+
+
+
+</body>
+
+</html>
