@@ -35,44 +35,43 @@
     <p>Observe the following examples:</p>
     <pre>
         <code>
-        function exampleVar() {
-            if (true) {
-                var x = 10;            
-                console.log(`Inside if block (var): ${x}`);
-                
-            }        
-            console.log(`Outside if block (var): ${x}`);      
-        }
+function exampleVar() {
+    if (true) {
+        var x = 10;            
+        console.log(`Inside if block (var): ${x}`);                
+    }        
+    console.log(`Outside if block (var): ${x}`);      
+}
           
-        exampleVar();
+exampleVar();
         </code>
         </pre>
     <pre>
-            <code>
-            function exampleLet() {    
-                if (true) {     
-                    var x = 10;        
-                    console.log(`Inside if block (let): ${x}`);           
-                }      
-                <span className="color-success">//Esto generará un error, ya que 'x' no está definido fuera del bloque if</span>        
-                //console.log(`Outside if block (let): ${x}`);      
-            }        
-            exampleLet();
-            </code>
+<code>
+function exampleLet() {    
+    if (true) {     
+        var x = 10;        
+        console.log(`Inside if block (let): ${x}`);           
+    }      
+    <span className="color-success">//Esto generará un error, ya que 'x' no está definido fuera del bloque if</span>        
+    //console.log(`Outside if block (let): ${x}`);      
+}        
+exampleLet();
+</code>
     </pre>
     <h2>📝 Instructions:</h2>
     <p>Next, remove all content in the code section and copy the following:
     <pre>
         <code>
-        const PI = 3.14;
+const PI = 3.14;
     
-        function exercise() {      
-            if (true) {               
-                let area = PI * 10 * 10;        
-            }                     
-        }
+function exercise() {      
+    if (true) {               
+        let area = PI * 10 * 10;        
+    }                     
+}
             
-        exercise();
+exercise();
         </code>
         </pre>
 
