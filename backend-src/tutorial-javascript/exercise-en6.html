@@ -21,6 +21,9 @@
             margin: 10px 0;
             font-family: 'Courier New', monospace;
         }
+        .color-success {
+            color:rgb(27, 224, 17);
+        }
     </style>
 </head>
 
@@ -46,14 +49,15 @@ function exampleVar() {
 exampleVar();
         </code>
         </pre>
+<p>Now try this example with let declaration statement</p>
     <pre>
 <code>
 function exampleLet() {    
     if (true) {     
-        var x = 10;        
+        let x = 10;        
         console.log(`Inside if block (let): ${x}`);           
     }      
-    <span className="color-success">//Esto generará un error, ya que 'x' no está definido fuera del bloque if</span>        
+    <span class="color-success">//this will generate an error because x do not exist outside of curly braces</span>        
     //console.log(`Outside if block (let): ${x}`);      
 }        
 exampleLet();
