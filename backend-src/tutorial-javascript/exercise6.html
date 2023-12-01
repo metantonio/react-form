@@ -12,6 +12,7 @@
             border-radius: 5px;
             overflow-x: auto;
         }
+
         code {
             display: block;
             background-color: #0a0a0a;
@@ -35,23 +36,18 @@
     <p>Observa los siguientes ejemplos:</p>
     <pre>
     <code>
-        function exampleVar() {
-        <br/>
-            if (true) {
-                <br/>
-              var x = 10;
-              <br/>
-              console.log(`Inside if block (var): ${x}`);
-              <br/>
-            }
-            <br/>
-            console.log(`Outside if block (var): ${x}`);
-            <br/>
-          }
-          <br/>
-          exampleVar();
+    function exampleVar() {
+        if (true) {
+            var x = 10;            
+            console.log(`Inside if block (var): ${x}`);
+            
+        }        
+        console.log(`Outside if block (var): ${x}`);      
+    }
+      
+    exampleVar();
     </code>
-</pre>
+    </pre>
     <pre>
     <code>
         function exampleLet() {
