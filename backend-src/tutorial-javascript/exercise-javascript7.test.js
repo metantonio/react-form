@@ -9,7 +9,7 @@ if (!process.argv.find(arg => arg.startsWith('--textVariable='))) {
     process.exit(1); // Exit the process with an error code
 }
 
-describe('Exercise 06: String Concatenation', () => {
+describe('Exercise 07: String Concatenation', () => {
     beforeEach(() => {
         // Antes de cada prueba, configuramos el valor de textVariable
         textVariable = process.argv.find(arg => arg.startsWith('--textVariable=')).split('=').slice(1).join('=');
@@ -32,7 +32,7 @@ describe('Exercise 06: String Concatenation', () => {
         expect(textVariable).toContain("console.log");
     });
 
-    test('Evaluate a console.log()', () => {
+    test('Evaluate a console.log(i+b+e+c+f+a+h+g+d)', () => {
         let jsCode = textVariable.replace(/[\n\t\r]+\s*/g, '');
         try {
             // capturing the ouput of the console.log
