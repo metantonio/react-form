@@ -9,7 +9,7 @@ if (!process.argv.find(arg => arg.startsWith('--textVariable='))) {
     process.exit(1); // Exit the process with an error code
 }
 
-describe('Exercise 04: Weakly Typed Language', () => {
+describe('Exercise 05: Declaration of Constant Variables', () => {
     beforeEach(() => {
         // Antes de cada prueba, configuramos el valor de textVariable
         textVariable = process.argv.find(arg => arg.startsWith('--textVariable=')).split('=').slice(1).join('=');
@@ -27,7 +27,10 @@ describe('Exercise 04: Weakly Typed Language', () => {
     //        throw error;
     //    }
     //});
-    
+    test('Contains specific var statement', () => {
+        expect(textVariable).toContain("var");
+    });
+
     test('Contains specific variable EULER', () => {
         expect(textVariable).toContain("EULER");
     });
@@ -36,7 +39,7 @@ describe('Exercise 04: Weakly Typed Language', () => {
         expect(textVariable).toContain("console.log(EULER)");
     });
 
-    test('Evaluate a console.log(easyCalculation)', () => {        
+    test('Evaluate a console.log(EULER)', () => {        
         let jsCode = textVariable.replace(/[\n\t\r]+\s*/g, '');        
         try {
             // capturing the ouput of the console.log
