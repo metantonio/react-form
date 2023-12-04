@@ -28,7 +28,7 @@ describe('Exercise 09: Function Creation', () => {
     //    }
     //});    
 
-    test('concatenation("Hello", "World") function should be the same', () => {
+    test(`concatenation('Hello', 'World') function should be the same`, () => {
         expect(textVariable).toContain(`concatenation('Hello', 'World')`);
     });
 
@@ -36,7 +36,7 @@ describe('Exercise 09: Function Creation', () => {
         expect(textVariable).toContain('+');
     });
 
-    test('Evaluate concatenation("Hello", "World")', () => {
+    test('Evaluate concatenation("Hello", "World") should return "Hello World!"', () => {
         let jsCode = textVariable.replace(/[\n\t\r]+\s*/g, '');
         try {
             // capturing the ouput of the console.log
