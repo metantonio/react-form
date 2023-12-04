@@ -268,9 +268,39 @@ describe('Exercise 12: Simulating Logic Gates', () => {
         }
     });
 
-    test('Evaluate nocturneGuard(25, "male") should return false', () => {
+    test('Evaluate nocturneGuard(25, "male") should return true', () => {
         let jsCode = textVariable.replace(/[\n\t\r]+\s*/g, '');
         let newNumber = 25;
+        let newGender = "male";
+        jsCode = jsCode.replace(
+            /console\.log\(nocturneGuard\(\d+, "\w+"\)\);/,
+            `console.log(nocturneGuard(${newNumber}, "${newGender}"));`
+        );
+        try {
+            // capturing the ouput of the console.log
+            let consoleOutput = '';
+            const originalConsoleLog = console.log;
+            console.log = (output) => {
+                consoleOutput += output + '\n';
+            };
+
+            // run code
+            eval(jsCode);
+
+            // Restaurar la función original de console.log
+            console.log = originalConsoleLog;
+
+            // Verificar la presencia de console.log en la salida
+            expect(consoleOutput).toContain(`true`);
+        } catch (error) {
+            console.error("Error during code evaluation:", error);
+            throw error;
+        }
+    });
+
+    test('Evaluate nocturneGuard(35, "male") should return false', () => {
+        let jsCode = textVariable.replace(/[\n\t\r]+\s*/g, '');
+        let newNumber = 35;
         let newGender = "male";
         jsCode = jsCode.replace(
             /console\.log\(nocturneGuard\(\d+, "\w+"\)\);/,
