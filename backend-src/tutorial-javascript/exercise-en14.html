@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial HTML</title>
+    <style>
+        pre {
+            background-color: #0a0a0a;
+            padding: 3px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            display: block;
+            background-color: #0a0a0a;
+            color: rgb(236, 237, 238);
+            padding: 3px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .color-success {
+            color: rgb(27, 224, 17);
+        }
+
+        .important {
+            color: rgb(17, 20, 224);
+        }
+
+        .return {
+            color: rgb(216, 11, 235);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>14 Switch for Comparisons?</h1>
+    <p>Although it's not a good practice as it can lead to data type errors, among other issues; you could use the
+        <strong>switch()</strong> to perform value comparisons.</p>
+    <p>The way to do it would be by passing <strong>true</strong> to the switch() function</p>
+
+<pre><code>
+switch(true) {
+    case > 99:
+        <span class="color-success">//logic</span>
+        <span class="return">break;</span>
+    <span class="color-success">//Other cases</span>
+    default:
+        <span class="color-success">//logic</span>
+        <span class="return">break;</span>
+}
+</code></pre>
+
+    <p>In the case of these <strong>switch(true)</strong>, if numerical values are being evaluated, it is strongly
+        recommended to start from the case with the highest numerical value to the lowest, in order.</p>
+
+    <h2>📝 Instructions:</h2>
+    <p>Imagine you are building a fighting video game where each hit has a points system behind it, such that:</p>
+    <ul>
+        <li>For hits greater than or equal to 90, the returned message should be: "critical"</li>
+        <li>For hits greater than or equal to 70, the returned message should be: "nice"</li>
+        <li>For hits greater than or equal to 50, the returned message should be: "good"</li>
+        <li>For hits greater than or equal to 30, the returned message should be: "soft"</li>
+        <li>For hits greater than or equal to 1, the returned message should be: "bad"</li>
+        <li>For any other value, the returned message should be: "miss"</li>
+    </ul>
+    <p>Next, delete all the content in the code section and copy the following:</p>
+    <pre><code>
+function pointSytems(value){
+    let message;
+    switch(true) => {
+        case value >= 90:
+            message = "critical";
+            <span class="return">break;</span>
+    }
+    <span class="return">return</span> message;
+    }
+
+console.log(pointSytems(100));
+
+    </code></pre>
+    <p>Modify the <code>pointSystems()</code> function to receive the passed arguments and return the requested value
+        based on the case</p>
+    <h2>Hint:</h2>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch"
+            target="_blank">Switch statement</a></p>
+    <p>Don't forget the semicolon (;) at the end of each line of code</p>
+    <!-- <script>
+    <div id="codeExample">       
+    </div>    
+        function runExample() {
+            document.getElementById('codeExample').innerText = '';
+            let codeSnippet = 'WoW!!';
+            document.getElementById('codeExample').innerText = codeSnippet;
+            eval(codeSnippet);
+        }
+    </script>
+    <button onclick="runExample()">Mensaje Secreto</button> -->
+</body>
+
+</html>
