@@ -28,11 +28,11 @@ describe('Exercise 09: Function Creation', () => {
     //    }
     //});    
 
-    test('concatenation("Hello", "World")', () => {
-        expect(textVariable).toContain('concatenation("Hello", "World")');
+    test('concatenation("Hello", "World") function should be the same', () => {
+        expect(textVariable).toContain(`concatenation('Hello', 'World')`);
     });
 
-    test('addition', () => {
+    test('concatenation should be has a + symbol', () => {
         expect(textVariable).toContain('+');
     });
 
