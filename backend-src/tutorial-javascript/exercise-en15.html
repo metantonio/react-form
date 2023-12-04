@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial HTML</title>
+    <style>
+        pre {
+            background-color: #0a0a0a;
+            padding: 3px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            display: block;
+            background-color: #0a0a0a;
+            color: rgb(236, 237, 238);
+            padding: 3px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .color-success {
+            color: rgb(27, 224, 17);
+        }
+
+        .important {
+            color: rgb(17, 20, 224);
+        }
+
+        .return {
+            color: rgb(216, 11, 235);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>15 Random Numbers</h1>
+<p>In JavaScript, there is an internal library called Math that allows us to, among other things, obtain random numbers.</p>
+<p>The way to obtain random numbers is with <strong>Math.random()</strong></p>
+
+<pre><code>
+console.log(Math.random()); <span class="color-success">//returns a random number between 0 and 1, excluding 1.</span>
+</code></pre>
+
+<p>As we saw, we can return numbers between <strong>0 - 1</strong>, excluding 1.</p>
+<p>If we want to increase the range of returned numbers, for example, up to 5 excluding it:</p>
+
+<pre><code>
+console.log(Math.random() * 5); <span class="color-success">//returns a random decimal between 0 and 5, excluding 5.</span>
+</code></pre>
+
+<p>As 5 is not included, we see that the numbers actually range from 0 to 4.9999999</p>
+<p>Now, suppose we only want to obtain whole numbers from the previous range, we use <strong>Math.floor()</strong>:</p>
+
+<pre><code>
+console.log(Math.floor((Math.random() * 5))); <span class="color-success">//returns a random whole number between 0 and 5, excluding 5.</span>
+</code></pre>
+
+<h2>📝 Instructions:</h2>
+<p>Imagine you are building a fighting video game where each hit has a points system behind it, such that:</p>
+<ul>
+    <li>For hits greater than or equal to 90, the returned message should be: "critical"</li>
+    <li>For hits greater than or equal to 70, the returned message should be: "nice"</li>
+    <li>For hits greater than or equal to 50, the returned message should be: "good"</li>
+    <li>For hits greater than or equal to 30, the returned message should be: "soft"</li>
+    <li>For hits greater than or equal to 1, the returned message should be: "bad"</li>
+    <li>For any other value, the returned message should be: "miss"</li>
+</ul>
+<p>Next, delete all the content in the code section and copy the following:</p>
+
+<pre><code>
+function pointSystems() {
+    let message;
+    let value = Math.random(); <span class="color-success">// modify only this line</span>
+    switch(true) {
+        case value >= 90:
+            message = "critical";
+            <span class="return">break;</span>
+        case value >= 70:
+            message = "nice";
+            <span class="return">break;</span>
+        case value >= 50:
+            message = "good";
+            <span class="return">break;</span>
+        case value >= 30:
+            message = "soft";
+            <span class="return">break;</span>
+        case value >= 1:
+            message = "bad";
+            <span class="return">break;</span>
+        default:
+            message = "miss";
+            <span class="return">break;</span>
+    }
+    <span class="return">return</span> message;
+}
+
+console.log(pointSystems());
+</code></pre>
+
+<p>Modify the variable <code>value</code> to get a random whole number in the range 0 - 100</p>
+
+<h2>Hint:</h2>
+<p><a href="https://www.w3schools.com/jsref/jsref_random.asp" target="_blank">random numbers</a></p>
+<p>Don't forget the semicolon (;) at the end of each line of code</p>
+
+    <!-- <script>
+    <div id="codeExample">       
+    </div>    
+        function runExample() {
+            document.getElementById('codeExample').innerText = '';
+            let codeSnippet = 'WoW!!';
+            document.getElementById('codeExample').innerText = codeSnippet;
+            eval(codeSnippet);
+        }
+    </script>
+    <button onclick="runExample()">Mensaje Secreto</button> -->
+</body>
+
+</html>
