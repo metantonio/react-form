@@ -88,7 +88,7 @@ describe('Exercise 13: Switch', () => {
 
     test('Evaluate pointSystems(2) should return "orange"', () => {
         let jsCode = textVariable.replace(/[\n\t\r]+\s*/g, '');
-        let newNumber = 0;
+        let newNumber = 2;
         jsCode = jsCode.replace(
             /console\.log\(speedometer\(\d+\)\);/g,
             `console.log(pointSystems(${newNumber}));`
@@ -117,7 +117,7 @@ describe('Exercise 13: Switch', () => {
 
     test('Evaluate pointSystems(3) should return "red"', () => {
         let jsCode = textVariable.replace(/[\n\t\r]+\s*/g, '');
-        let newNumber = 0;
+        let newNumber = 3;
         jsCode = jsCode.replace(
             /console\.log\(speedometer\(\d+\)\);/g,
             `console.log(pointSystems(${newNumber}));`
@@ -146,7 +146,7 @@ describe('Exercise 13: Switch', () => {
 
     test('Evaluate pointSystems(4) should return "green"', () => {
         let jsCode = textVariable.replace(/[\n\t\r]+\s*/g, '');
-        let newNumber = 0;
+        let newNumber = 4;
         jsCode = jsCode.replace(
             /console\.log\(speedometer\(\d+\)\);/g,
             `console.log(pointSystems(${newNumber}));`
@@ -175,7 +175,7 @@ describe('Exercise 13: Switch', () => {
 
     test('Evaluate pointSystems(5) should return "blue"', () => {
         let jsCode = textVariable.replace(/[\n\t\r]+\s*/g, '');
-        let newNumber = 0;
+        let newNumber = 5;
         jsCode = jsCode.replace(
             /console\.log\(speedometer\(\d+\)\);/g,
             `console.log(pointSystems(${newNumber}));`
