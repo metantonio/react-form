@@ -32,7 +32,7 @@ describe('Exercise 13: Switch', () => {
         let jsCode = textVariable.replace(/[\n\t\r]+\s*/g, '');
         let newNumber = 0;
         jsCode = jsCode.replace(
-            /console\.log\(speedometer\(\d+\)\);/g,
+            /console\.log\(pointSystems\(\d+\)\);/g,
             `console.log(pointSystems(${newNumber}));`
         );
         try {
@@ -61,7 +61,7 @@ describe('Exercise 13: Switch', () => {
         let jsCode = textVariable.replace(/[\n\t\r]+\s*/g, '');
         let newNumber = 1;
         jsCode = jsCode.replace(
-            /console\.log\(speedometer\(\d+\)\);/g,
+            /console\.log\(pointSystems\(\d+\)\);/g,
             `console.log(pointSystems(${newNumber}));`
         );
         try {
@@ -90,7 +90,7 @@ describe('Exercise 13: Switch', () => {
         let jsCode = textVariable.replace(/[\n\t\r]+\s*/g, '');
         let newNumber = 2;
         jsCode = jsCode.replace(
-            /console\.log\(speedometer\(\d+\)\);/g,
+            /console\.log\(pointSystems\(\d+\)\);/g,
             `console.log(pointSystems(${newNumber}));`
         );
         try {
@@ -119,7 +119,7 @@ describe('Exercise 13: Switch', () => {
         let jsCode = textVariable.replace(/[\n\t\r]+\s*/g, '');
         let newNumber = 3;
         jsCode = jsCode.replace(
-            /console\.log\(speedometer\(\d+\)\);/g,
+            /console\.log\(pointSystems\(\d+\)\);/g,
             `console.log(pointSystems(${newNumber}));`
         );
         try {
@@ -148,7 +148,7 @@ describe('Exercise 13: Switch', () => {
         let jsCode = textVariable.replace(/[\n\t\r]+\s*/g, '');
         let newNumber = 4;
         jsCode = jsCode.replace(
-            /console\.log\(speedometer\(\d+\)\);/g,
+            /console\.log\(pointSystems\(\d+\)\);/g,
             `console.log(pointSystems(${newNumber}));`
         );
         try {
@@ -177,7 +177,7 @@ describe('Exercise 13: Switch', () => {
         let jsCode = textVariable.replace(/[\n\t\r]+\s*/g, '');
         let newNumber = 5;
         jsCode = jsCode.replace(
-            /console\.log\(speedometer\(\d+\)\);/g,
+            /console\.log\(pointSystems\(\d+\)\);/g,
             `console.log(pointSystems(${newNumber}));`
         );
         try {
