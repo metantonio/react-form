@@ -30,7 +30,11 @@ describe('Exercise 11: If Statements', () => {
 
     test('Evaluate speedometer(101) should return "red"', () => {
         let jsCode = textVariable.replace(/[\n\t\r]+\s*/g, '');
-        jsCode = jsCode + " console.log(speedometer(101));"
+        let newNumber = 101;
+        jsCode = jsCode.replace(
+            /console\.log\(speedometer\(\d+\)\);/g,
+            `console.log(speedometer(${newNumber}));`
+        );
         try {
             // capturing the ouput of the console.log
             let consoleOutput = '';
@@ -55,7 +59,11 @@ describe('Exercise 11: If Statements', () => {
 
     test('Evaluate speedometer(100) should return "yellow"', () => {
         let jsCode = textVariable.replace(/[\n\t\r]+\s*/g, '');
-        jsCode = jsCode + " console.log(speedometer(100));"
+        let newNumber = 100;
+        jsCode = jsCode.replace(
+            /console\.log\(speedometer\(\d+\)\);/g,
+            `console.log(speedometer(${newNumber}));`
+        );
         try {
             // capturing the ouput of the console.log
             let consoleOutput = '';
@@ -80,7 +88,12 @@ describe('Exercise 11: If Statements', () => {
 
     test('Evaluate speedometer(61) should return "yellow"', () => {
         let jsCode = textVariable.replace(/[\n\t\r]+\s*/g, '');
-        jsCode = jsCode + " console.log(speedometer(61));"
+
+        let newNumber = 61;
+        jsCode = jsCode.replace(
+            /console\.log\(speedometer\(\d+\)\);/g,
+            `console.log(speedometer(${newNumber}));`
+        );
         try {
             // capturing the ouput of the console.log
             let consoleOutput = '';
@@ -105,7 +118,11 @@ describe('Exercise 11: If Statements', () => {
 
     test('Evaluate speedometer(60) should return "green"', () => {
         let jsCode = textVariable.replace(/[\n\t\r]+\s*/g, '');
-        jsCode = jsCode + " console.log(speedometer(60));"
+        let newNumber = 60;
+        jsCode = jsCode.replace(
+            /console\.log\(speedometer\(\d+\)\);/g,
+            `console.log(speedometer(${newNumber}));`
+        );
         try {
             // capturing the ouput of the console.log
             let consoleOutput = '';
