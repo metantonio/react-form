@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial HTML</title>
+    <style>
+        pre {
+            background-color: #0a0a0a;
+            padding: 3px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            display: block;
+            background-color: #0a0a0a;
+            color: rgb(236, 237, 238);
+            padding: 3px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .color-success {
+            color: rgb(27, 224, 17);
+        }
+        .important {
+            color: rgb(17, 20, 224);
+        }
+        .return {
+            color: rgb(216, 11, 235);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>10 Complete the Function</h1>
+    <h2>📝 Instrucciones:</h2>
+    <p>Below is a function that uses "function strings" or "f-strings" for concatenation</p>
+    <pre><code>
+function fString(name, year){
+    let newString = `My name is ${name} and have ${year} old. I'm from`;
+    <span class="return">return</span> newString;
+    }
+
+console.log(fString('John', 30, "London"));
+console.log(fString('Mary', 24, "New York"));
+console.log(fString('David', 42, "California"));
+    </code></pre>
+    <p>Modify the <code>fString()</code> function to receive the passed arguments and return the following:</p>
+    <code>My name is John and have 30 old. I'm from London</code>    
+    <code>My name is Mary and have 24 old. I'm from New York</code>
+    <code>My name is David and have 42 old. I'm from California</code>
+    <h2>Hint:</h2>
+    <!-- <p><a href="https://www.w3schools.com/jsref/jsref_var.asp" target="_blank">The var statement</a></p> -->
+    <p>Don't forget the semicolon (;) at the end of each line of code</p>
+    <!-- <script>
+    <div id="codeExample">       
+    </div>    
+        function runExample() {
+            document.getElementById('codeExample').innerText = '';
+            let codeSnippet = 'WoW!!';
+            document.getElementById('codeExample').innerText = codeSnippet;
+            eval(codeSnippet);
+        }
+    </script>
+    <button onclick="runExample()">Mensaje Secreto</button> -->
+</body>
+
+</html>
