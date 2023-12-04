@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial HTML</title>
+    <style>
+        pre {
+            background-color: #0a0a0a;
+            padding: 3px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            display: block;
+            background-color: #0a0a0a;
+            color: rgb(236, 237, 238);
+            padding: 3px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .color-success {
+            color: rgb(27, 224, 17);
+        }
+        .important {
+            color: rgb(17, 20, 224);
+        }
+        .return {
+            color: rgb(216, 11, 235);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>13 El Switch</h1>
+    <p>En ocasiones, podríamos tener una serie de <storng>if...else if</storng> anidados, lo que puede hacer el código poco legible.</p>
+    <p>En javascript tenemos la función <strong>switch()</strong> la cuál tiene la siguiente estructura:</p>
+
+<pre><code> 
+switch(value) => {
+    case == "some-condition":
+        <span class="color-success">//logic</span> 
+        <span class="return">break</span>
+    case == "some-condition2":
+        <span class="color-success">//logic</span> 
+        <span class="return">break</span>
+    default:
+        <span class="color-success">//logic</span> 
+        <span class="return">break</span>
+}
+</code></pre>
+    <h2>📝 Instrucciones:</h2>
+    <p>Imagina que tienes un sistema de puntuación que va desde el 0 (cero) hasta el 4 (cuatro). Para cada uno de los puntajes hay un color relacionado:</p>
+    <ul>
+        <li>Para el puntaje 0, el color devuelto debe ser: "black"</li>
+        <li>Para el puntaje 1, el color devuelto debe ser: "yellow"</li>
+        <li>Para el puntaje 2, el color devuelto debe ser: "orange"</li>
+        <li>Para el puntaje 3, el color devuelto debe ser: "red"</li>
+        <li>Para el puntaje 4, el color devuelto debe ser: "green"</li>
+        <li>Para cualquier otro valor, el color devuelto debe ser: "blue"</li>
+    </ul>
+    <p>A continuación, elimina todo el contenido en la sección de código y copia lo siguiente:</p>
+    <pre><code>
+function pointSytems(value){
+    let color;
+    switch(value) => {
+        case == "0":
+            color = "black"
+            <span class="return">break</span>
+    }
+    <span class="return">return</span> color;
+    }
+
+console.log(pointSytems(0));
+
+    </code></pre>
+    <p>Modifica la función<code>pointSytems()</code> para que pueda recibir los argumentos pasados, y pueda retornar lo que se pide según sea el caso</p>
+    <h2>Pista:</h2>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else" target="_blank">If...else statement</a></p>
+    <p>No olvides el punto y coma (;) al final de cada línea de código</p>
+    <!-- <script>
+    <div id="codeExample">       
+    </div>    
+        function runExample() {
+            document.getElementById('codeExample').innerText = '';
+            let codeSnippet = 'WoW!!';
+            document.getElementById('codeExample').innerText = codeSnippet;
+            eval(codeSnippet);
+        }
+    </script>
+    <button onclick="runExample()">Mensaje Secreto</button> -->
+</body>
+
+</html>

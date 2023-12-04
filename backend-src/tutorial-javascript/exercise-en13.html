@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial HTML</title>
+    <style>
+        pre {
+            background-color: #0a0a0a;
+            padding: 3px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            display: block;
+            background-color: #0a0a0a;
+            color: rgb(236, 237, 238);
+            padding: 3px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .color-success {
+            color: rgb(27, 224, 17);
+        }
+
+        .important {
+            color: rgb(17, 20, 224);
+        }
+
+        .return {
+            color: rgb(216, 11, 235);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>13 The Switch</h1>
+<p>Sometimes, we might have a series of nested <strong>if...else if</strong> statements, which can make the code less readable.</p>
+<p>In JavaScript, we have the <strong>switch()</strong> statement, which has the following structure:</p>
+
+<pre><code>
+switch(value) {
+    case "some-condition":
+        <span class="color-success">//logic</span>
+        <span class="return">break;</span>
+    case "some-condition2":
+        <span class="color-success">//logic</span>
+        <span class="return">break;</span>
+    default:
+        <span class="color-success">//logic</span>
+        <span class="return">break;</span>
+}
+</code></pre>
+
+<h2>📝 Instructions:</h2>
+<p>Imagine you have a scoring system ranging from 0 to 4. For each of the scores, there is a related color:</p>
+<ul>
+    <li>For a score of 0, the returned color should be: "black"</li>
+    <li>For a score of 1, the returned color should be: "yellow"</li>
+    <li>For a score of 2, the returned color should be: "orange"</li>
+    <li>For a score of 3, the returned color should be: "red"</li>
+    <li>For a score of 4, the returned color should be: "green"</li>
+    <li>For any other value, the returned color should be: "blue"</li>
+</ul>
+<p>Next, delete all the content in the code section and copy the following:</p>
+<pre><code>
+function pointSystems(value) {
+    let color;
+    switch(value) {
+        case 0:
+            color = "black";
+            <span class="return">break;</span>
+    }
+    <span class="return">return</span> color;
+}
+
+console.log(pointSystems(0));
+</code></pre>
+<p>Modify the <code>pointSystems()</code> function to receive the passed arguments and return the requested value based on the case</p>
+    <h2>Hint:</h2>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else"
+            target="_blank">If...else statement</a></p>
+    <p>Don't forget the semicolon (;) at the end of each line of code</p>
+    <!-- <script>
+    <div id="codeExample">       
+    </div>    
+        function runExample() {
+            document.getElementById('codeExample').innerText = '';
+            let codeSnippet = 'WoW!!';
+            document.getElementById('codeExample').innerText = codeSnippet;
+            eval(codeSnippet);
+        }
+    </script>
+    <button onclick="runExample()">Mensaje Secreto</button> -->
+</body>
+
+</html>
