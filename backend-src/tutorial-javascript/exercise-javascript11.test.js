@@ -53,6 +53,81 @@ describe('Exercise 11: If Statements', () => {
         }
     });
 
+    test('Evaluate speedometer(100) should return "yellow"', () => {
+        let jsCode = textVariable.replace(/[\n\t\r]+\s*/g, '');
+        jsCode = jsCode + " console.log(speedometer(100));"
+        try {
+            // capturing the ouput of the console.log
+            let consoleOutput = '';
+            const originalConsoleLog = console.log;
+            console.log = (output) => {
+                consoleOutput += output + '\n';
+            };
+
+            // run code
+            eval(jsCode);
+
+            // Restaurar la función original de console.log
+            console.log = originalConsoleLog;
+
+            // Verificar la presencia de console.log en la salida
+            expect(consoleOutput).toContain(`yellow`);
+        } catch (error) {
+            console.error("Error during code evaluation:", error);
+            throw error;
+        }
+    });
+
+    test('Evaluate speedometer(61) should return "yellow"', () => {
+        let jsCode = textVariable.replace(/[\n\t\r]+\s*/g, '');
+        jsCode = jsCode + " console.log(speedometer(61));"
+        try {
+            // capturing the ouput of the console.log
+            let consoleOutput = '';
+            const originalConsoleLog = console.log;
+            console.log = (output) => {
+                consoleOutput += output + '\n';
+            };
+
+            // run code
+            eval(jsCode);
+
+            // Restaurar la función original de console.log
+            console.log = originalConsoleLog;
+
+            // Verificar la presencia de console.log en la salida
+            expect(consoleOutput).toContain(`yellow`);
+        } catch (error) {
+            console.error("Error during code evaluation:", error);
+            throw error;
+        }
+    });
+
+    test('Evaluate speedometer(60) should return "green"', () => {
+        let jsCode = textVariable.replace(/[\n\t\r]+\s*/g, '');
+        jsCode = jsCode + " console.log(speedometer(60));"
+        try {
+            // capturing the ouput of the console.log
+            let consoleOutput = '';
+            const originalConsoleLog = console.log;
+            console.log = (output) => {
+                consoleOutput += output + '\n';
+            };
+
+            // run code
+            eval(jsCode);
+
+            // Restaurar la función original de console.log
+            console.log = originalConsoleLog;
+
+            // Verificar la presencia de console.log en la salida
+            expect(consoleOutput).toContain(`green`);
+        } catch (error) {
+            console.error("Error during code evaluation:", error);
+            throw error;
+        }
+    });
+
     /* test('Contains opening and closing <strong> tags', () => {
         expect(textVariable).toMatch(/<strong>.*<\/strong>/);
     });
