@@ -298,7 +298,7 @@ describe('Exercise 12: Simulating Logic Gates', () => {
         }
     });
 
-    test('Evaluate nocturneGuard(35, "male") should return false', () => {
+    test('Evaluate nocturneGuard(35, "male") should return true', () => {
         let jsCode = textVariable.replace(/[\n\t\r]+\s*/g, '');
         let newNumber = 35;
         let newGender = "male";
