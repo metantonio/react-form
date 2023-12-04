@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial HTML</title>
+    <style>
+        pre {
+            background-color: #0a0a0a;
+            padding: 3px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            display: block;
+            background-color: #0a0a0a;
+            color: rgb(236, 237, 238);
+            padding: 3px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .color-success {
+            color: rgb(27, 224, 17);
+        }
+
+        .important {
+            color: rgb(17, 20, 224);
+        }
+
+        .return {
+            color: rgb(216, 11, 235);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>12 Simulating Logic Gates</h1>
+    <p>We already know that we can compare conditions using:</p>
+    <ul>
+        <li>Equality: <strong>==</strong></li>
+        <li>Strict equality (value and type): <strong>===</strong></li>
+        <li>Greater than: <strong>&gt;</strong></li>
+        <li>Greater than or equal to: <strong>&gt;=</strong></li>
+        <li>Less than: <strong>&lt;</strong></li>
+        <li>Less than or equal to: <strong>&lt;=</strong></li>
+    </ul>
+    <p>We can also link multiple conditions inclusively and/or exclusively. Example:</p>
+    <ul>
+        <li>Both conditions must be true: <strong>condition1 && condition2</strong></li>
+        <li>At least one of the conditions must be true: <strong>condition1 || condition2</strong></li>
+    </ul>
+    <h2>📝 Instructions:</h2>
+    <p>You are the bouncer at a nightclub for young people, and you have been told that:</p>
+    <ul>
+        <li>Anyone over the age of 35 should not be allowed in, so the function should return: false</li>
+        <li>Anyone under the age of 21 should not be allowed in, so the function should return: false</li>
+        <li>Males between the ages of 25 and 35 can enter, so the function should return: true</li>
+        <li>Females between the ages of 21 and 31 can enter, so the function should return: true</li>
+    </ul>
+    <p>For males, use "male" as the gender</p>
+    <p>For females, use "female" as the gender</p>
+    <p>Next, delete all the content in the code section and copy the following:</p>
+    <pre><code>
+function nocturneGuard(year, gender){
+    let entrance;
+    if(year > 200){
+        entrance = false
+    }
+    <span class="return">return</span> entrance;
+    }
+
+console.log(nocturneGuard(73, "male"));
+
+    </code></pre>
+    <p>Modify the <code>nocturneGuard()</code> function to receive the passed arguments and return the requested value
+        based on the case</p>
+    <h2>Hint:</h2>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else"
+            target="_blank">If...else statement</a></p>
+    <p>Don't forget the semicolon (;) at the end of each line of code</p>
+    <!-- <script>
+    <div id="codeExample">       
+    </div>    
+        function runExample() {
+            document.getElementById('codeExample').innerText = '';
+            let codeSnippet = 'WoW!!';
+            document.getElementById('codeExample').innerText = codeSnippet;
+            eval(codeSnippet);
+        }
+    </script>
+    <button onclick="runExample()">Mensaje Secreto</button> -->
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial HTML</title>
+    <style>
+        pre {
+            background-color: #0a0a0a;
+            padding: 3px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            display: block;
+            background-color: #0a0a0a;
+            color: rgb(236, 237, 238);
+            padding: 3px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .color-success {
+            color: rgb(27, 224, 17);
+        }
+        .important {
+            color: rgb(17, 20, 224);
+        }
+        .return {
+            color: rgb(216, 11, 235);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>12 Simulando Puerta lógicas</h1>
+    <p>Ya sabemos que podemos comparar las condiciones con:</p>
+    <ul>
+        <li>Igualdad: <strong>==</strong></li>
+        <li>Igualdad de valor y de tipo de dato: <strong>===</strong></li>
+        <li>Mayor que: <strong>&gt;</strong></li>
+        <li>Mayor o igual que: <strong>&gt;=</strong></li>
+        <li>Menor que: <strong>&lt;</strong></li>
+        <li>Menor o igual que: <strong>&lt;=</strong></li>
+    </ul>
+    <p>También podemos enlazar varias condiciones de forma incluyente y/o excluyente. Ejemplo:</p>
+    <ul>
+        <li>Ambas condiciones se deben cumplir <strong>condition1 && condition2</strong></li>
+        <li>Al menos una de la condiciones se debe cumplir <strong>condition1 || condition2</strong></li>
+    </ul>
+    <h2>📝 Instrucciones:</h2>
+    <p>Eres el vigilante de una club nocturno para gente joven, y se te ha dicho que:</p>
+    <ul>
+        <li>Toda persona con una edad mayor a 35 no debe pasar, por lo que la función debe retornar: false</li>
+        <li>Toda persona con una edad menor a 21 no debe pasar, por lo que la función debe retornar: false</li>
+        <li>Personas de género masculino con una edad entre 25 y 35 puede pasar, por lo que la función debe retornar: true</li>
+        <li>Personas de género femenino con una edad entre 21 y 31 puede pasar, por lo que la función debe retornar: true</li>
+    </ul>
+    <p>Para el género masculino usa "male"</p>
+    <p>Para el género femenino usa "female"</p>
+    <p>A continuación, elimina todo el contenido en la sección de código y copia lo siguiente:</p>
+    <pre><code>
+function nocturneGuard(year, gender){
+    let entrance;
+    if(year > 200){
+        entrance = false
+    }
+    <span class="return">return</span> entrance;
+    }
+
+console.log(nocturneGuard(73, "male"));
+
+    </code></pre>
+    <p>Modifica la función<code>nocturneGuard()</code> para que pueda recibir los argumentos pasados, y pueda retornar lo que se pide según sea el caso</p>
+    <h2>Pista:</h2>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else" target="_blank">If...else statement</a></p>
+    <p>No olvides el punto y coma (;) al final de cada línea de código</p>
+    <!-- <script>
+    <div id="codeExample">       
+    </div>    
+        function runExample() {
+            document.getElementById('codeExample').innerText = '';
+            let codeSnippet = 'WoW!!';
+            document.getElementById('codeExample').innerText = codeSnippet;
+            eval(codeSnippet);
+        }
+    </script>
+    <button onclick="runExample()">Mensaje Secreto</button> -->
+</body>
+
+</html>
