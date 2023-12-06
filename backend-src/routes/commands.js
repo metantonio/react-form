@@ -289,156 +289,162 @@ router.post('/unix-commands', (req, res) => {
         });
 
     } else {
-        let childProcess;
-        console.log("distinto de windows")
-        console.log("data: ", data)
-        let commandParts = data.split(' ');
-        let correcto = true
-        if ((data == 'pwd' && lesson <= 4)) {
-            childProcess = spawn('pwd', []);
-        }
-        else if ((data == 'ls') && lesson < 4) {
-            childProcess = spawn('ls', []);
-        }
-        else if ((data == 'ls -l') && lesson < 4) {
-            childProcess = spawn('ls', ['-l']);
-        }
-        else if ((data == 'ls -la' || data == 'ls -l -a') && lesson < 4) {
-            childProcess = spawn('ls', ['-la']);
-        }
-        else if (commandParts[0] === 'cd' && lesson < 4) {
-            childProcess = spawn('cd', [commandParts[1]]);
-        }
-        else if (data === 'cd ./home/user1' && lesson == 4) {
-            childProcess = spawn('pwd', [commandParts[1]], { shell: true, cwd: "./unix/home/user1" });
-        }
-        else if (commandParts[0] === 'ls' && lesson == 4) {
-            childProcess = spawn('ls', [commandParts[1]], { shell: true, cwd: "./unix" });
-        }
-        else if (data === 'pwd' && lesson == 5) {
-            childProcess = spawn('pwd', [], { shell: true, cwd: "./unix/home/user1" });
-        }
-        else if (commandParts[0] === 'ls' && lesson == 5) {
-            childProcess = spawn('ls', [commandParts[1]], { shell: true, cwd: "./unix/home/user1" });
-        }
-        else if (data === 'pwd' && lesson >= 6 && lesson <= 8) {
-            childProcess = spawn('pwd', [], { shell: true, cwd: "./unix/home/user1" });
-            correcto = false
-        }
-        else if (commandParts[0] === 'ls' && lesson == 6 && commandParts[1] !== '-R') {
-            childProcess = spawn('ls', [commandParts[1]], { shell: true, cwd: "./unix/home/user1" });
-            correcto = false
-        }
-        else if (commandParts[0] === 'ls' && lesson == 6 && commandParts[1] === '-R') {
-            childProcess = spawn('ls', [commandParts[1]], { shell: true, cwd: "./unix/home/user1" });
-            correcto = true
-        }
-        else if (commandParts[0] === 'ls' && lesson > 6) {
-            childProcess = spawn('ls', [commandParts[1]], { shell: true, cwd: "./unix/home/user1" });
-            correcto = false
-        }
-        else if ((data == 'cp hello.txt ../user2/HelloCopy.txt' || data == 'cp ./hello.txt ../user2/HelloCopy.txt') && lesson == 5) {
-            let origen = './hello.txt';
-            let destino = '../user2/HelloCopy.txt';
-            childProcess = spawn(`cp ${origen} ${destino}`, [], { shell: true, cwd: "./unix/home/user1" });
-        }
-        else if (commandParts[0] === 'find' && lesson == 7) {
-            let resto = commandParts.slice(1)
-            childProcess = spawn('find', resto, { shell: true, cwd: "./unix/home/user1" });
-            if (data == 'find ./ -type f -name "*.js"' || data == 'find . -type f -name "*.js"') {
-                correcto = true
-            } else {
+        try {
+            let childProcess;
+            console.log("distinto de windows")
+            console.log("data: ", data)
+            let commandParts = data.split(' ');
+            let correcto = true
+            if ((data == 'pwd' && lesson <= 4)) {
+                childProcess = spawn('pwd', []);
+            }
+            else if ((data == 'ls') && lesson < 4) {
+                childProcess = spawn('ls', []);
+            }
+            else if ((data == 'ls -l') && lesson < 4) {
+                childProcess = spawn('ls', ['-l']);
+            }
+            else if ((data == 'ls -la' || data == 'ls -l -a') && lesson < 4) {
+                childProcess = spawn('ls', ['-la']);
+            }
+            else if (commandParts[0] === 'cd' && lesson < 4) {
+                childProcess = spawn('cd', [commandParts[1]]);
+            }
+            else if (data === 'cd ./home/user1' && lesson == 4) {
+                childProcess = spawn('pwd', [commandParts[1]], { shell: true, cwd: "./unix/home/user1" });
+            }
+            else if (commandParts[0] === 'ls' && lesson == 4) {
+                childProcess = spawn('ls', [commandParts[1]], { shell: true, cwd: "./unix" });
+            }
+            else if (data === 'pwd' && lesson == 5) {
+                childProcess = spawn('pwd', [], { shell: true, cwd: "./unix/home/user1" });
+            }
+            else if (commandParts[0] === 'ls' && lesson == 5) {
+                childProcess = spawn('ls', [commandParts[1]], { shell: true, cwd: "./unix/home/user1" });
+            }
+            else if (data === 'pwd' && lesson >= 6 && lesson <= 8) {
+                childProcess = spawn('pwd', [], { shell: true, cwd: "./unix/home/user1" });
                 correcto = false
             }
-        }
-        else if (commandParts[0] === 'find' && (lesson == 8 || lesson == 11)) {
-            let resto = commandParts.slice(1)
-            childProcess = spawn('find', resto, { shell: true, cwd: "./unix/home/user1" });
-            if (data == 'find ./ -type f -name "*.txt" | grep "secret"' || data == 'find . -type f -name "*.txt" | grep "secret"') {
-                correcto = true
-            } else {
+            else if (commandParts[0] === 'ls' && lesson == 6 && commandParts[1] !== '-R') {
+                childProcess = spawn('ls', [commandParts[1]], { shell: true, cwd: "./unix/home/user1" });
                 correcto = false
             }
-        }
-        else if (commandParts[0] === 'ls' && lesson >= 8) {
-            let resto = commandParts.slice(1)
-            childProcess = spawn('ls', resto, { shell: true, cwd: "./unix/home/user1" });
-            correcto = false
-        }
-        else if (data === 'mkdir ../user2/QLX' && lesson == 9) {
-            let resto = commandParts.slice(1)
-            childProcess = spawn('rm', ["-r QLX"], { shell: true, cwd: "./unix/home/user2" });
-            childProcess = spawn('mkdir', ["QLX"], { shell: true, cwd: "./unix/home/user2" });
-            correcto = true
-        }
-        else if (data === 'mkdir --help') {
-            let resto = commandParts.slice(1)
-            childProcess = spawn('mkdir', ["--help"], { shell: true, cwd: "./unix/home/user1" });
-            correcto = false
-        }
-        else if (data === 'cat --help') {
-            let resto = commandParts.slice(1)
-            childProcess = spawn('cat', ["--help"], { shell: true, cwd: "./unix/home/user1" });
-            correcto = false
-        }
-        else if (data === 'less --help') {
-            let resto = commandParts.slice(1)
-            childProcess = spawn('less', ["--help"], { shell: true, cwd: "./unix/home/user1" });
-            correcto = false
-        }
-        else if (data === 'rm --help') {
-            let resto = commandParts.slice(1)
-            childProcess = spawn('rm', ["--help"], { shell: true, cwd: "./unix/home/user1" });
-            correcto = false
-        }
-        else if (commandParts[0] === 'ls' && lesson >= 10) {
-            let resto = commandParts.slice(1)
-            childProcess = spawn('ls', resto, { shell: true, cwd: "./unix/home/user1" });
-            correcto = false
-        }
-        else if (commandParts[0] === 'pwd' && lesson >= 10) {
-            let resto = commandParts.slice(1)
-            childProcess = spawn('pwd', [], { shell: true, cwd: "./unix/home/user1" });
-            correcto = false
-        }
-        else if (data === 'rm -r ../user2/QLX' && lesson == 10) {
-            let resto = commandParts.slice(1)
-            childProcess = spawn('mkdir', ["QLX"], { shell: true, cwd: "./unix/home/user2" });
-            childProcess = spawn('rm', ["-r QLX"], { shell: true, cwd: "./unix/home/user2" });
-            correcto = true
-        }
-        else if (data === 'cat "./documents/more documents/not important documents/jokes.txt"' && lesson == 11) {
-            let resto = commandParts.slice(1)
-            childProcess = spawn('cat', ['"./documents/more documents/not important documents/jokes.txt"'], { shell: true, cwd: "./unix/home/user1" });
-            correcto = true
-        }
-        else if (data === 'less "./documents/more documents/not important documents/jokes.txt"' && lesson == 11) {
-            let resto = commandParts.slice(1)
-            childProcess = spawn('less', ['"./documents/more documents/not important documents/jokes.txt"'], { shell: true, cwd: "./unix/home/user1" });
-            correcto = true
-        }
-        else {
-            childProcess = spawn(`echo Wrong Command: ${data}`, [], { shell: true });
-            correcto = false
-        }
-        childProcess.stdout.on('data', (data) => {
-            console.log(`stdout: ${data}`);
-            output += data.toString();
-        });
-
-        childProcess.stderr.on('data', (data) => {
-            console.error(`stderr: ${data}`);
-        });
-
-        childProcess.on('close', (code) => {
-            if (code !== 0) {
-                console.error(`Error: Proceso hijo cerrado con código ${code}`);
-                return res.status(500).json({ error: 'Error al ejecutar el comando', correct: false, message: "error" });
+            else if (commandParts[0] === 'ls' && lesson == 6 && commandParts[1] === '-R') {
+                childProcess = spawn('ls', [commandParts[1]], { shell: true, cwd: "./unix/home/user1" });
+                correcto = true
             }
+            else if (commandParts[0] === 'ls' && lesson > 6) {
+                childProcess = spawn('ls', [commandParts[1]], { shell: true, cwd: "./unix/home/user1" });
+                correcto = false
+            }
+            else if ((data == 'cp hello.txt ../user2/HelloCopy.txt' || data == 'cp ./hello.txt ../user2/HelloCopy.txt') && lesson == 5) {
+                let origen = './hello.txt';
+                let destino = '../user2/HelloCopy.txt';
+                childProcess = spawn(`cp ${origen} ${destino}`, [], { shell: true, cwd: "./unix/home/user1" });
+            }
+            else if (commandParts[0] === 'find' && lesson == 7) {
+                let resto = commandParts.slice(1)
+                childProcess = spawn('find', resto, { shell: true, cwd: "./unix/home/user1" });
+                if (data == 'find ./ -type f -name "*.js"' || data == 'find . -type f -name "*.js"') {
+                    correcto = true
+                } else {
+                    correcto = false
+                }
+            }
+            else if (commandParts[0] === 'find' && (lesson == 8 || lesson == 11)) {
+                let resto = commandParts.slice(1)
+                childProcess = spawn('find', resto, { shell: true, cwd: "./unix/home/user1" });
+                if (data == 'find ./ -type f -name "*.txt" | grep "secret"' || data == 'find . -type f -name "*.txt" | grep "secret"') {
+                    correcto = true
+                } else {
+                    correcto = false
+                }
+            }
+            else if (commandParts[0] === 'ls' && lesson >= 8) {
+                let resto = commandParts.slice(1)
+                childProcess = spawn('ls', resto, { shell: true, cwd: "./unix/home/user1" });
+                correcto = false
+            }
+            else if (data === 'mkdir ../user2/QLX' && lesson == 9) {
+                let resto = commandParts.slice(1)
+                childProcess = spawn('rm', ["-r QLX"], { shell: true, cwd: "./unix/home/user2" });
+                childProcess = spawn('mkdir', ["QLX"], { shell: true, cwd: "./unix/home/user2" });
+                correcto = true
+            }
+            else if (data === 'mkdir --help') {
+                let resto = commandParts.slice(1)
+                childProcess = spawn('mkdir', ["--help"], { shell: true, cwd: "./unix/home/user1" });
+                correcto = false
+            }
+            else if (data === 'cat --help') {
+                let resto = commandParts.slice(1)
+                childProcess = spawn('cat', ["--help"], { shell: true, cwd: "./unix/home/user1" });
+                correcto = false
+            }
+            else if (data === 'less --help') {
+                let resto = commandParts.slice(1)
+                childProcess = spawn('less', ["--help"], { shell: true, cwd: "./unix/home/user1" });
+                correcto = false
+            }
+            else if (data === 'rm --help') {
+                let resto = commandParts.slice(1)
+                childProcess = spawn('rm', ["--help"], { shell: true, cwd: "./unix/home/user1" });
+                correcto = false
+            }
+            else if (commandParts[0] === 'ls' && lesson >= 10) {
+                let resto = commandParts.slice(1)
+                childProcess = spawn('ls', resto, { shell: true, cwd: "./unix/home/user1" });
+                correcto = false
+            }
+            else if (commandParts[0] === 'pwd' && lesson >= 10) {
+                let resto = commandParts.slice(1)
+                childProcess = spawn('pwd', [], { shell: true, cwd: "./unix/home/user1" });
+                correcto = false
+            }
+            else if (data === 'rm -r ../user2/QLX' && lesson == 10) {
+                let resto = commandParts.slice(1)
+                childProcess = spawn('mkdir', ["QLX"], { shell: true, cwd: "./unix/home/user2" });
+                childProcess = spawn('rm', ["-r QLX"], { shell: true, cwd: "./unix/home/user2" });
+                correcto = true
+            }
+            else if (data === 'cat "./documents/more documents/not important documents/jokes.txt"' && lesson == 11) {
+                let resto = commandParts.slice(1)
+                childProcess = spawn('cat', ['"./documents/more documents/not important documents/jokes.txt"'], { shell: true, cwd: "./unix/home/user1" });
+                correcto = true
+            }
+            else if (data === 'less "./documents/more documents/not important documents/jokes.txt"' && lesson == 11) {
+                let resto = commandParts.slice(1)
+                childProcess = spawn('less', ['"./documents/more documents/not important documents/jokes.txt"'], { shell: true, cwd: "./unix/home/user1" });
+                correcto = true
+            }
+            else {
+                childProcess = spawn(`echo Wrong Command: ${data}`, [], { shell: true });
+                correcto = false
+            }
+            childProcess.stdout.on('data', (data) => {
+                console.log(`stdout: ${data}`);
+                output += data.toString();
+            });
 
-            console.log(`Comando ejecutado con éxito:\n${output}`);
-            res.status(200).json({ message: 'Exitoso', command: output, correct: correcto });
-        });
+            childProcess.stderr.on('data', (data) => {
+                console.error(`stderr: ${data}`);
+            });
+
+            childProcess.on('close', (code) => {
+                if (code !== 0) {
+                    console.error(`Error: Proceso hijo cerrado con código ${code}`);
+                    return res.status(500).json({ error: 'Error al ejecutar el comando', correct: false, message: "error" });
+                }
+
+                console.log(`Comando ejecutado con éxito:\n${output}`);
+                res.status(200).json({ message: 'Exitoso', command: output, correct: correcto });
+            });
+        }
+        catch (err) {
+            console.log(err)
+        }
+
 
     }
 
