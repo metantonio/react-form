@@ -143,7 +143,8 @@ describe('Exercise 16: For Loop', () => {
             4
             3
             2
-            1`);
+            1
+            `);
         } catch (error) {
             console.error("Error during code evaluation:", error);
             throw error;
