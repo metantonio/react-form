@@ -9,7 +9,7 @@ if (!process.argv.find(arg => arg.startsWith('--textVariable='))) {
     process.exit(1); // Exit the process with an error code
 }
 
-describe('Exercise 14: Switch(true)', () => {
+describe('Exercise 15: Random Numbers and Switch(true)', () => {
     beforeEach(() => {
         // Antes de cada prueba, configuramos el valor de textVariable
         textVariable = process.argv.find(arg => arg.startsWith('--textVariable=')).split('=').slice(1).join('=');
