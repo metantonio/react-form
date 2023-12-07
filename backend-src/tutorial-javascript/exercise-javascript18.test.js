@@ -44,7 +44,7 @@ describe('Exercise 18: Arrays', () => {
             console.log = originalConsoleLog;
 
             // Verificar la presencia de console.log en la salida
-            expect(consoleOutput).toBe(`The Incredibles`);
+            expect(consoleOutput).toBe(`The Incredibles\n`);
         } catch (error) {
             console.error("Error during code evaluation:", error);
             throw error;
