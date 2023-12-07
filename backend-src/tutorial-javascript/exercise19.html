@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial HTML</title>
+    <style>
+        pre {
+            background-color: #0a0a0a;
+            padding: 3px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            display: block;
+            background-color: #0a0a0a;
+            color: rgb(236, 237, 238);
+            padding: 3px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .color-success {
+            color: rgb(27, 224, 17);
+        }
+
+        .important {
+            color: rgb(17, 20, 224);
+        }
+
+        .return {
+            color: rgb(216, 11, 235);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>19 Recorriendo arreglos For Loop</h1>
+    <p>Algo bastante común es recorrer los arreglos, y tenemos maneras de hacerlo en javascript. Pero tal vez las más genérica y potente es con el For Loop genérico.</p>
+    <p>Si no te habías dado cuenta, el índice del último elemento de un arreglo será igual a la longitud del arreglo menos 1 unidad.</p>
+    <p>Podemos recorrer un arreglo de la siguiente manera:</p>
+    <pre><code> 
+let myArray = ["Hello", 1, true, false];
+for(let i=0; i&lt;myArray.length; i++){
+    console.log(myArray[i]);
+}
+    </code></pre>
+    <p>Aún si el código anterior se puede ejecutar, no es eficiente, ya que cada vez que recorre el arreglo, debe obtener la longitud del mismo cuando hace <strong>myArray.length</strong>. Y esto es particularmente terrible cuando el arreglo tiene miles o millones de elementos.</p>
+    <p>Por lo tanto, es mejor almacenar la longitud del arreglo, de forma que esta lectura se haga una única vez:</p>
+<pre><code> 
+    let myArray = ["Hello", 1, true, false];
+    let myArrayLength = myArray.length;
+    for(let i=0; i&lt;myArrayLength; i++){
+        console.log(myArray[i]);
+    }
+</code></pre> 
+    <p>Prueba el código anterior en la terminal</p>
+
+    <h2>📝 Instrucciones:</h2>
+    <p>A continuación, elimina todo el contenido en la sección de código y copia lo siguiente:</p>
+    <pre><code> 
+let movies = ["Matrix", "Toy Story", "The Incredibles", "Ratatouille", "Up"];
+</code></pre>
+    <p>Crea un <code>For Loop</code> que recorra al arreglo <strong>movies</strong> y en cada iteración imprima cada elemento concatenado con: <strong>"is a nice movie!"</strong></p>
+
+    <h2>Pista:</h2>
+    <p><a href="https://www.w3schools.com/js/js_arrays.asp" target="_blank">Arrays</a></p>
+    <p>No olvides el punto y coma (;) al final de cada línea de código</p>
+    <p>La primera iteración debería verse así: "Matrix is a nice movie!"</p>
+    <!-- <script>
+    <div id="codeExample">       
+    </div>    
+        function runExample() {
+            document.getElementById('codeExample').innerText = '';
+            let codeSnippet = 'WoW!!';
+            document.getElementById('codeExample').innerText = codeSnippet;
+            eval(codeSnippet);
+        }
+    </script>
+    <button onclick="runExample()">Mensaje Secreto</button> -->
+</body>
+
+</html>
