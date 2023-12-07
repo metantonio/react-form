@@ -137,7 +137,7 @@ export const Navbar2 = () => {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="justify-content-center align-self-center m-auto">
-                    <Link to="/menu">
+                    <Link to="/">
                         <div className="navbar-brand"><img src={ImgLog} width="150px"></img></div>
                     </Link>
                 </div>
