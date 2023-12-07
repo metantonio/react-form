@@ -151,7 +151,7 @@ router.post('/test-javascript/:exerciseNumber', (req, res) => {
             res.status(200).json({ message: 'Exitoso', command: output, correct: true });
         });
     } else {
-        let childProcess = spawn('npx', ['jest', `exercise-${tutorialType}${exerciseNumber}.test.js`, '--', `--textVariable="${data.toString()}"`], { cwd: "./" });
+        let childProcess = spawn('npx', ['jest', `exercise-${tutorialType}${exerciseNumber}.test.js`, '--', `--textVariable="${data.toString()}"`], { cwd: "./backend-src/tutorial-javascript/" });
         console.log("comando pedido: ", data)
 
 
