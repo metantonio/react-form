@@ -1,6 +1,6 @@
 /** @type {import('jest').Config} */
 const config = {
-    verbose: true,
+    verbose: false,
 };
 //console.log('exercise 1 html test');
 let textVariable;
