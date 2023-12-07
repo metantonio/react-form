@@ -49,7 +49,7 @@ Toy Story is a nice movie!
 The Incredibles is a nice movie!
 Ratatouille is a nice movie!
 Up is a nice movie!
-            `);
+`);
         } catch (error) {
             console.error("Error during code evaluation:", error);
             throw error;
