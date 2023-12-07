@@ -27,7 +27,7 @@ describe('Exercise 19: Looping Through Arrays with For Loop', () => {
     //        throw error;
     //    }
     //});    
-    test('Evaluate console.logs()', () => {
+    test('Evaluate For Loop', () => {
         let jsCode = textVariable.replace(/[\n\t\r]+\s*/g, '');
         try {
             // capturing the ouput of the console.log
