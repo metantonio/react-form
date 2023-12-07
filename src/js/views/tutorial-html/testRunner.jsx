@@ -14,7 +14,7 @@ const TestRunner = () => {
     const [contextMenuPosition, setContextMenuPosition] = useState({ top: 0, left: 0 });
     const [formattedHtml, setFormattedHtml] = useState('');
     const [tutorialLesson, setTutorialLesson] = useState(0)
-    const [selectedLanguage, setSelectedLanguage] = useState('es');
+    const [selectedLanguage, setSelectedLanguage] = useState('en');
 
     const BASE_URL = process.env.BASE_URL2;
 
