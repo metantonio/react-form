@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial HTML</title>
+    <style>
+        pre {
+            background-color: #0a0a0a;
+            padding: 3px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            display: block;
+            background-color: #0a0a0a;
+            color: rgb(236, 237, 238);
+            padding: 3px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .color-success {
+            color: rgb(27, 224, 17);
+        }
+
+        .important {
+            color: rgb(17, 20, 224);
+        }
+
+        .return {
+            color: rgb(216, 11, 235);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>17 For + If</h1>
+    <p>Dentro de los loops es normal evualar la condiciones.</p>
+    <p>En el siguiente ejemplo, sólo cuando el ciclo i sea igual a 3, es que se ejecuta cierta lógica:</p>
+    <pre><code> 
+for(let i=0; i&lt;5; i=i+1){ <span class="color-success">
+    if(i==3){
+        console.log('Ejecutando')
+        <span class="color-success">//logic here</span> 
+    }else{
+        console.log('error')
+    }     
+}
+</code></pre>
+    <p>Prueba el código anterior en la terminal</p>
+
+    <h2>📝 Instrucciones:</h2>
+    <p>A continuación, elimina todo el contenido en la sección de código y copia lo siguiente:</p>
+    <pre><code> 
+for(let i=0; i&lt;5; i=i+1){ 
+    console.log(i)
+}
+</code></pre>
+    <p>Modifica el <code>For Loop</code> de modo que el ciclo vaya desde 0 hasta 21 (sin incluir el 21), y además ocurra lo siguiente:</p>
+    <ul>
+        <li>Cuando la variable i sea par, se debe imprimir en consola: "I'm even"</li>
+        <li>Cuando la variable i sea impar, se debe imprimir en consola: "I'm odd"</li>
+    </ul>
+    <h2>Pista:</h2>
+    <p><a href="https://www.w3schools.com/js/js_loop_for.asp" target="_blank">For Loop</a></p>
+    <p>No olvides el punto y coma (;) al final de cada línea de código</p>
+    <!-- <script>
+    <div id="codeExample">       
+    </div>    
+        function runExample() {
+            document.getElementById('codeExample').innerText = '';
+            let codeSnippet = 'WoW!!';
+            document.getElementById('codeExample').innerText = codeSnippet;
+            eval(codeSnippet);
+        }
+    </script>
+    <button onclick="runExample()">Mensaje Secreto</button> -->
+</body>
+
+</html>

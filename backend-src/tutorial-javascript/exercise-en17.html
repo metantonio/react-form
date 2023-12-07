@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial HTML</title>
+    <style>
+        pre {
+            background-color: #0a0a0a;
+            padding: 3px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            display: block;
+            background-color: #0a0a0a;
+            color: rgb(236, 237, 238);
+            padding: 3px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .color-success {
+            color: rgb(27, 224, 17);
+        }
+
+        .important {
+            color: rgb(17, 20, 224);
+        }
+
+        .return {
+            color: rgb(216, 11, 235);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>17 For + If</h1>
+    <p>Within loops, it's common to evaluate conditions.</p>
+    <p>In the following example, certain logic is executed only when the loop variable i is equal to 3:</p>
+    <pre><code> 
+for(let i=0; i&lt;5; i=i+1){ <span class="color-success">
+    if(i==3){
+        console.log('Ejecutando');
+        <span class="color-success">//logic here</span> 
+    }else{
+        console.log('error');
+    }     
+}
+</code></pre>
+    <p>Try the above code in the terminal.</p>
+
+    <h2>📝 Instructions:</h2>
+    <p>Next, delete all the content in the code section and copy the following:</p>
+<pre><code> 
+for(let i=0; i&lt;21; i=i+1){ 
+    console.log(i)
+}
+</code></pre>
+    <p>Modify the <code>For Loop</code> so that the loop runs from 0 to 20 (excluding 21), and the following occurs:</p>
+    <ul>
+        <li>When the variable i is even, print to the console: "I'm even"</li>
+        <li>When the variable i is odd, print to the console: "I'm odd"</li>
+    </ul>
+    <h2>Hint:</h2>
+    <p><a href="https://www.w3schools.com/js/js_loop_for.asp" target="_blank">For Loop</a></p>
+    <p>Don't forget the semicolon (;) at the end of each line of code.</p>
+    <!-- <script>
+    <div id="codeExample">       
+    </div>    
+        function runExample() {
+            document.getElementById('codeExample').innerText = '';
+            let codeSnippet = 'WoW!!';
+            document.getElementById('codeExample').innerText = codeSnippet;
+            eval(codeSnippet);
+        }
+    </script>
+    <button onclick="runExample()">Mensaje Secreto</button> -->
+</body>
+
+</html>
