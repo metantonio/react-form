@@ -125,6 +125,7 @@ router.post('/test-javascript/:exerciseNumber', (req, res) => {
     let platform = os.platform();
     let output = '';
     let tutorialType = 'javascript';
+    console.log("testing exercise number ",exerciseNumber)
     // Ejecutar el proceso cmd.exe con el comando jest en Windows
     if (platform === 'win32') {
         let childProcess = spawn('cmd.exe', ['/c', `jest --runInBand exercise-${tutorialType}${exerciseNumber} --textVariable="%${data.toString()}%"`], { shell: true });
