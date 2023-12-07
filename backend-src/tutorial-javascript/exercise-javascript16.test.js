@@ -44,7 +44,7 @@ describe('Exercise 16: For Loop', () => {
             console.log = originalConsoleLog;
 
             // Verificar la presencia de console.log en la salida
-            expect(consoleOutput).toMatch(`100
+            expect(consoleOutput).toBe(`100
 99
 98
 97
