@@ -27,7 +27,12 @@ const Home = () => {
   }, []) */
   return (
     <>
-      <main>
+      <main className={`
+      d-flex
+      [animation:linear_reveal_both]
+      [animation-range:entry_5%_cover_30%]
+      [animation-timeline:view()]
+      `}>
         <Block
           title="HTML"
           imageUrl={tutoHtml}
