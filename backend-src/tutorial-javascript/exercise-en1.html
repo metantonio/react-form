@@ -30,26 +30,34 @@
 
     <p>Observe the output in the browser console and check if the message "Hello World" appears. Click "Run Code" to see the result!. Finally Click "Check" to validate your result.</p>
 
-    <!-- <h2>Example:</h2>
-    <div id="codeExample">
-
-    </div>
-
     <script>
-       
-        function runExample() {
-         
-            document.getElementById('codeExample').innerText = '';
+        /* <div id="codeExample">       
+        </div>    
+            function runExample() {
+                document.getElementById('codeExample').innerText = '';
+                let codeSnippet = 'WoW!!';
+                document.getElementById('codeExample').innerText = codeSnippet;
+                eval(codeSnippet);
+            } */
+        function copyCode(sourceId) {
+            // Obtén el valor del código fuente
+            var sourceCode = document.getElementById(sourceId).innerText;
 
-        
-            let codeSnippet = 'WoW!!';
-            document.getElementById('codeExample').innerText = codeSnippet;
+            // Crea un elemento textarea temporal para copiar el contenido
+            var tempTextArea = document.createElement('textarea');
+            tempTextArea.value = sourceCode;
 
-        
-            eval(codeSnippet);
+            // Añade el textarea al documento
+            document.body.appendChild(tempTextArea);
+
+            // Selecciona y copia el contenido al portapapeles
+            tempTextArea.select();
+            document.execCommand('copy');
+
+            // Elimina el textarea temporal
+            document.body.removeChild(tempTextArea);
         }
     </script>
-    <button onclick="runExample()">Secret Message</button> -->
 </body>
 
 </html>

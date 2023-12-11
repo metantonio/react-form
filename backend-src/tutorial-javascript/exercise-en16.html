@@ -61,17 +61,34 @@ for(let i=0; i&lt;5; i=i+1){
     <p><a href="https://www.w3schools.com/js/js_loop_for.asp" target="_blank">For Loop</a></p>
     <p>Don't forget the semicolon (;) at the end of each line of code.</p>
     
-    <!-- <script>
-    <div id="codeExample">       
-    </div>    
-        function runExample() {
-            document.getElementById('codeExample').innerText = '';
-            let codeSnippet = 'WoW!!';
-            document.getElementById('codeExample').innerText = codeSnippet;
-            eval(codeSnippet);
+    <script>
+        /* <div id="codeExample">       
+        </div>    
+            function runExample() {
+                document.getElementById('codeExample').innerText = '';
+                let codeSnippet = 'WoW!!';
+                document.getElementById('codeExample').innerText = codeSnippet;
+                eval(codeSnippet);
+            } */
+        function copyCode(sourceId) {
+            // Obtén el valor del código fuente
+            var sourceCode = document.getElementById(sourceId).innerText;
+
+            // Crea un elemento textarea temporal para copiar el contenido
+            var tempTextArea = document.createElement('textarea');
+            tempTextArea.value = sourceCode;
+
+            // Añade el textarea al documento
+            document.body.appendChild(tempTextArea);
+
+            // Selecciona y copia el contenido al portapapeles
+            tempTextArea.select();
+            document.execCommand('copy');
+
+            // Elimina el textarea temporal
+            document.body.removeChild(tempTextArea);
         }
     </script>
-    <button onclick="runExample()">Mensaje Secreto</button> -->
 </body>
 
 </html>
