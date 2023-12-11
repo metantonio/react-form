@@ -24,6 +24,8 @@ import TestRunner from "./views/tutorial-html/testRunner.jsx";
 import TestRunnerUnix from "./views/tutorial-unix/testRunnerUnix.jsx";
 import TestRunnerJavascript from "./views/tutorial-javascript/testRunnerJavascript.jsx";
 
+import MetaMask from "./views/third-web/metamask.jsx";
+
 
 const Layout = () => {
   //the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -46,7 +48,8 @@ const Layout = () => {
               <Route exact path="/update-password" element={<CambioPassword />} />   
               <Route exact path="/html-tutorial" element={<TestRunner />} />
               <Route exact path="/unix-tutorial" element={<TestRunnerUnix />} />   
-              <Route exact path="/javascript-tutorial" element={<TestRunnerJavascript />} />    
+              <Route exact path="/javascript-tutorial" element={<TestRunnerJavascript />} /> 
+              <Route exact path="/metamask" element={<MetaMask />} />      
               <Route exact path="*" element={<Error404 />} />
             </Routes>
           </Suspense>
