@@ -42,7 +42,7 @@
     <p>Something quite common is looping through arrays, and we have ways to do it in JavaScript. Perhaps the most generic and powerful way is with the generic For Loop.</p>
     <p>If you haven't noticed, the index of the last element in an array will be equal to the array's length minus 1.</p>
     <p>We can loop through an array as follows:</p>
-    <pre><code id="code-1"> 
+    <pre><button onclick="copyCode('code-1')">Copy</button><code id="code-1"> 
 let myArray = ["Hello", 1, true, false];
 
 for(let i=0; i &lt; myArray.length; i++){
@@ -51,7 +51,7 @@ for(let i=0; i &lt; myArray.length; i++){
     </code></pre>
     <p>Even though the above code can run, it's not efficient because every time it goes through the array, it has to get the length of the array with <strong>myArray.length</strong>. And this is particularly terrible when the array has thousands or millions of elements.</p>
     <p>Therefore, it's better to store the array's length, so this reading is done only once:</p>
-<pre><code id="code-2"> 
+<pre><button onclick="copyCode('code-2')">Copy</button><code id="code-2"> 
 let myArray = ["Hello", 1, true, false];
 let myArrayLength = myArray.length;
 
