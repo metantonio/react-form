@@ -42,21 +42,21 @@
 <p>In JavaScript, there is an internal library called Math that allows us to, among other things, obtain random numbers.</p>
 <p>The way to obtain random numbers is with <strong>Math.random()</strong></p>
 
-<pre><code>
+<pre><button onclick="copyCode('code-1')">Copy</button><code id="code-1">
 console.log(Math.random()); <span class="color-success">//returns a random number between 0 and 1, excluding 1.</span>
 </code></pre>
 
 <p>As we saw, we can return numbers between <strong>0 - 1</strong>, excluding 1.</p>
 <p>If we want to increase the range of returned numbers, for example, up to 5 excluding it:</p>
 
-<pre><code>
+<pre><button onclick="copyCode('code-2')">Copy</button><code id="code-2">
 console.log(Math.random() * 5); <span class="color-success">//returns a random decimal between 0 and 5, excluding 5.</span>
 </code></pre>
 
 <p>As 5 is not included, we see that the numbers actually range from 0 to 4.9999999</p>
 <p>Now, suppose we only want to obtain whole numbers from the previous range, we use <strong>Math.floor()</strong>:</p>
 
-<pre><code>
+<pre><button onclick="copyCode('code-3')">Copy</button><code id="code-3">
 console.log(Math.floor((Math.random() * 5))); <span class="color-success">//returns a random whole number between 0 and 5, excluding 5.</span>
 </code></pre>
 
@@ -72,7 +72,7 @@ console.log(Math.floor((Math.random() * 5))); <span class="color-success">//retu
 </ul>
 <p>Next, delete all the content in the code section and copy the following:</p>
 
-<pre><code>
+<pre><button onclick="copyCode('code-4')">Copy</button><code id="code-4">
 function pointSystems() {
     let message;
     let value = Math.random(); <span class="color-success">// modify only this line</span>

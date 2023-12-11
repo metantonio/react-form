@@ -42,18 +42,18 @@
     <p>En JavaScript existe una librería interna llamada Math que nos permite, entre otras cosas, obtener números
         aleatorios.</p>
     <p>La forma de obtener números aleatorios es con <strong>Math.random()</strong></p>
-    <pre><code> 
+    <pre><button onclick="copyCode('code-1')">Copy</button><code id="code-1"> 
 console.log(Math.random()); <span class="color-success">//devuelve un número aleatorio entre 0 y 1, sin incluir el 1.</span> 
 </code></pre>
     <p>Cómo ya vimos podemos devolver números entre <strong>0 - 1</strong> sin incluir el 1</p>
     <p>Si quisiéramos aumentar el rango de números devueltos, por ejemplo hasta el 5 sin incluirlo:</p>
-    <pre><code> 
+    <pre><button onclick="copyCode('code-2')">Copy</button><code id="code-2"> 
 console.log(Math.random()*5); <span class="color-success">//devuelve un número decimal aleatorio entre 0 y 5, sin incluir el 5.</span> 
 </code></pre>
     <p>Como el 5 no se incluye, observamos que realmente los números van desde el 0 hasta el 4.9999999</p>
     <p>Ahora supón sólo queremos obtener los números enteros enteros del rango anterior, usamos
         <strong>Math.floor()</strong>:</p>
-    <pre><code> 
+        <pre><button onclick="copyCode('code-3')">Copy</button><code id="code-3">
 console.log(Math.floor((Math.random() * 5))); <span class="color-success">//devuelve un número entero aleatorio entre 0 y 5, sin incluir el 5.</span> 
 </code></pre>
 
@@ -69,7 +69,7 @@ console.log(Math.floor((Math.random() * 5))); <span class="color-success">//devu
         <li>Para cualquier otro valor, el mensaje devuelto debe ser: "miss"</li>
     </ul>
     <p>A continuación, elimina todo el contenido en la sección de código y copia lo siguiente:</p>
-    <pre><code>
+    <pre><button onclick="copyCode('code-4')">Copy</button><code id="code-4">
 function pointSytems(){
     let message;
     let value = Math.ramdon() <span class="color-success">// modifica sólo esta línea</span>
