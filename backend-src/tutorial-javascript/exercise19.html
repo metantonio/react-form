@@ -63,7 +63,8 @@ for(let i=0; i &lt; myArray.length; i++){
 
     <h2>📝 Instrucciones:</h2>
     <p>A continuación, elimina todo el contenido en la sección de código y copia lo siguiente:</p>
-    <pre><code> 
+    <pre><button onclick="copyCode('code-3')">Copy</button>
+    <code id="code-3"> 
 let movies = ["Matrix", "Toy Story", "The Incredibles", "Ratatouille", "Up"];
 </code></pre>
     <p>Crea un <code>For Loop</code> que recorra al arreglo <strong>movies</strong> y en cada iteración imprima cada elemento concatenado con: <strong>"is a nice movie!"</strong></p>
@@ -73,17 +74,21 @@ let movies = ["Matrix", "Toy Story", "The Incredibles", "Ratatouille", "Up"];
     <p>No olvides el punto y coma (;) al final de cada línea de código</p>
     <p>La primera iteración debería verse así: "Matrix is a nice movie!"</p>
     <p>En ocaciones <strong>i++</strong> puede causar errores en la validación. Usa <strong>i=i+1</strong> en su lugar.</p>
-    <!-- <script>
-    <div id="codeExample">       
+    <script>
+    /* <div id="codeExample">       
     </div>    
         function runExample() {
             document.getElementById('codeExample').innerText = '';
             let codeSnippet = 'WoW!!';
             document.getElementById('codeExample').innerText = codeSnippet;
             eval(codeSnippet);
-        }
+        } */
+    function copyCode(name){
+        document.getElementById("code").innerText = document.getElementById(name).innerText;
+    }
     </script>
-    <button onclick="runExample()">Mensaje Secreto</button> -->
+
+    <button onclick="runExample()">Mensaje Secreto</button>
 </body>
 
 </html>
