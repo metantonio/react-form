@@ -85,11 +85,16 @@ let movies = ["Matrix", "Toy Story", "The Incredibles", "Ratatouille", "Up"];
         } */
     function copyCode(name){
         var sourceCode = document.getElementById(name).innerText;
-        document.querySelector('textarea').value = sourceCode;
+        // Copia el contenido al portapapeles
+        navigator.clipboard.writeText(sourceCode)
+            .then(function() {
+                console.log('Copied', sourceCode);
+            })
+            .catch(function(err) {
+                console.error('Error', err);
+            });
     }
     </script>
-
-    <button onclick="runExample()">Mensaje Secreto</button>
 </body>
 
 </html>
