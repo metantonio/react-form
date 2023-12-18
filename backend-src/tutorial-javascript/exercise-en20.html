@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial HTML</title>
+    <style>
+        pre {
+            background-color: #0a0a0a;
+            padding: 3px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            display: block;
+            background-color: #0a0a0a;
+            color: rgb(236, 237, 238);
+            padding: 3px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .color-success {
+            color: rgb(27, 224, 17);
+        }
+
+        .important {
+            color: rgb(17, 20, 224);
+        }
+
+        .return {
+            color: rgb(216, 11, 235);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>20 Nested For Loops</h1>
+    <p>A common task in programming is to find all possible combinations that can be obtained given a series of
+        elements.</p>
+    <p>The simplest way to do this is with nested For Loops (one inside the other).</p>
+    <p>We can have nested loops as follows:</p>
+
+    <pre>
+<button onclick="copyCode('code-1')">Copy</button>
+<code id="code-1"> 
+for(let i=0; i &lt; 3; i=i+1){
+    for(let j=0; j &lt; 3; j=j+1){
+        console.log(`value i: ${i}, value j: ${j}`);
+    }
+}
+</code>
+</pre>
+
+    <p>A quick way to know the total possible combinations is to multiply the number of cycles in each loop, in this
+        case, it would be: <strong>3 * 3 = 9 possible combinations.</strong></p>
+
+    <h2>📝 Instructions:</h2>
+    <p>Next, delete all the content in the code section and copy the following:</p>
+
+    <pre>
+<button onclick="copyCode('code-2')">Copy</button>
+<code id="code-2"> 
+let movies = ["Matrix", "Toy Story", "The Incredibles", "Up"];
+let description = ["is an old movie", "is a new movie", "is a retro movie"];
+let finish = ["and I like it", "and is not for me", "and maybe you like it"];
+</code>
+</pre>
+
+    <p>Find all possible combinations using the structure <strong>movies + description + finish</strong></p>
+    <p>The first iteration should look like this: <strong>"Matrix is an old movie and I like it"</strong></p>
+
+    <h2>Hint:</h2>
+    <p><a href="https://www.w3schools.com/js/js_arrays.asp" target="_blank">Arrays</a></p>
+    <p>Don't forget the semicolon (;) at the end of each line of code</p>
+
+    <p>Sometimes <strong>i++</strong> can cause errors in validation. Use <strong>i=i+1</strong> instead.</p>
+
+    <script>
+        /* <div id="codeExample">       
+        </div>    
+            function runExample() {
+                document.getElementById('codeExample').innerText = '';
+                let codeSnippet = 'WoW!!';
+                document.getElementById('codeExample').innerText = codeSnippet;
+                eval(codeSnippet);
+            } */
+        function copyCode(sourceId) {
+            // Obtén el valor del código fuente
+            var sourceCode = document.getElementById(sourceId).innerText;
+
+            // Crea un elemento textarea temporal para copiar el contenido
+            var tempTextArea = document.createElement('textarea');
+            tempTextArea.value = sourceCode;
+
+            // Añade el textarea al documento
+            document.body.appendChild(tempTextArea);
+
+            // Selecciona y copia el contenido al portapapeles
+            tempTextArea.select();
+            document.execCommand('copy');
+
+            // Elimina el textarea temporal
+            document.body.removeChild(tempTextArea);
+        }
+    </script>
+</body>
+
+</html>
