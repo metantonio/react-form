@@ -103,9 +103,9 @@ const TestRunnerPython = () => {
           const nuevoCursor = selectionStart + 4;
           event.target.setSelectionRange(nuevoCursor, nuevoCursor);
         }
-        if (e.key === 'Enter') {
-            const lines = selectedText.split('\n');
-            const highlightedLines = lines.map(line =>
+        if (event.key === 'Enter') {
+            let lines = selectedText.split('\n');
+            let highlightedLines = lines.map(line =>
               line.trim().startsWith('#') ? `<span class="code-line-comment">${line}</span>` : line
             );
             setSelectedText(highlightedLines.join('\n'));
