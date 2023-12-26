@@ -522,7 +522,7 @@ router.post('/test-python/:exerciseNumber', (req, res) => {
             
             if (dividedMessage.length >= 1) {
                 let result = unitTestPython(dividedMessage[dividedMessage.length - 1], exerciseNumber)
-                res.status(200).json({ message: 'Exitoso', command: dividedMessage[dividedMessage.length - 1], correct: true });
+                res.status(200).json({ message: result.message, command: dividedMessage[dividedMessage.length - 1], correct: result.correct });
             } else {
                 let result = unitTestPython(output, exerciseNumber)
                 res.status(200).json({ message: result.message, command: output, correct: result.correct });
