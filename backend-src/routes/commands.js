@@ -468,6 +468,58 @@ function unitTestPython(outputTerminal, exercise) {
     return messageOutput;
 }
 
+function validatePythonCode(pythonCode){
+    if(pythonCode.includes("os.system")){
+        return false
+    }
+    if(pythonCode.includes("rm -rf")){
+        return false
+    }
+    if(pythonCode.includes("eval")){
+        return false
+    }
+    if(pythonCode.includes("/etc/passwd")){
+        return false
+    }
+    if(pythonCode.includes("with open")){
+        return false
+    }
+    if(pythonCode.includes("requests.get")){
+        return false
+    }
+    if(pythonCode.includes("requests")){
+        return false
+    }
+    if(pythonCode.includes("while True")){
+        return false
+    }
+    if(pythonCode.includes("re.compile")){
+        return false
+    }
+    if(pythonCode.includes("os.remove")){
+        return false
+    }
+    if(pythonCode.includes("git remote")){
+        return false
+    }
+    if(pythonCode.includes("git add")){
+        return false
+    }
+    if(pythonCode.includes("git push")){
+        return false
+    }
+    if(pythonCode.includes("git pull")){
+        return false
+    }
+    if(pythonCode.includes("git commit")){
+        return false
+    }
+    if(pythonCode.includes("'A' * 1000000")){
+        return false
+    }
+    return true
+}
+
 router.post('/test-python/:exerciseNumber', (req, res) => {
     const { data } = req.body;
     const exerciseNumber = req.params.exerciseNumber;
@@ -475,6 +527,10 @@ router.post('/test-python/:exerciseNumber', (req, res) => {
     let output = '';
     let tutorialType = 'python';
     console.log("testing exercise number ", exerciseNumber)
+    let validation = validatePythonCode(data)
+    if(validation===false){
+        res.status(403).json({ message: "Hey! what are you trying to do?", command: "This code is not valid!!!", correct: false });
+    }
     // Ejecutar el proceso cmd.exe con el comando jest en Windows
     if (platform === 'win32') {
         let childProcess = spawn('cmd.exe', ['/c', `jest --runInBand exercise-${tutorialType}${exerciseNumber} --textVariable="%${data.toString()}%"`], { shell: true });
