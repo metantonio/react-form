@@ -125,7 +125,7 @@ router.post('/test-javascript/:exerciseNumber', (req, res) => {
     let platform = os.platform();
     let output = '';
     let tutorialType = 'javascript';
-    console.log("testing exercise number ",exerciseNumber)
+    console.log("testing exercise number ", exerciseNumber)
     // Ejecutar el proceso cmd.exe con el comando jest en Windows
     if (platform === 'win32') {
         let childProcess = spawn('cmd.exe', ['/c', `jest --runInBand exercise-${tutorialType}${exerciseNumber} --textVariable="%${data.toString()}%"`], { shell: true });
@@ -451,18 +451,18 @@ router.post('/unix-commands', (req, res) => {
 
 });
 
-function unitTestPython(outputTerminal, exercise){
-    let messageOutput = {message:"Correct", correct:true}
+function unitTestPython(outputTerminal, exercise) {
+    let messageOutput = { message: "Error", correct: false }
     console.log("unitestPython", exercise)
-    switch(exercise){
+    switch (exercise) {
         case "1":
             console.log("terminal: ", outputTerminal)
-            if(outputTerminal==="Hello World"){
-                return messageOutput
+            if (outputTerminal === "Hello World") {
+                return { message: "Correct", correct: true }
             }
             break;
         default:
-            messageOutput = {message:"Error", correct:false}
+            return messageOutput;
             break;
     }
     return messageOutput;
@@ -474,7 +474,7 @@ router.post('/test-python/:exerciseNumber', (req, res) => {
     let platform = os.platform();
     let output = '';
     let tutorialType = 'python';
-    console.log("testing exercise number ",exerciseNumber)
+    console.log("testing exercise number ", exerciseNumber)
     // Ejecutar el proceso cmd.exe con el comando jest en Windows
     if (platform === 'win32') {
         let childProcess = spawn('cmd.exe', ['/c', `jest --runInBand exercise-${tutorialType}${exerciseNumber} --textVariable="%${data.toString()}%"`], { shell: true });
@@ -502,7 +502,7 @@ router.post('/test-python/:exerciseNumber', (req, res) => {
     } else {
         console.log("comando pedido: ", data)
         let childProcess = spawn('python3', ['-c', data], { cwd: "./backend-src/tutorial-python/" });
-        
+
 
         childProcess.stdout.on('data', (data) => {
             output += data.toString();
@@ -521,7 +521,7 @@ router.post('/test-python/:exerciseNumber', (req, res) => {
             let dividedMessage = output.split("https://jestjs.io/docs/configuration")
             console.log("dividesMessage.length = ", dividedMessage.length)
             //console.log(`Comando ejecutado con éxito:\n${output}`);
-            
+
             if (dividedMessage.length >= 1) {
                 let result = unitTestPython(dividedMessage[dividedMessage.length - 1], exerciseNumber)
                 res.status(200).json({ message: result.message, command: dividedMessage[dividedMessage.length - 1], correct: result.correct });
