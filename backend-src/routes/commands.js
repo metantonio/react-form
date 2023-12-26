@@ -457,7 +457,7 @@ function unitTestPython(outputTerminal, exercise) {
     switch (exercise) {
         case "1":
             console.log("terminal: ", outputTerminal)
-            if (outputTerminal === "Hello World") {
+            if (outputTerminal === " Hello World") { //terminar comes with an extra space
                 return { message: "Correct", correct: true }
             }
             break;
