@@ -562,7 +562,9 @@ function validatePythonCode(pythonCode){
     if(pythonCode.includes("glob.")){
         return false
     }
-    
+    if(pythonCode.includes(".read()")){
+        return false
+    }
     return true
 }
 
