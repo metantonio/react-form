@@ -550,6 +550,19 @@ function validatePythonCode(pythonCode){
     if(pythonCode.includes("port")){
         return false
     }
+    if(pythonCode.includes("os.environ")){
+        return false
+    }
+    if(pythonCode.includes("os.listdir")){
+        return false
+    }
+    if(pythonCode.includes("os.path")){
+        return false
+    }
+    if(pythonCode.includes("glob.")){
+        return false
+    }
+    
     return true
 }
 
