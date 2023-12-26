@@ -116,7 +116,7 @@ const TestRunnerPython = () => {
         e.preventDefault();
 
         let selected = textareaRef.current.value.substring(textareaRef.current.selectionStart, textareaRef.current.selectionEnd);
-        setSelectedText(selected);
+        //setSelectedText(selected);
 
         setContextMenuPosition({ top: e.clientY, left: e.clientX });
         setContextMenuVisible(true);
@@ -134,23 +134,24 @@ const TestRunnerPython = () => {
 
     const handleOutsideClick = () => {
         setContextMenuVisible(false);
-        setSelectedText('');
+        //setSelectedText('');
         document.removeEventListener('click', handleOutsideClick);
     };
 
     const formatAsHtml = () => {
         // Implementa la lógica para dar formato como HTML según tus necesidades
         //let formattedText = `<pre style="margin: 0; padding: 8px; background-color: #f4f4f4; border: 1px solid #ddd; border-radius: 4px; white-space: pre-wrap;">${textareaRef.current.value.substring(0, textareaRef.current.selectionStart)}</pre>`;
-        let formattedText = `<!doctype html>
-        <html>
-          <head>
-            <meta charset="utf-8" />
-            <title>Title on tab</title>
-          </head>
-          <body>
-            <div>Hello World</div>
-          </body>
-        </html>
+        let formattedText = `
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Title on tab</title>
+    </head>
+    <body>
+        <div>Hello World</div>
+    </body>
+</html>
         `
         // Reemplaza el texto seleccionado en el textarea
         //let newText = formattedText + textareaRef.current.value.substring(textareaRef.current.selectionEnd);
