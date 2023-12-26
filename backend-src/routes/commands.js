@@ -451,7 +451,7 @@ router.post('/unix-commands', (req, res) => {
 
 });
 
-function unitTestPython(outputTerminal, exercise) {
+function unitTestPython(outputTerminal, exercise, code=null) {
     let messageOutput = { message: "Error", correct: false }
     //console.log("unitestPython", exercise)
     switch (exercise) {
@@ -463,7 +463,7 @@ function unitTestPython(outputTerminal, exercise) {
             break;
         case "2":
             //console.log("terminal:", outputTerminal)
-            if (outputTerminal.includes("print(message)")) { //terminar comes with an extra space
+            if (code.includes("print(message)") && outputTerminal.includes("I like programming")) { //terminar comes with an extra space
                 messageOutput = { message: "Correct", correct: true }
             }
             break;
@@ -634,10 +634,10 @@ router.post('/test-python/:exerciseNumber', (req, res) => {
             //console.log(`Comando ejecutado con éxito:\n${output}`);
 
             if (dividedMessage.length >= 1) {
-                let result = unitTestPython(dividedMessage[dividedMessage.length - 1], exerciseNumber)
+                let result = unitTestPython(dividedMessage[dividedMessage.length - 1], exerciseNumber, data)
                 res.status(200).json({ message: result.message, command: dividedMessage[dividedMessage.length - 1], correct: result.correct });
             } else {
-                let result = unitTestPython(output, exerciseNumber)
+                let result = unitTestPython(output, exerciseNumber, data)
                 res.status(200).json({ message: result.message, command: output, correct: result.correct });
             }
 
