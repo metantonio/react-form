@@ -455,7 +455,7 @@ function unitTestPython(outputTerminal, exercise){
     let messageOutput = {message:"Correct", correct:true}
     console.log("unitestPython", exercise)
     switch(exercise){
-        case 1:
+        case "1":
             console.log("terminal: ", outputTerminal)
             if(outputTerminal==="Hello World"){
                 return messageOutput
