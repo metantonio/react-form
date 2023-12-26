@@ -483,9 +483,9 @@ router.post('/test-python/:exerciseNumber', (req, res) => {
             res.status(200).json({ message: 'Exitoso', command: output, correct: true });
         });
     } else {
-        let childProcess = spawn('python', ['-c', `${data.toString()}`], { cwd: "./backend-src/tutorial-python/" });
         console.log("comando pedido: ", data)
-
+        let childProcess = spawn('python', ['-c', `${data.toString()}`], { cwd: "./backend-src/tutorial-python/" });
+        
 
         childProcess.stdout.on('data', (data) => {
             output += data.toString();
