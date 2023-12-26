@@ -103,13 +103,13 @@ const TestRunnerPython = () => {
             const nuevoCursor = selectionStart + 4;
             event.target.setSelectionRange(nuevoCursor, nuevoCursor);
         }
-        if (event.key === 'Enter') {
+        /* if (event.key === 'Enter') {
             let lines = selectedText.split('\n');
             let highlightedLines = lines.split('\n')
-                .map(line => (line.trim().startsWith('#') ? `/* ${line} */` : line))
+                .map(line => (line.trim().startsWith('#') ? `## ${line} ##` : line))
                 .join('\n');
             setSelectedText(highlightedLines);
-        }
+        } */
     };
 
     const handleContextMenu = (e) => {
