@@ -453,10 +453,10 @@ router.post('/unix-commands', (req, res) => {
 
 function unitTestPython(outputTerminal, exercise) {
     let messageOutput = { message: "Error", correct: false }
-    console.log("unitestPython", exercise)
+    //console.log("unitestPython", exercise)
     switch (exercise) {
         case "1":
-            console.log("terminal:", outputTerminal)
+            //console.log("terminal:", outputTerminal)
             if (outputTerminal.includes("Hello World")) { //terminar comes with an extra space
                 messageOutput = { message: "Correct", correct: true }
             }
