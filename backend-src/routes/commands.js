@@ -484,7 +484,7 @@ router.post('/test-python/:exerciseNumber', (req, res) => {
         });
     } else {
         console.log("comando pedido: ", data)
-        let childProcess = spawn('python', ['-c', data], { cwd: "./backend-src/tutorial-python/" });
+        let childProcess = spawn('python3', ['-c', data], { cwd: "./backend-src/tutorial-python/" });
         
 
         childProcess.stdout.on('data', (data) => {
