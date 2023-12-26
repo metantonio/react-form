@@ -89,6 +89,22 @@ const TestRunnerPython = () => {
         }
     };
 
+    const handleKeyDown = (event) => {
+        if (event.key === 'Tab') {
+          event.preventDefault();
+    
+          // Agregar un espacio o múltiples espacios en blanco
+          const { selectionStart, selectionEnd, value } = event.target;
+          const nuevaLinea = value.substring(0, selectionStart) + '    ' + value.substring(selectionEnd);
+    
+          setSelectedText(nuevaLinea);
+    
+          // Mover el cursor después de la tabulación
+          const nuevoCursor = selectionStart + 4;
+          event.target.setSelectionRange(nuevoCursor, nuevoCursor);
+        }
+      };
+
     const handleContextMenu = (e) => {
         e.preventDefault();
 
@@ -152,6 +168,9 @@ const TestRunnerPython = () => {
                         className="code"
                         placeholder="/* write your code here */"
                         onContextMenu={handleContextMenu}
+                        onKeyDown={handleKeyDown}
+                        value={selectedText}
+                        onChange={(e) => setSelectedText(e.target.value)}
                     />
                 </code>
             </div>
