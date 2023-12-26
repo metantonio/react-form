@@ -161,7 +161,7 @@ const TestRunnerPython = () => {
 
         // Oculta el menú contextual
         setContextMenuVisible(false);
-        setSelectedText('');
+        setSelectedText(newText);
         setFormattedHtml(newText)
     };
 
