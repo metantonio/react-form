@@ -103,6 +103,13 @@ const TestRunnerPython = () => {
           const nuevoCursor = selectionStart + 4;
           event.target.setSelectionRange(nuevoCursor, nuevoCursor);
         }
+        if (e.key === 'Enter') {
+            const lines = selectedText.split('\n');
+            const highlightedLines = lines.map(line =>
+              line.trim().startsWith('#') ? `<span class="code-line-comment">${line}</span>` : line
+            );
+            setSelectedText(highlightedLines.join('\n'));
+          }
       };
 
     const handleContextMenu = (e) => {
@@ -166,7 +173,7 @@ const TestRunnerPython = () => {
                         ref={textareaRef}
                         id="code"
                         className="code"
-                        placeholder="/* write your code here */"
+                        placeholder="# Write your code here"
                         onContextMenu={handleContextMenu}
                         onKeyDown={handleKeyDown}
                         value={selectedText}

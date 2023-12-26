@@ -77,3 +77,7 @@
     padding: 8px;
     font-size: 16px;
   }
+
+  .code-line-comment {
+    color: green; /* Color verde para líneas que comienzan con # */
+  }
