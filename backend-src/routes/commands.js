@@ -451,6 +451,21 @@ router.post('/unix-commands', (req, res) => {
 
 });
 
+function unitTestPython(outputTerminal, exercise){
+    let messageOutput = {message:"Correct", correct:true}
+    switch(exercise){
+        case 1:
+            if(outputTerminal==="Hello World"){
+                return messageOutput
+            }
+            break;
+        default:
+            messageOutput = {message:"Error", correct:false}
+            break;
+    }
+    return messageOutput;
+}
+
 router.post('/test-python/:exerciseNumber', (req, res) => {
     const { data } = req.body;
     const exerciseNumber = req.params.exerciseNumber;
@@ -503,11 +518,14 @@ router.post('/test-python/:exerciseNumber', (req, res) => {
             }
             let dividedMessage = output.split("https://jestjs.io/docs/configuration")
             console.log("dividesMessage.length = ", dividedMessage.length)
-            console.log(`Comando ejecutado con éxito:\n${output}`);
+            //console.log(`Comando ejecutado con éxito:\n${output}`);
+            
             if (dividedMessage.length >= 1) {
+                let result = unitTestPython(dividedMessage[dividedMessage.length - 1], exerciseNumber)
                 res.status(200).json({ message: 'Exitoso', command: dividedMessage[dividedMessage.length - 1], correct: true });
             } else {
-                res.status(200).json({ message: 'Exitoso', command: output, correct: true });
+                let result = unitTestPython(output, exerciseNumber)
+                res.status(200).json({ message: result.message, command: output, correct: result.correct });
             }
 
         });
