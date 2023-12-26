@@ -493,6 +493,9 @@ function validatePythonCode(pythonCode){
     if(pythonCode.includes("while True")){
         return false
     }
+    if(pythonCode.includes("while False")){
+        return false
+    }
     if(pythonCode.includes("re.compile")){
         return false
     }
@@ -515,6 +518,36 @@ function validatePythonCode(pythonCode){
         return false
     }
     if(pythonCode.includes("'A' * 1000000")){
+        return false
+    }
+    if(pythonCode.includes("range(1000000)")){
+        return false
+    }
+    if(pythonCode.includes("builtins")){
+        return false
+    }
+    if(pythonCode.includes("__import__")){
+        return false
+    }
+    if(pythonCode.includes("time.sleep")){
+        return false
+    }
+    if(pythonCode.includes("os.makedirs")){
+        return false
+    }
+    if(pythonCode.includes("psycopg2")){
+        return false
+    }
+    if(pythonCode.includes("database")){
+        return false
+    }
+    if(pythonCode.includes("host")){
+        return false
+    }
+    if(pythonCode.includes("localhost")){
+        return false
+    }
+    if(pythonCode.includes("port")){
         return false
     }
     return true
