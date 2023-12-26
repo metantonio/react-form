@@ -37,7 +37,7 @@ const TestRunnerPython = () => {
             // Restaura console.log a su estado original
             console.log = originalConsoleLog;
 
-            setLsCommand(prev=>`${prev}\n${consoleLogOutput}`);
+            setLsCommand(prev => `${prev}\n${consoleLogOutput}`);
         } catch (error) {
             console.error('Error running code:', error);
             //setLsCommand(null); // Puedes establecer un valor predeterminado o manejarlo de acuerdo a tus necesidades
@@ -91,26 +91,26 @@ const TestRunnerPython = () => {
 
     const handleKeyDown = (event) => {
         if (event.key === 'Tab') {
-          event.preventDefault();
-    
-          // Agregar un espacio o múltiples espacios en blanco
-          const { selectionStart, selectionEnd, value } = event.target;
-          const nuevaLinea = value.substring(0, selectionStart) + '    ' + value.substring(selectionEnd);
-    
-          setSelectedText(nuevaLinea);
-    
-          // Mover el cursor después de la tabulación
-          const nuevoCursor = selectionStart + 4;
-          event.target.setSelectionRange(nuevoCursor, nuevoCursor);
+            event.preventDefault();
+
+            // Agregar un espacio o múltiples espacios en blanco
+            const { selectionStart, selectionEnd, value } = event.target;
+            const nuevaLinea = value.substring(0, selectionStart) + '    ' + value.substring(selectionEnd);
+
+            setSelectedText(nuevaLinea);
+
+            // Mover el cursor después de la tabulación
+            const nuevoCursor = selectionStart + 4;
+            event.target.setSelectionRange(nuevoCursor, nuevoCursor);
         }
         if (event.key === 'Enter') {
             let lines = selectedText.split('\n');
-            let highlightedLines = lines.map(line =>
-              line.trim().startsWith('#') ? `<span class="code-line-comment">${line}</span>` : line
-            );
-            setSelectedText(highlightedLines.join('\n'));
-          }
-      };
+            let highlightedLines = lines.split('\n')
+                .map(line => (line.trim().startsWith('#') ? `/* ${line} */` : line))
+                .join('\n');
+            setSelectedText(highlightedLines);
+        }
+    };
 
     const handleContextMenu = (e) => {
         e.preventDefault();
