@@ -577,6 +577,7 @@ router.post('/test-python/:exerciseNumber', (req, res) => {
     console.log("testing exercise number ", exerciseNumber)
     let validation = validatePythonCode(data)
     if(validation===false){
+        console.log("Hey! what are you trying to do?")
         return res.status(200).json({ message: "Hey! what are you trying to do?", command: "Hey! what are you trying to do?? :/   The code is not valid!", correct: false });
     }
     // Ejecutar el proceso cmd.exe con el comando jest en Windows
