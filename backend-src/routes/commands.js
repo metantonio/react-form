@@ -428,7 +428,7 @@ router.post('/unix-commands', (req, res) => {
             }
             else if (commandParts[0] === 'pwd' && lesson >= 10) {
                 let resto = commandParts.slice(1)
-                childProcess = spawn('pwd', [], { shell: true, cwd: "./unix/home/user1" });
+                childProcess = spawn('pwd', resto, { shell: true, cwd: "./unix/home/user1" });
                 correcto = false
             }
             else if (data === 'rm -r ../user2/QLX' && lesson == 10) {
