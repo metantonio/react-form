@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial Python</title>
+    <style>
+        code {
+            display: block;
+            background-color: #0a0a0a;
+            color: rgb(236, 237, 238);
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>03 Mathematical Operations</h1>
+    <p>One of the things we can do in the Python language is store mathematical operations in variables.</p>
+    <p>For example, we can store the multiplication operation in a variable, like this:</p>
+    <code>multiplicationVariable = 3 * 4</code>
+
+    <h2>📝 Instructions:</h2>
+    <p>Next, create a variable named <strong>easyCalculation</strong> that stores the operation <strong>453 * 32</strong></p>
+    <p>Print the value of the variable to the console.</p>  
+    
+    <!-- <p><a href="https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_console_log2" target="_blank">W3schools</a></p> -->
+    
+    <script>
+        /* <div id="codeExample">       
+        </div>    
+            function runExample() {
+                document.getElementById('codeExample').innerText = '';
+                let codeSnippet = 'WoW!!';
+                document.getElementById('codeExample').innerText = codeSnippet;
+                eval(codeSnippet);
+            } */
+        function copyCode(sourceId) {
+            // Obtén el valor del código fuente
+            var sourceCode = document.getElementById(sourceId).innerText;
+
+            // Crea un elemento textarea temporal para copiar el contenido
+            var tempTextArea = document.createElement('textarea');
+            tempTextArea.value = sourceCode;
+
+            // Añade el textarea al documento
+            document.body.appendChild(tempTextArea);
+
+            // Selecciona y copia el contenido al portapapeles
+            tempTextArea.select();
+            document.execCommand('copy');
+
+            // Elimina el textarea temporal
+            document.body.removeChild(tempTextArea);
+        }
+    </script>
+
+
+
+</body>
+
+</html>
