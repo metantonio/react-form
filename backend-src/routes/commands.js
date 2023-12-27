@@ -365,7 +365,7 @@ router.post('/unix-commands', (req, res) => {
             else if (commandParts[0] === 'date') {
                 let resto = commandParts.slice(1)
                 childProcess = spawn('date', resto, { shell: true, cwd: "./unix/home/user1" });
-                if (lesson === 13) {
+                if (lesson === 13 && resto[0]=="-R") {
                     correcto = true
                 } else {
                     correcto = false
