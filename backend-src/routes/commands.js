@@ -473,6 +473,12 @@ function unitTestPython(outputTerminal, exercise, code=null) {
                 messageOutput = { message: "Correct", correct: true }
             }
             break;
+        case "4":
+            //console.log("terminal:", outputTerminal)
+            if (code.includes("print(age)") && code.includes("+") && code.includes("35")) { //terminar comes with an extra space
+                messageOutput = { message: "Correct", correct: true }
+            }
+            break;
         default:
             return messageOutput;
             break;
