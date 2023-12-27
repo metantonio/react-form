@@ -356,12 +356,16 @@ router.post('/unix-commands', (req, res) => {
             else if (commandParts[0] === 'man') {
                 let resto = commandParts.slice(1)
                 childProcess = spawn('man', resto, { shell: true, cwd: "./unix/home/user1" });
-                correcto = false
+                if (lesson === 12) {
+                    correcto = true
+                } else {
+                    correcto = false
+                }
             }
             else if (commandParts[0] === 'find' && (lesson == 8 || lesson == 11)) {
                 let resto = commandParts.slice(1)
                 childProcess = spawn('find', resto, { shell: true, cwd: "./unix/home/user1" });
-                if (lesson == 12) {
+                if (data == 'find ./ -type f -name "*.txt" | grep "secret"' || data == 'find . -type f -name "*.txt" | grep "secret"') {
                     correcto = true
                 } else {
                     correcto = false
