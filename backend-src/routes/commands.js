@@ -371,9 +371,9 @@ router.post('/unix-commands', (req, res) => {
                     correcto = false
                 }
             }
-            else if (data === 'ls -l; cat hello.txt' && lesson==14) {
+            else if (commandParts[0] === 'ls' && lesson == 14) {
                 let resto = commandParts.slice(1)
-                childProcess = spawn('ls', ["-l; cat hello.txt"], { shell: true, cwd: "./unix/home/user1" });
+                childProcess = spawn('ls', resto, { shell: true, cwd: "./unix/home/user1" });
                 if (lesson === 14) {
                     correcto = true
                 } else {
@@ -389,7 +389,7 @@ router.post('/unix-commands', (req, res) => {
                     correcto = false
                 }
             }
-            else if (commandParts[0] === 'ls' && lesson >= 8) {
+            else if (commandParts[0] === 'ls' && lesson >= 8 && lesson != 14) {
                 let resto = commandParts.slice(1)
                 childProcess = spawn('ls', resto, { shell: true, cwd: "./unix/home/user1" });
                 correcto = false
