@@ -467,6 +467,12 @@ function unitTestPython(outputTerminal, exercise, code=null) {
                 messageOutput = { message: "Correct", correct: true }
             }
             break;
+        case "3":
+            //console.log("terminal:", outputTerminal)
+            if (code.includes("print(easyCalculation)") && outputTerminal.includes("14496")) { //terminar comes with an extra space
+                messageOutput = { message: "Correct", correct: true }
+            }
+            break;
         default:
             return messageOutput;
             break;
