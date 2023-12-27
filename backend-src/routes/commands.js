@@ -571,6 +571,21 @@ function validatePythonCode(pythonCode){
     if(pythonCode.includes(".read()")){
         return false
     }
+    if(pythonCode.includes("pip install")){
+        return false
+    }
+    if(pythonCode.includes("pip3 install")){
+        return false
+    }
+    if(pythonCode.includes("pip uninstall")){
+        return false
+    }
+    if(pythonCode.includes("pip3 uninstall")){
+        return false
+    }
+    if(pythonCode.includes("pipenv")){
+        return false
+    }
     return true
 }
 

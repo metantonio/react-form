@@ -140,7 +140,7 @@ const TestRunner = () => {
                     {formattedHtml && (
                         <div dangerouslySetInnerHTML={{ __html: formattedHtml }} />
                     )}
-                    <div onClick={formatAsHtml}>{selectedLanguage=='es'?'Formato HTML':'HTML Format'}</div>
+                    <div onClick={formatAsHtml}>{selectedLanguage == 'es' ? 'Estructura HTML' : 'HTML Structure'}</div>
                 </div>
             )}
             <div id="instructions" className='instructions'>

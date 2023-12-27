@@ -160,6 +160,27 @@ const TestRunnerJavascript = () => {
         setFormattedHtml(newText)
     };
 
+    const forStructure = () => {
+        // Implementa la lógica para dar formato como HTML según tus necesidades
+        //let formattedText = `<pre style="margin: 0; padding: 8px; background-color: #f4f4f4; border: 1px solid #ddd; border-radius: 4px; white-space: pre-wrap;">${textareaRef.current.value.substring(0, textareaRef.current.selectionStart)}</pre>`;
+        let formattedText = `
+for(let i=0; i < 10; i=i+1){
+    console.log(i)
+}
+`
+        // Reemplaza el texto seleccionado en el textarea
+        //let newText = formattedText + textareaRef.current.value.substring(textareaRef.current.selectionEnd);
+        let newText = formattedText
+
+        // Actualiza el valor del textarea
+        textareaRef.current.value = newText;
+
+        // Oculta el menú contextual
+        setContextMenuVisible(false);
+        setSelectedText(newText);
+        setFormattedHtml(newText)
+    };
+
     return (
         <div id="layout-tutorial">
             <div id="pre">
@@ -181,7 +202,8 @@ const TestRunnerJavascript = () => {
                     {formattedHtml && (
                         <div dangerouslySetInnerHTML={{ __html: formattedHtml }} />
                     )}
-                    <div onClick={formatAsHtml}>{selectedLanguage == 'es' ? 'Formato HTML' : 'HTML Format'}</div>
+                    <div onClick={formatAsHtml}>{selectedLanguage == 'es' ? 'Estructura HTML' : 'HTML Structure'}</div>
+                    <div onClick={forStructure}>{selectedLanguage == 'es' ? 'Estructura For Loop' : 'For Loop Structure'}</div>
                 </div>
             )}
             <div id="instructions" className='instructions'>
