@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial UNIX</title>
+    <style>
+        pre {
+            background-color: #0a0a0a;
+            padding: 3px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            display: block;
+            background-color: #0a0a0a;
+            color: rgb(236, 237, 238);
+            padding: 3px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .color-success {
+            color: rgb(27, 224, 17);
+        }
+
+        .important {
+            color: rgb(17, 20, 224);
+        }
+
+        .return {
+            color: rgb(216, 11, 235);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>12 The Manual</h1>
+    <p>The <code>man man</code> command in Unix is a way to access the manual page for the <code>man</code> command itself. The <code>man</code> command is used to display online system documentation in Unix and Unix-like systems.</p>
+
+<pre><button onclick="copyCode('code-0')">Copy</button> 
+    <code id="code-0">
+man man
+</code></pre>
+
+<p>The manual page for the <code>man</code> command provides detailed information on how to use the <code>man</code> command, its options, and usage examples.</p>
+
+<p>Remember that the <code>man</code> command is a valuable tool for exploring and understanding other commands on your Unix system. You can use <code>man</code> followed by the name of the command you're interested in to get detailed information about its usage and options.</p>
+
+<h2>📝 Instructions:</h2>
+<p>Look up information using the manual for the <code>ls</code> command.</p>
+
+    <script>
+        /* <div id="codeExample">       
+        </div>    
+            function runExample() {
+                document.getElementById('codeExample').innerText = '';
+                let codeSnippet = 'WoW!!';
+                document.getElementById('codeExample').innerText = codeSnippet;
+                eval(codeSnippet);
+            } */
+        function copyCode(sourceId) {
+            // Obtén el valor del código fuente
+            var sourceCode = document.getElementById(sourceId).innerText;
+
+            // Crea un elemento textarea temporal para copiar el contenido
+            var tempTextArea = document.createElement('textarea');
+            tempTextArea.value = sourceCode;
+
+            // Añade el textarea al documento
+            document.body.appendChild(tempTextArea);
+
+            // Selecciona y copia el contenido al portapapeles
+            tempTextArea.select();
+            document.execCommand('copy');
+
+            // Elimina el textarea temporal
+            document.body.removeChild(tempTextArea);
+        }
+    </script>
+</body>
+
+</html>
