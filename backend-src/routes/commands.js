@@ -358,6 +358,8 @@ router.post('/unix-commands', (req, res) => {
                 childProcess = spawn('man', resto, { shell: true, cwd: "./unix/home/user1" });
                 if (lesson === 12 && resto[0]=="ls" ) {
                     correcto = true
+                } else if(lesson === 15 && data =='man || ls || cat hello.txt'){
+                    correcto = true
                 } else {
                     correcto = false
                 }
