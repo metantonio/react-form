@@ -315,7 +315,7 @@ router.post('/unix-commands', (req, res) => {
             }
             else if (commandParts[0] === 'cd' && lesson < 4) {
                 let resto = commandParts.slice(1)
-                childProcess = spawn('cd', resto);
+                childProcess = spawn('cd', resto, { shell: true, cwd: "./" });
                 if(lesson ==3 && (data =='cd ./unix')){
                     correcto = true
                 }
