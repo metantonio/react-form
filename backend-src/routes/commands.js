@@ -373,6 +373,7 @@ router.post('/unix-commands', (req, res) => {
             }
             else if (commandParts[0] === 'ls' && lesson == 14) {
                 let resto = commandParts.slice(1)
+                console.log(resto)
                 childProcess = spawn('ls', resto, { shell: true, cwd: "./unix/home/user1" });
                 if (data == 'ls -l; cat hello.txt') {
                     correcto = true
