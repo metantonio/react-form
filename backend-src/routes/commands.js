@@ -375,7 +375,7 @@ router.post('/unix-commands', (req, res) => {
                 let resto = commandParts.slice(1)
                 console.log(resto)
                 childProcess = spawn('ls', resto, { shell: true, cwd: "./unix/home/user1" });
-                if (data == 'ls -l; cat hello.txt') {
+                if (data == 'ls -l ; cat hello.txt') {
                     correcto = true
                 } else {
                     correcto = false
