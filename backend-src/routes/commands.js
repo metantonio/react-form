@@ -464,6 +464,7 @@ router.post('/unix-commands', (req, res) => {
 
             childProcess.stderr.on('data', (data) => {
                 console.error(`stderr: ${data}`);
+                output += data.toString();
             });
 
             childProcess.on('close', (code) => {
