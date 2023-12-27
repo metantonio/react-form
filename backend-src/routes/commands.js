@@ -392,8 +392,12 @@ router.post('/unix-commands', (req, res) => {
             }
             else if (commandParts[0] === 'ls' && lesson >= 8 && lesson != 14) {
                 let resto = commandParts.slice(1)
-                childProcess = spawn('ls', resto, { shell: true, cwd: "./unix/home/user1" });
                 correcto = false
+                if(data == 'ls -l ; cat hello.txt'){
+                    correcto = true
+                }
+                childProcess = spawn('ls', resto, { shell: true, cwd: "./unix/home/user1" });
+                
             }
             else if (data === 'mkdir ../user2/QLX' && lesson == 9) {
                 let resto = commandParts.slice(1)
