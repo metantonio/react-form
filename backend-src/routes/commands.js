@@ -598,6 +598,9 @@ function validatePythonCode(pythonCode){
     if(pythonCode.includes("pipenv")){
         return false
     }
+    if(pythonCode.includes("input(")){
+        return false
+    }
     return true
 }
 
