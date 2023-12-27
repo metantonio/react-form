@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial UNIX</title>
+    <style>
+        pre {
+            background-color: #0a0a0a;
+            padding: 3px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            display: block;
+            background-color: #0a0a0a;
+            color: rgb(236, 237, 238);
+            padding: 3px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .color-success {
+            color: rgb(27, 224, 17);
+        }
+        .important {
+            color: rgb(17, 20, 224);
+        }
+        .return {
+            color: rgb(216, 11, 235);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>15 Múltiples Comandos Condionados</h1>
+<p>Es posible ejecutar varios comandos múltiples y que éstos se ejecuten dependiendo, o no, de la ejecución exitósa de los comandos previos</p>
+<ul>
+    <li><strong>&&</strong> Operador: Ejecuta el siguiente comando sólo si el anterior fue ejecutado exitósamente.</li>
+    <li><strong>||</strong> Operador: Ejecuta el siguiente comando sólo si el anterior fue ejecutado fallidamente.</li>
+</ul>
+<pre><button onclick="copyCode('code-0')">Copy</button><code id="code-0">
+pwd && ls
+</code></pre>
+
+<h2>📝 Instrucciones:</h2>
+<p>Coloca el(los) operador(es) correcto para que se pueda ejecutar el siguiente comando</p>
+<pre><button onclick="copyCode('code-1')">Copy</button><code id="code-1">
+man && ls && cat hello.txt
+</code></pre>
+<p>Cambia únicamente los operadores.</p>
+    <script>        
+        function copyCode(sourceId) {
+            // Obtén el valor del código fuente
+            var sourceCode = document.getElementById(sourceId).innerText;
+
+            // Crea un elemento textarea temporal para copiar el contenido
+            var tempTextArea = document.createElement('textarea');
+            tempTextArea.value = sourceCode;
+
+            // Añade el textarea al documento
+            document.body.appendChild(tempTextArea);
+
+            // Selecciona y copia el contenido al portapapeles
+            tempTextArea.select();
+            document.execCommand('copy');
+
+            // Elimina el textarea temporal
+            document.body.removeChild(tempTextArea);
+        }
+    </script>
+</body>
+
+</html>
