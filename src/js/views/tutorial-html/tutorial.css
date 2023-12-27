@@ -77,3 +77,95 @@
     padding: 8px;
     font-size: 16px;
   }
+
+  *:contains('<div>') {
+    color: rgb(0, 4, 255); /* Cambia este color según tus preferencias */
+  }
+
+  *:contains('</div>') {
+    color: rgb(0, 4, 255);; /* Cambia este color según tus preferencias */
+  }
+
+  *:contains('<body>') {
+    color: rgb(0, 4, 255); /* Cambia este color según tus preferencias */
+  }
+
+  *:contains('</body>') {
+    color: rgb(0, 4, 255);; /* Cambia este color según tus preferencias */
+  }
+
+  *:contains('<meta>') {
+    color: rgb(0, 4, 255); /* Cambia este color según tus preferencias */
+  }
+
+  *:contains('</meta>') {
+    color: rgb(0, 4, 255);; /* Cambia este color según tus preferencias */
+  }
+
+  *:contains('<head>') {
+    color: rgb(0, 4, 255); /* Cambia este color según tus preferencias */
+  }
+
+  *:contains('</head>') {
+    color: rgb(0, 4, 255);; /* Cambia este color según tus preferencias */
+  }
+
+  *:contains('<p>') {
+    color: rgb(0, 4, 255); /* Cambia este color según tus preferencias */
+  }
+
+  *:contains('</p>') {
+    color: rgb(0, 4, 255);; /* Cambia este color según tus preferencias */
+  }
+
+  *:contains('<ul>') {
+    color: rgb(0, 4, 255); /* Cambia este color según tus preferencias */
+  }
+
+  *:contains('</ul>') {
+    color: rgb(0, 4, 255);; /* Cambia este color según tus preferencias */
+  }
+
+  *:contains('<ol>') {
+    color: rgb(0, 4, 255); /* Cambia este color según tus preferencias */
+  }
+
+  *:contains('</ol>') {
+    color: rgb(0, 4, 255);; /* Cambia este color según tus preferencias */
+  }
+
+  *:contains('<li>') {
+    color: rgb(0, 4, 255); /* Cambia este color según tus preferencias */
+  }
+
+  *:contains('</li>') {
+    color: rgb(0, 4, 255);; /* Cambia este color según tus preferencias */
+  }
+
+  *:contains('<div>') {
+    color: rgb(0, 4, 255); /* Cambia este color según tus preferencias */
+  }
+
+  *:contains('class=') {
+    color: rgb(0, 162, 255);; /* Cambia este color según tus preferencias */
+  }
+
+  *:contains('id=') {
+    color: rgb(0, 162, 255);; /* Cambia este color según tus preferencias */
+  }
+
+  *:contains('src=') {
+    color: rgb(0, 162, 255);; /* Cambia este color según tus preferencias */
+  }
+
+  *:contains('href=') {
+    color: rgb(0, 162, 255);; /* Cambia este color según tus preferencias */
+  }
+
+  *:contains('target=') {
+    color: rgb(0, 162, 255);; /* Cambia este color según tus preferencias */
+  }
+
+  *:contains('style=') {
+    color: rgb(0, 162, 255);; /* Cambia este color según tus preferencias */
+  }
