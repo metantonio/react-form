@@ -57,6 +57,8 @@ const TestRunnerUnix = () => {
             let data = await response.json();
             if (response.ok) {
                 setLsCommand(data.command)
+            }else{
+                setLsCommand(data.command)
             }
             if (data.correct) {
                 Swal.fire({ text: "Correct!", icon: "success" });

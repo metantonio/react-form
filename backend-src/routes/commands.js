@@ -220,6 +220,11 @@ router.post('/unix-commands', (req, res) => {
     let { data, lesson } = req.body;
     let platform = os.platform();
     let output = '';
+    let validation = validatePythonCode(data)
+    if(validation===false){
+        console.log("Hey! what are you trying to do?")
+        return res.status(200).json({ message: "Hey! what are you trying to do?", command: "Hey! what are you trying to do?? :/   The code is not valid!", correct: false });
+    }
     //const exerciseNumber = req.params.exerciseNumber;
     // Ejecutar el proceso cmd.exe con el comando dir en Windows
     if (platform === 'win32') {
@@ -292,7 +297,7 @@ router.post('/unix-commands', (req, res) => {
     } else {
         try {
             let childProcess;
-            console.log("distinto de windows")
+            //console.log("distinto de windows")
             console.log("data: ", data)
             let commandParts = data.split(' ');
             let correcto = true
@@ -473,7 +478,7 @@ router.post('/unix-commands', (req, res) => {
                     return res.status(500).json({ error: 'Error al ejecutar el comando', correct: false, message: "error", command:output });
                 }
 
-                console.log(`Comando ejecutado con éxito:\n${output}`);
+                //console.log(`Comando ejecutado con éxito:\n${output}`);
                 res.status(200).json({ message: 'Exitoso', command: output, correct: correcto });
             });
         }
