@@ -171,8 +171,8 @@ const TestRunnerPython = () => {
         //let formattedText = `<pre style="margin: 0; padding: 8px; background-color: #f4f4f4; border: 1px solid #ddd; border-radius: 4px; white-space: pre-wrap;">${textareaRef.current.value.substring(0, textareaRef.current.selectionStart)}</pre>`;
         let formattedText = `
 for i in range(0, 10):
-        print(i)
-        `
+    print(i)
+`
         // Reemplaza el texto seleccionado en el textarea
         //let newText = formattedText + textareaRef.current.value.substring(textareaRef.current.selectionEnd);
         let newText = formattedText
