@@ -470,7 +470,7 @@ router.post('/unix-commands', (req, res) => {
             childProcess.on('close', (code) => {
                 if (code !== 0) {
                     console.error(`Error: Proceso hijo cerrado con código ${code}`);
-                    return res.status(500).json({ error: 'Error al ejecutar el comando', correct: false, message: "error" });
+                    return res.status(500).json({ error: 'Error al ejecutar el comando', correct: false, message: "error", command:output });
                 }
 
                 console.log(`Comando ejecutado con éxito:\n${output}`);
