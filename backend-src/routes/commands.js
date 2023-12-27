@@ -335,7 +335,7 @@ router.post('/unix-commands', (req, res) => {
                 childProcess = spawn('ls', [commandParts[1]], { shell: true, cwd: "./unix/home/user1" });
                 correcto = true
             }
-            else if (commandParts[0] === 'ls' && lesson > 6) {
+            else if (commandParts[0] === 'ls' && lesson > 6 && lesson != 14) {
                 childProcess = spawn('ls', [commandParts[1]], { shell: true, cwd: "./unix/home/user1" });
                 correcto = false
             }
