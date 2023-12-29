@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial UNIX</title>
+    <style>
+        pre {
+            background-color: #0a0a0a;
+            padding: 3px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            display: block;
+            background-color: #0a0a0a;
+            color: rgb(236, 237, 238);
+            padding: 3px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .color-success {
+            color: rgb(27, 224, 17);
+        }
+        .important {
+            color: rgb(17, 20, 224);
+        }
+        .return {
+            color: rgb(216, 11, 235);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>19 VIM</h1>
+<p><strong>VIM</strong> es uno de los editores de texto que vienen predeterminadamente en UNIX, y es muy poderoso pero complicado de usar al principio.</p>
+<h2>📝 Instrucciones:</h2>
+<p>Usa el siguiente ejercicio de OpenVim para practicar</p>
+<iframe src="https://www.openvim.com/"></iframe>
+<a href="https://www.openvim.com/">OpenVim</a>
+    <script>        
+        function copyCode(sourceId) {
+            // Obtén el valor del código fuente
+            var sourceCode = document.getElementById(sourceId).innerText;
+
+            // Crea un elemento textarea temporal para copiar el contenido
+            var tempTextArea = document.createElement('textarea');
+            tempTextArea.value = sourceCode;
+
+            // Añade el textarea al documento
+            document.body.appendChild(tempTextArea);
+
+            // Selecciona y copia el contenido al portapapeles
+            tempTextArea.select();
+            document.execCommand('copy');
+
+            // Elimina el textarea temporal
+            document.body.removeChild(tempTextArea);
+        }
+    </script>
+</body>
+
+</html>
