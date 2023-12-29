@@ -462,6 +462,11 @@ router.post('/unix-commands', (req, res) => {
                 childProcess = spawn('less', ['"./documents/more documents/not important documents/jokes.txt"'], { shell: true, cwd: "./unix/home/user1" });
                 correcto = true
             }
+            else if ((data === 'diff ./documents/more documents/some important documents/secret1.txt ./documents/more documents/some important documents/secret-of-life.txt' || data === 'diff ./documents/more documents/some important documents/secret-of-lif.txt ./documents/more documents/some important documents/secret1.txt') && lesson == 16) {
+                let resto = commandParts.slice(1)
+                childProcess = spawn('diff', resto, { shell: true, cwd: "./unix/home/user1" });
+                correcto = true
+            }
             else {
                 childProcess = spawn(`echo Wrong Command: ${data}`, [], { shell: true });
                 correcto = false
