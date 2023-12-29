@@ -609,9 +609,6 @@ function validatePythonCode(pythonCode){
     if(pythonCode.includes("localhost")){
         return false
     }
-    if(pythonCode.includes("port")){
-        return false
-    }
     if(pythonCode.includes("os.environ")){
         return false
     }
