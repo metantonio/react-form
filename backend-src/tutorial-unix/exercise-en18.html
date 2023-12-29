@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial UNIX</title>
+    <style>
+        pre {
+            background-color: #0a0a0a;
+            padding: 3px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            display: block;
+            background-color: #0a0a0a;
+            color: rgb(236, 237, 238);
+            padding: 3px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .color-success {
+            color: rgb(27, 224, 17);
+        }
+        .important {
+            color: rgb(17, 20, 224);
+        }
+        .return {
+            color: rgb(216, 11, 235);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>18 Hard Link and Soft Link</h1>
+    <p>The <strong>ln</strong> command is used to create a link to a file. It's similar to creating shortcuts in Windows.</p>
+    <p>By default, the <strong>ln</strong> command creates "hard links" to files. This means that if the original file is moved or renamed, we can still access it because the "hard link" links it through the <strong>inode</strong>.</p>
+    <p>On the other hand, the <strong>ln -s</strong> command creates "soft links" to files. It's a direct pointer to the file and not to the original inode (creating a new inode), so if the file is renamed or moved, even if the "soft link" exists, we no longer have the correct path to the original file.</p>
+    <p>To create these links, it's necessary to first navigate to the folder where we want to create this "shortcut" and then provide the path to the file using:</p>
+    
+<pre><button onclick="copyCode('code-0')">Copy</button><code id="code-0">ln ./path-to-file/or-folder</code></pre>
+<img src="https://miro.medium.com/v2/resize:fit:700/1*Dw9A-Fxahdai7ccNwkxWFA.jpeg"/>
+    <h2>📝 Instructions:</h2>
+    <p>Next, from the current folder, create a "hard link" to the file <strong>secret3.txt</strong>.</p>
+    
+    <script>        
+        function copyCode(sourceId) {
+            // Obtén el valor del código fuente
+            var sourceCode = document.getElementById(sourceId).innerText;
+
+            // Crea un elemento textarea temporal para copiar el contenido
+            var tempTextArea = document.createElement('textarea');
+            tempTextArea.value = sourceCode;
+
+            // Añade el textarea al documento
+            document.body.appendChild(tempTextArea);
+
+            // Selecciona y copia el contenido al portapapeles
+            tempTextArea.select();
+            document.execCommand('copy');
+
+            // Elimina el textarea temporal
+            document.body.removeChild(tempTextArea);
+        }
+    </script>
+</body>
+
+</html>
