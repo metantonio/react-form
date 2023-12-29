@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial UNIX</title>
+    <style>
+        pre {
+            background-color: #0a0a0a;
+            padding: 3px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            display: block;
+            background-color: #0a0a0a;
+            color: rgb(236, 237, 238);
+            padding: 3px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .color-success {
+            color: rgb(27, 224, 17);
+        }
+        .important {
+            color: rgb(17, 20, 224);
+        }
+        .return {
+            color: rgb(216, 11, 235);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>16 Comparing Files</h1>
+<p>One of the most useful and perhaps not so commonly used commands is the <strong>diff</strong> command.</p>
+<p><strong>diff</strong> allows us to compare two files, and if they are text files, it allows us to compare them line by line. The structure of the command is as follows:</p>
+
+<pre><button onclick="copyCode('code-0')">Copy</button><code id="code-0">diff ./file1.txt ./file2.txt</code></pre>
+
+<h2>📝 Instructions:</h2>
+<p>Next, locate the location of the files <strong>secret-of-life.txt</strong> and <strong>secret1.txt</strong>. Once you have the location of both files, without moving from the current folder, compare both files.</p>
+
+<h3>🔎 Hint:</h3>
+<p>Use the <strong>find</strong> command to assist in the search:</p>
+
+<pre><button onclick="copyCode('code-1')">Copy</button><code id="code-1">find ./ -type f -name "secret*.txt"</code></pre>
+    <script>        
+        function copyCode(sourceId) {
+            // Obtén el valor del código fuente
+            var sourceCode = document.getElementById(sourceId).innerText;
+
+            // Crea un elemento textarea temporal para copiar el contenido
+            var tempTextArea = document.createElement('textarea');
+            tempTextArea.value = sourceCode;
+
+            // Añade el textarea al documento
+            document.body.appendChild(tempTextArea);
+
+            // Selecciona y copia el contenido al portapapeles
+            tempTextArea.select();
+            document.execCommand('copy');
+
+            // Elimina el textarea temporal
+            document.body.removeChild(tempTextArea);
+        }
+    </script>
+</body>
+
+</html>
