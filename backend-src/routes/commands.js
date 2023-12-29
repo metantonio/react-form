@@ -368,6 +368,7 @@ router.post('/unix-commands', (req, res) => {
                 let origen = './hello.txt';
                 let destino = '../user2/HelloCopy.txt';
                 childProcess = spawn(`cp ${origen} ${destino}`, [], { shell: true, cwd: "./unix/home/user1" });
+                correcto = true
             }
             else if (commandParts[0] === 'find' && lesson == 7) {
                 let resto = commandParts.slice(1)
