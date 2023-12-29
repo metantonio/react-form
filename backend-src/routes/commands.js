@@ -424,7 +424,7 @@ router.post('/unix-commands', (req, res) => {
                 if(data == 'ls -l ; cat hello.txt' && lesson == 14){
                     correcto = true
                 }
-                if(lesson == 17 && (data=="ls -Ri" || data=="ls -iR") ){
+                if(lesson == 17 && (data=='ls -Ri' || data=='ls -iR') ){
                     correcto = true
                 }
                 childProcess = spawn('ls', resto, { shell: true, cwd: "./unix/home/user1" });
