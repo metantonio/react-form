@@ -360,9 +360,15 @@ router.post('/unix-commands', (req, res) => {
                 childProcess = spawn('ls', [commandParts[1]], { shell: true, cwd: "./unix/home/user1" });
                 correcto = true
             }
-            else if (commandParts[0] === 'ls' && lesson > 6 && lesson != 14) {
+            else if (commandParts[0] === 'ls' && lesson > 6) {
                 childProcess = spawn('ls', [commandParts[1]], { shell: true, cwd: "./unix/home/user1" });
                 correcto = false
+                if(data == 'ls -l ; cat hello.txt' && lesson == 14){
+                    correcto = true
+                }
+                if(lesson == 17 && (data=='ls -Ri' || data=='ls -iR') ){
+                    correcto = true
+                }
             }
             else if ((data == 'cp hello.txt ../user2/HelloCopy.txt' || data == 'cp ./hello.txt ../user2/HelloCopy.txt') && lesson == 5) {
                 let origen = './hello.txt';
