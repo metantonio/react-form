@@ -467,6 +467,7 @@ router.post('/unix-commands', (req, res) => {
                 childProcess = spawn('diff', resto, { shell: true, cwd: "./unix/home/user1" });
                 if(data.includes('"./documents/more documents/some important documents/secret1.txt"') && data.includes('"./documents/more documents/some important documents/secret-of-life.txt"')){
                     correcto = true
+                    console.log("correcto")
                 }
                 
             }
