@@ -466,8 +466,7 @@ router.post('/unix-commands', (req, res) => {
                 let resto = commandParts.slice(1)
                 childProcess = spawn('diff', resto, { shell: true, cwd: "./unix/home/user1" });
                 if(data.includes('"./documents/more documents/some important documents/secret1.txt"') && data.includes('"./documents/more documents/some important documents/secret-of-life.txt"')){
-                    correcto = true
-                    console.log("correcto")
+                    correcto = true                    
                 }
                 
             }
@@ -488,7 +487,7 @@ router.post('/unix-commands', (req, res) => {
             childProcess.on('close', (code) => {
                 if (code !== 0) {
                     console.error(`Error: Proceso hijo cerrado con código ${code}`);
-                    return res.status(500).json({ error: 'Error al ejecutar el comando', correct: false, message: "error", command:output });
+                    return res.status(500).json({ error: 'Error al ejecutar el comando', correct: correcto, message: "error", command:output });
                 }
 
                 //console.log(`Comando ejecutado con éxito:\n${output}`);
