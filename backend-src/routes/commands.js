@@ -465,7 +465,7 @@ router.post('/unix-commands', (req, res) => {
             else if (commandParts[0] === 'diff' && lesson == 16) {
                 let resto = commandParts.slice(1)
                 childProcess = spawn('diff', resto, { shell: true, cwd: "./unix/home/user1" });
-                if(resto.includes("./documents/more documents/some important documents/secret1.txt") && resto.includes("./documents/more documents/some important documents/secret-of-life.txt")){
+                if(resto.includes('"./documents/more documents/some important documents/secret1.txt"') && resto.includes('"./documents/more documents/some important documents/secret-of-life.txt"')){
                     correcto = true
                 }
                 
