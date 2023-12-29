@@ -303,6 +303,9 @@ router.post('/unix-commands', (req, res) => {
             let correcto = false
             if ((data == 'pwd' && lesson < 4)) {
                 childProcess = spawn('pwd', []);
+                if(lesson==1){
+                    correcto=true
+                }
             }
             else if ((data == 'ls') && lesson < 4) {
                 childProcess = spawn('ls', []);
