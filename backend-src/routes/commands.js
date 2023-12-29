@@ -506,6 +506,13 @@ router.post('/unix-commands', (req, res) => {
                     correcto = true
                 }
             }
+            else if((commandParts[0] === 'cat' || commandParts[0] === 'less') && lesson == 18){
+                let resto = commandParts.slice(1)
+                if(data.includes('./secret3.txt')){
+                    childProcess = spawn(commandParts[0], resto, { shell: true, cwd: "./unix/home/user1" });
+                    correcto = true
+                }
+            }
             else {
                 childProcess = spawn(`echo Wrong Command: ${data}`, [], { shell: true });
                 correcto = false
