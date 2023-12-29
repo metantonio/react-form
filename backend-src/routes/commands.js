@@ -361,7 +361,8 @@ router.post('/unix-commands', (req, res) => {
                 correcto = true
             }
             else if (commandParts[0] === 'ls' && lesson > 6) {
-                childProcess = spawn('ls', [commandParts[1]], { shell: true, cwd: "./unix/home/user1" });
+                let resto = commandParts.slice(1)
+                childProcess = spawn('ls', resto, { shell: true, cwd: "./unix/home/user1" });
                 correcto = false
                 if(data == 'ls -l ; cat hello.txt' && lesson == 14){
                     correcto = true
