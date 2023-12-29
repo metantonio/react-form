@@ -645,6 +645,21 @@ function validatePythonCode(pythonCode){
     if(pythonCode.includes("input(")){
         return false
     }
+    if(pythonCode.includes("sudo")){
+        return false
+    }
+    if(pythonCode.includes("systemctl")){
+        return false
+    }
+    if(pythonCode.includes("nginx")){
+        return false
+    }
+    if(pythonCode.includes("firewall")){
+        return false
+    }
+    if(pythonCode.includes("selinux")){
+        return false
+    }
     return true
 }
 
