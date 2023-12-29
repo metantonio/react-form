@@ -457,7 +457,7 @@ router.post('/unix-commands', (req, res) => {
                 let resto = commandParts.slice(1)
                 childProcess = spawn('ls', resto, { shell: true, cwd: "./unix/home/user1" });
                 correcto = false
-                if(lesson == 17 && (resto[0]=="-Ri" || resto[0]=="-iR") ){
+                if(lesson == 17 && (data=="ls -Ri" || data=="ls -iR") ){
                     correcto = true
                 }
             }
