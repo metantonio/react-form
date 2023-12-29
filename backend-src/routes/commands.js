@@ -502,7 +502,7 @@ router.post('/unix-commands', (req, res) => {
             else if(commandParts[0] === 'ln' && lesson == 18){
                 let resto = commandParts.slice(1)
                 if(data.includes('"./documents/more documents/some important documents/secret3.txt"')){
-                    childProcess = spawn('diff', resto, { shell: true, cwd: "./unix/home/user1" });
+                    childProcess = spawn('ln', resto, { shell: true, cwd: "./unix/home/user1" });
                     correcto = true
                 }
             }
