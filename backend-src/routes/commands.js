@@ -309,12 +309,21 @@ router.post('/unix-commands', (req, res) => {
             }
             else if ((data == 'ls') && lesson < 4) {
                 childProcess = spawn('ls', []);
+                if(lesson == 2){
+                    correcto = true
+                }
             }
             else if ((data == 'ls -l') && lesson < 4) {
                 childProcess = spawn('ls', ['-l']);
+                if(lesson == 2){
+                    correcto = true
+                }
             }
             else if ((data == 'ls -la' || data == 'ls -l -a') && lesson < 4) {
                 childProcess = spawn('ls', ['-la']);
+                if(lesson == 2){
+                    correcto = true
+                }
             }
             else if (commandParts[0] === 'cd' && lesson < 4) {
                 let resto = commandParts.slice(1)
