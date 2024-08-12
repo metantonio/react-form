@@ -3,7 +3,7 @@ import '../scss/style.scss'
 import { Context } from "./store/appContext";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Suspense, lazy } from "react";
-
+import Login from "./views/Login/login.jsx";
 import ScrollToTop from "./component/scrollToTop";
 
 import Home from './views/home.js';
@@ -39,19 +39,21 @@ const Layout = () => {
       <Router basename={basename}>
         <ScrollToTop>
           {/* {store.logOutConfirmation ? <Navbar2 /> : <></>} */}
-          <Navbar2 />
+          {/* <Navbar2 /> */}
           {/* {store.logOutConfirmation ? <IAInput /> : <></>} */}
           <Suspense fallback={<div className="spinner-border text-primary" />}>
             <Routes>
-              <Route exact path="/" element={<Home />} />         
-              <Route exact path="/login" element={<Loginqruser />} />                
-              <Route exact path="/signup" element={<Userqrregister />} />            
-              <Route exact path="/update-password" element={<CambioPassword />} />   
+              <Route exact path="/">
+                <Login />
+              </Route>
+              <Route exact path="/login" element={<Loginqruser />} />
+              <Route exact path="/signup" element={<Userqrregister />} />
+              <Route exact path="/update-password" element={<CambioPassword />} />
               <Route exact path="/html-tutorial" element={<TestRunner />} />
-              <Route exact path="/unix-tutorial" element={<TestRunnerUnix />} />   
-              <Route exact path="/javascript-tutorial" element={<TestRunnerJavascript />} /> 
-              <Route exact path="/python-tutorial" element={<TestRunnerPython />} /> 
-              <Route exact path="/metamask" element={<MetaMask />} />      
+              <Route exact path="/unix-tutorial" element={<TestRunnerUnix />} />
+              <Route exact path="/javascript-tutorial" element={<TestRunnerJavascript />} />
+              <Route exact path="/python-tutorial" element={<TestRunnerPython />} />
+              <Route exact path="/metamask" element={<MetaMask />} />
               <Route exact path="*" element={<Error404 />} />
             </Routes>
           </Suspense>
