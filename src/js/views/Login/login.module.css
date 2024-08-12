@@ -19,11 +19,12 @@
     width: 100%;
 } */
 
-/* clase del logo de kaizen */
+/* clase del logo */
 .login__img {
 
     width: 100% !important;
-    height: 67px !important;
+    height: 80px !important;
+    mix-blend-mode: multiply !important;
 }
 
 .login__container {

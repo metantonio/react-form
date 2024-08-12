@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../../store/appContext";
 import { Redirect, useHistory } from "react-router-dom";
 import logo from "../../../img/logo.png";
-import imgbg from "../../../img/bg.jpg";
+import imgbg from "../../../img/bg.png";
 import { Link } from "react-router-dom";
 import Swal from 'sweetalert2';
 import styles from "./login.module.css";
@@ -84,9 +84,9 @@ const Login = () => {
                 <section className={styles.ftco_section} >
                     <div className="container">
                         <div className="row d-flex justify-content-center">
-                            <div className="d-flex text-center mb-5">
+                            <div className="d-flex text-center justify-content-center mb-5">
                                 <h2 className={styles.heading_section} style={{ border: "none" }}><Link to="/">
-                                    <img src={logo} className="login__img" alt="" />
+                                    <img src={logo} className="login__img" alt="" style={{mixBlendMode:"multiply"}}/>
                                 </Link></h2>
                             </div>
                         </div>

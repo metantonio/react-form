@@ -1,8 +1,9 @@
 import React, { useState, useContext } from "react";
-import '../scss/style.scss'
+//import '../scss/style.scss'
 import { Context } from "./store/appContext";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Suspense, lazy } from "react";
+//import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Router, Switch, Suspense } from "react-router-dom";
+//import { Suspense, lazy } from "react";
 import Login from "./views/Login/login.jsx";
 import ScrollToTop from "./component/scrollToTop";
 
@@ -14,19 +15,7 @@ import { Navbar2 } from "./component/Navbar2/navbar2.jsx";
 
 import Error404 from "./views/404/404.jsx";
 
-const Loginqruser = lazy(() => import('./views/user/login.js'));
-
-import { Userqrregister } from "./views/user/signup.js";
-
-const CambioPassword = lazy(() => import('./views/user/changePassword.js'))
-
-import TestRunner from "./views/tutorial-html/testRunner.jsx";
-import TestRunnerUnix from "./views/tutorial-unix/testRunnerUnix.jsx";
-import TestRunnerJavascript from "./views/tutorial-javascript/testRunnerJavascript.jsx";
-import TestRunnerPython from "./views/tutorial-python/testRunnerPython.jsx";
-
-import MetaMask from "./views/third-web/metamask.jsx";
-
+//const CambioPassword = lazy(() => import('./views/user/changePassword.js'))
 
 const Layout = () => {
   //the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -36,29 +25,21 @@ const Layout = () => {
 
   return (
     <div>
-      <Router basename={basename}>
+      <BrowserRouter basename={basename}>
         <ScrollToTop>
           {/* {store.logOutConfirmation ? <Navbar2 /> : <></>} */}
           {/* <Navbar2 /> */}
           {/* {store.logOutConfirmation ? <IAInput /> : <></>} */}
-          <Suspense fallback={<div className="spinner-border text-primary" />}>
-            <Routes>
-              <Route exact path="/">
-                <Login />
-              </Route>
-              <Route exact path="/login" element={<Loginqruser />} />
-              <Route exact path="/signup" element={<Userqrregister />} />
-              <Route exact path="/update-password" element={<CambioPassword />} />
-              <Route exact path="/html-tutorial" element={<TestRunner />} />
-              <Route exact path="/unix-tutorial" element={<TestRunnerUnix />} />
-              <Route exact path="/javascript-tutorial" element={<TestRunnerJavascript />} />
-              <Route exact path="/python-tutorial" element={<TestRunnerPython />} />
-              <Route exact path="/metamask" element={<MetaMask />} />
-              <Route exact path="*" element={<Error404 />} />
-            </Routes>
-          </Suspense>
+          <Switch>
+            <Route exact path="/">
+              <Login />
+            </Route>
+            <Route exact path="*">
+              <Error404 />
+            </Route>
+          </Switch>
         </ScrollToTop>
-      </Router>
+      </BrowserRouter>
     </div>
   );
 };
