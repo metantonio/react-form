@@ -118,6 +118,77 @@ export function usuariosActions(getStore, getActions, setStore) {
                 return false;
             }
         },
+        loginPhp: async (user_name, password) => {
+            let url = BASE_URL + "/admin/verify.php";
+            let actions = getActions();
+            let store = getStore();
+            let login_data = {};
+            let atCounter = false;
+            const data = new URLSearchParams();
+            data.append('t1', user_name);
+            data.append('t2', password);
+            data.append('login', "");
+
+            for (let i = 0; i < user_name.length; i++) {
+                if (atCounter) {
+                    break;
+                }
+                if (user_name.charAt(i) == "@") {
+                    atCounter = true;
+                }
+            }
+
+            if (!atCounter) {
+                login_data = {
+                    username: user_name,
+                    password: password
+                };
+            } else if (atCounter) {
+                login_data = {
+                    username: user_name,
+                    password: password
+                };
+            }
+            let response = await fetch(url, {
+                method: "POST",
+                headers: { 
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+                    /* 'X-Forwarded-For': '34.230.98.190:443' */
+                    "Cookie": "PHPSESSID=i2ulebdqqr31qaghh1ubfpq6r5"
+                 },
+                body: data.toString()
+            });
+            let userdata = await response.data;
+
+            //actions.saveUserData(user);
+            if (response.ok) {
+                //let response2 = actions.checkUser();
+                if (response.ok) {
+                    console.log(userdata);
+                    setStore({ ...store, user: userdata });
+                    setStore({ ...store, logOutConfirmation: true });
+                    localStorage.setItem("username", userdata.JRUsuario); //revisar
+                    //localStorage.setItem("password", userdata.JRClave);
+                    localStorage.setItem("token", userdata.token);
+                    localStorage.setItem("logOutConfirmation", true);
+                    //actions.getUsers();
+                    actions.getTablas();
+                    actions.getCtl();
+                    actions.checkUser();
+                    return true;
+                } else {
+                    //actions.logOut();
+                    alert("username o password incorrectos");
+                    return false;
+                }
+            } else {
+                //actions.logOut();
+                console.log(userdata);
+                alert("username o password incorrectos");
+                return false;
+            }
+        },
         saveUserData: (user, google = null) => {
             setStore({ ...store, user: user, logOutConfirmation: true });
             //localStorage.setItem("token", user.jwt);

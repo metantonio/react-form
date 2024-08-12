@@ -17,7 +17,7 @@ const Login = () => {
     const [qrCode, setQrCode] = useState(false)
     const login = async e => {
         e.preventDefault();
-        const succes = await actions.login(userName, password);
+        const succes = await actions.loginPhp(userName, password);
         if (succes) {
             setQrCode(store.userpoker.qr_image)
             Swal.fire({
@@ -89,11 +89,12 @@ const Login = () => {
                                     <img src={logo} className="login__img" alt="" style={{mixBlendMode:"multiply"}}/>
                                 </Link></h2>
                             </div>
+                            <h2>Admin Login</h2>
                         </div>
                         <div className="row justify-content-center">
                             <div className="col-md-12 col-lg-12">
                                 <div className={`${styles.login_wrap} p-0`}>
-                                    <a className={`${styles.login_title} mb-4 text-center`} onClick={signup}>Have an account?</a>
+                                    <a className={`${styles.login_title} mb-4 text-center text-blue`} onClick={signup}>Have an account?</a>
                                     <form action="#" className="signin-form">
                                         <div className={styles.form_group}>
                                             <input type="text" className={styles.form_control} placeholder="Email/Username"
@@ -134,7 +135,7 @@ const Login = () => {
                                             </div>
                                         </div>
                                     </form>
-                                    <p className={`${styles.w_100} text-center`}>&mdash; Or Sign In With &mdash;</p>
+                                    {/* <p className={`${styles.w_100} text-center`}>&mdash; Or Sign In With &mdash;</p>
                                     <div className="row d-flex text-center">
                                         <div className={styles.sign_in_buttons}>
                                             <div className={styles.google_div}>
@@ -143,7 +144,7 @@ const Login = () => {
                                                 </GoogleOAuthProvider>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </div>
