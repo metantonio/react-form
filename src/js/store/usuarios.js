@@ -149,45 +149,38 @@ export function usuariosActions(getStore, getActions, setStore) {
                     password: password
                 };
             }
+            console.log("before making fetch")
+            //console.log(data.toString())
             let response = await fetch(url, {
                 method: "POST",
-                headers: { 
+                mode: "no-cors",
+                headers: {
                     "Content-Type": "application/x-www-form-urlencoded",
+                    "Access-Control-Allow-Origin": "*",
                     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
                     /* 'X-Forwarded-For': '34.230.98.190:443' */
-                    "Cookie": "PHPSESSID=i2ulebdqqr31qaghh1ubfpq6r5"
-                 },
+                },
                 body: data.toString()
             });
-            let userdata = await response.data;
+            console.log(response);
+            let userdata = await response.text();
+            //console.log(response.statusText)
+            console.log("data", userdata) // This is working but could be blocked by CORS, use a browser shorcut without cors for dev
+            /* //actions.saveUserData(user);
 
-            //actions.saveUserData(user);
-            if (response.ok) {
-                //let response2 = actions.checkUser();
-                if (response.ok) {
-                    console.log(userdata);
-                    setStore({ ...store, user: userdata });
-                    setStore({ ...store, logOutConfirmation: true });
-                    localStorage.setItem("username", userdata.JRUsuario); //revisar
-                    //localStorage.setItem("password", userdata.JRClave);
-                    localStorage.setItem("token", userdata.token);
-                    localStorage.setItem("logOutConfirmation", true);
-                    //actions.getUsers();
-                    actions.getTablas();
-                    actions.getCtl();
-                    actions.checkUser();
-                    return true;
-                } else {
-                    //actions.logOut();
-                    alert("username o password incorrectos");
-                    return false;
-                }
-            } else {
-                //actions.logOut();
-                console.log(userdata);
-                alert("username o password incorrectos");
-                return false;
-            }
+            console.log(userdata);
+            setStore({ ...store, user: userdata });
+            setStore({ ...store, logOutConfirmation: true });
+            localStorage.setItem("username", userdata.JRUsuario); //revisar
+            //localStorage.setItem("password", userdata.JRClave);
+            localStorage.setItem("token", userdata.token);
+            localStorage.setItem("logOutConfirmation", true);
+            //actions.getUsers();
+            //actions.getTablas();
+            //actions.getCtl();
+            //actions.checkUser(); */
+            return true;
+
         },
         saveUserData: (user, google = null) => {
             setStore({ ...store, user: user, logOutConfirmation: true });

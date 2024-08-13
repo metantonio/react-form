@@ -16,6 +16,7 @@
 		"test": "jest --verbose",
 		"tree": "git log --all --color --graph --pretty=format:\"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\" --abbrev-commit"
 	},
+	"proxy": "https://app.casinovizion.com",
 	"author": {
 		"name": "Antonio Martínez",
 		"url": "https://github.com/metantonio"

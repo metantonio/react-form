@@ -19,10 +19,10 @@ const Login = () => {
         e.preventDefault();
         const succes = await actions.loginPhp(userName, password);
         if (succes) {
-            setQrCode(store.userpoker.qr_image)
+            //setQrCode(store.userpoker.qr_image)
             Swal.fire({
                 icon: 'success',
-                title: `Welcome: ${store.userpoker.email}`,
+                title: `Welcome`,
                 showConfirmButton: false,
                 timer: 2000
             })
